@@ -161,7 +161,13 @@ export const FloatingNav = ({
         </motion.div>
         <motion.div 
           initial={{ y: -25, opacity: 0 }}
-          animate={showElements ? { y: 0 , opacity: 1 } : { y: "90vh" , opacity: 1 }}
+          animate={!isEventsPage ? { 
+            y: showElements ? 0 : "90vh" , 
+            opacity: 1 
+          } : { 
+            y: 0 , 
+            opacity: 1 
+          }}
           transition={{
             type: "spring",
             stiffness: 45,
