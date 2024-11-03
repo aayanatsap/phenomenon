@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
 import { Navbar } from "@/components/ui/Navbar";
+import { Footer } from "@/components/ui/Footer";
 
 export const metadata: Metadata = {
   title: "Phenomenon",
@@ -21,6 +22,7 @@ export default function RootLayout({
         <div>
           {children}
         </div>
+        <Footer/>
       </body>
     </html>
   );
