@@ -5,6 +5,8 @@ import { motion, AnimatePresence } from "framer-motion";
 import { cn } from "@/lib/utils"; // Ensure this utility function is correctly defined in your project
 import Link from "next/link";
 import { AiOutlineMenu, AiOutlineClose } from "react-icons/ai";
+import { usePathname } from 'next/navigation';
+
 
 export const FloatingNav = ({
   navItems,
@@ -21,6 +23,9 @@ export const FloatingNav = ({
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null); // Track hover state per item
   const [isOpen, setIsOpen] = useState(false); // State for mobile menu
   const [showElements, setShowElements] = useState(true);
+  const currentPath = usePathname(); // Get the current path
+  // Check if we are on the Events page and store it as a boolean
+  const isEventsPage = currentPath === "/events";
 
   // Scroll event handler
   const handleScroll = () => {
@@ -73,8 +78,10 @@ export const FloatingNav = ({
           initial={{
             opacity: 0
           }}
-          animate={{
+          animate={!isEventsPage ? {
             opacity: showElements ? 1 : 0
+          } : {
+            opacity : 1,
           }}
           transition={{
             duration: 0.4,
@@ -89,9 +96,12 @@ export const FloatingNav = ({
           opacity: 1,
           y: -100,
         }}
-        animate={{
+        animate={!isEventsPage ? {
           y: visible ? 0 : -100,
           opacity: visible ? 1 : 0,
+        } : {
+          y : 0,
+          opacity: 1
         }}
         transition={{
           type: "tween",
@@ -103,8 +113,10 @@ export const FloatingNav = ({
             initial={{
               opacity: 0
             }}
-            animate={{
+            animate={!isEventsPage ? {
               opacity: visible ? 1 : 0
+            } : {
+              opacity: 1
             }}
             transition={{
               duration: 0.4
