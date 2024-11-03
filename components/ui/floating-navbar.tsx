@@ -6,6 +6,7 @@ import { cn } from "@/lib/utils"; // Ensure this utility function is correctly d
 import Link from "next/link";
 import { AiOutlineMenu, AiOutlineClose } from "react-icons/ai";
 import { usePathname } from 'next/navigation';
+import logo from "../../media/logo.png";
 
 
 export const FloatingNav = ({
@@ -87,8 +88,8 @@ export const FloatingNav = ({
             duration: 0.4,
           }}
         >
-          <Link href={"/"} className="justify-self-start hidden lg:block">
-            <Image src={""} className="lg:size-[50px] size-[40px] bg-white" alt="logo" />
+          <Link href={"/"} className="justify-self-start hidden lg:block hover:scale-110 duration-500 ">
+            <Image src={logo} className="lg:size-[70px] size-[40px]" alt="logo" />
           </Link>
         </motion.div>
         <motion.div 
@@ -121,7 +122,7 @@ export const FloatingNav = ({
             transition={{
               duration: 0.4
             }}
-            className="flex flex-row gap-5 justify-self-center justify-items-center pr-10">
+            className="flex flex-row gap-5 justify-self-center justify-items-center mr-[60px] py-3 border-2 border-opacity-70 bg-black bg-opacity-85 px-[25px] rounded-full border-electricBlue">
               {navItems.map((navItem, idx) => (
                 <motion.div
                   key={`nav-link-${navItem.link}-${idx}`} // Unique key for each item
@@ -135,10 +136,10 @@ export const FloatingNav = ({
                     onMouseEnter={() => setHoveredIndex(idx)}
                     onMouseLeave={() => setHoveredIndex(null)}
                     className={cn(
-                      "relative items-center flex text-[#E5E5E5] hover:text-[#0BB3BA] hover:scale-105 duration-500"
+                      "relative items-center flex text-lightGray hover:text-aquaBlue hover:scale-105 duration-500"
                     )}
                   >
-                    <span className="font-semibold text-base px-0.5 text-center">
+                    <span className="font-bold text-base px-0.5 text-center">
                       {navItem.name}
                     </span>
                   </Link>
@@ -152,7 +153,7 @@ export const FloatingNav = ({
                     transition={{
                       duration: 0.35,
                     }}
-                    className="nav-underline bg-black h-[2.25px]"
+                    className="nav-underline bg-darkGray h-[2.25px]"
                   />
                 </motion.div>
               ))}
@@ -162,7 +163,7 @@ export const FloatingNav = ({
         <motion.div 
           initial={{ y: -25, opacity: 0 }}
           animate={!isEventsPage ? { 
-            y: showElements ? 0 : "90vh" , 
+            y: showElements ? 0 : "87vh" , 
             opacity: 1 
           } : { 
             y: 0 , 
@@ -174,7 +175,7 @@ export const FloatingNav = ({
             duration: 0.2,
           }} className="justify-self-end hidden lg:block">
             <Link href={"/registrations"}
-              className="flex items-center border-2 bg-[#FFF89A] border-[#FFF89A] hover:scale-105 duration-500 hover:bg-[#0BB3BA] hover:border-[#0BB3BA] justify-self-end font-medium relative text-[#1A1A1A] hover:text-[#E5E5E5] px-4 py-1.5 rounded-full"
+              className="flex items-center border-2 bg-softYellow border-softYellow hover:scale-105 duration-500 hover:bg-aquaBlue hover:border-aquaBlue justify-self-end font-medium relative text-darkGray hover:text-white px-4 py-1.5 rounded-full"
             >
               <span>Register</span>
             </Link>

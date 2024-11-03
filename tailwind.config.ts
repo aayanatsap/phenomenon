@@ -38,6 +38,13 @@ const config = {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
       },
+      colors: {
+        lightGray: '#E5E5E5', 
+        aquaBlue: '#0BB3BA',    
+        softYellow: '#FFF89A',  
+        electricBlue: '#7DF9FF', 
+        darkGray: '#1A1A1A',
+      },
     },
   },
   plugins: [

@@ -37,12 +37,12 @@ export const ZoomScrollCards = ({
 
   return (
     <div className="h-[400vh]">
-      <div className="sticky top-0 h-screen flex items-center justify-center overflow-hidden">
+      <div className="sticky -top-8 h-screen flex items-center justify-center overflow-hidden">
         {cardsData.map((card, index) => (
           <AnimatePresence key={index}>
             {currentCard === index && (
               <motion.div
-                className="absolute w-5/6 h-3/4 md:w-5/6 lg:h-4/5 md:h-3/4 bg-transparent shadow-lg rounded-lg p-6 flex flex-col items-center justify-start text-left"
+                className="absolute w-5/6 h-3/4 md:w-5/6 lg:h-3/4 md:h-3/5 bg-transparent shadow-lg rounded-lg p-6 flex flex-col items-center justify-start text-left"
                 initial={{ scale: 0, opacity: 0 }}
                 animate={{ scale: 1, opacity: 1 }}
                 exit={{ scale: 0, opacity: 0 }}
@@ -50,10 +50,10 @@ export const ZoomScrollCards = ({
                 style={{ zIndex: currentCard === index ? 10 : 0 }}
               >   
                 <div className="grid grid-flow-col h-full w-full gap-20">
-                  <div className="h-[420px] bg-white rounded-3xl md:w-[280px] lg:w-[340px] self-center justify-self-start"></div>
-                  <div className="grid grid-flow-row lg:py-10 lg:px-14 gap-6 h-full w-full">
+                  <div className="md:h-full lg:h-5/6 bg-white rounded-3xl md:w-[280px] lg:w-[340px] self-center justify-self-start"></div>
+                  <div className="grid grid-flow-row lg:py-10 lg:pl-16 gap-6 h-full w-full">
                     <div>
-                      <h2 className="text-4xl font-bold justify-self-center text-[#0BB3BA]">{card.title}</h2>
+                      <h2 className="text-4xl font-bold justify-self-center text-electricBlue">{card.title}</h2>
                     </div>
                     {/* Always show title at the top */}      
                     <div className='w-5/6 flex justify-items-center justify-self-center'>
@@ -67,7 +67,7 @@ export const ZoomScrollCards = ({
                             transition={{ type: "spring", stiffness: 100, duration: 0.5 }}
                             className="flex flex-col px-5"
                           >
-                            <p className='text-xl text-center text-[#0BB3BA]'>{card.content}</p>
+                            <p className='text-xl text-center text-electricBlue'>{card.content}</p>
                           </motion.div>
                         ) : (
                           <motion.div
@@ -78,10 +78,10 @@ export const ZoomScrollCards = ({
                             transition={{ type: "spring", stiffness: 100, duration: 0.5 }}
                             className="flex flex-col"
                           >
-                            <span className=" font-semibold mb-2 text-[#0BB3BA] text-2xl">Rules:</span>
-                            <ul className="list-disc list-inside space-y-2 overflow-y-auto scrollbar scrollbar-track-transparent scrollbar-thumb-[#0BB3BA] h-[200px] pr-3">
+                            <span className=" font-semibold mb-2 text-electricBlue text-2xl">Rules:</span>
+                            <ul className="list-disc list-inside space-y-2 overflow-y-auto scrollbar scrollbar-track-transparent scrollbar-thumb-[#0BB3BA] md:h-[170px] lg:h-[200px] pr-1">
                               {card.rules.map((rule, ruleIndex) => (
-                                <li key={ruleIndex} className='text-[#0BB3BA]'>{rule}</li>
+                                <li key={ruleIndex} className='text-electricBlue'>{rule}</li>
                               ))}
                             </ul>
                           </motion.div>
