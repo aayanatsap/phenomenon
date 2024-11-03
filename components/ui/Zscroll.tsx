@@ -20,24 +20,39 @@ export const ZoomScrollCards = ({
   const { scrollY } = useViewportScroll();
   const [currentCard, setCurrentCard] = useState(0);
   const [viewRules, setViewRules] = useState(false);
+  const containerHeight = cardsData.length * 100;
 
   useEffect(() => {
     const onScroll = () => {
-      const scrollIndex = Math.floor(scrollY.get() / window.innerHeight);
-      setCurrentCard(scrollIndex);
+      const scrollPosition = scrollY.get();
+      const maxScroll = 1000 * window.innerHeight; // 1000vh in pixels
+
+      // Disable scroll if scroll position exceeds 1000vh
+      if (scrollPosition >= maxScroll) {
+        document.body.style.overflow = 'hidden';
+        // Ensure currentCard doesn't exceed the last card
+        setCurrentCard(cardsData.length - 1);
+      } else {
+        document.body.style.overflow = 'auto';
+        const scrollIndex = Math.floor(scrollPosition / window.innerHeight);
+        setCurrentCard(scrollIndex);
+      }
     };
 
     const unsubscribe = scrollY.onChange(onScroll);
-    return () => unsubscribe();
-  }, [scrollY]);
+    return () => {
+      unsubscribe();
+      document.body.style.overflow = 'auto'; // Reset overflow on cleanup
+    };
+  }, [scrollY, cardsData.length]);
 
   useEffect(() => {
     setViewRules(false);
   }, [currentCard]);
 
   return (
-    <div className="h-[400vh]">
-      <div className="sticky top-0 lg:translate-y-20 h-screen flex items-start justify-center overflow-hidden">
+    <div className="h-[1200vh]">
+      <div className="sticky top-0 lg:-translate-y-[70px] h-screen flex items-start justify-center overflow-hidden">
         {cardsData.map((card, index) => (
           <AnimatePresence key={index}>
             {currentCard === index && (

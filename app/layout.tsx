@@ -19,7 +19,7 @@ export default function RootLayout({
       <body className="bg-black scrollbar-thin scrollbar-webkit">
         <div className="fixed body-bg-image h-screen w-screen -z-[5000] opacity-60"></div>
         <Navbar/>
-        <div>
+        <div className="translate-y-[150px]">
           {children}
         </div>
         <Footer/>

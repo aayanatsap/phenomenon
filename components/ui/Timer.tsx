@@ -39,27 +39,34 @@ const CountdownTimer: React.FC = () => {
     }, []);
 
   return (
-    <div className="flex flex-col items-center justify-center h-screen text-white">
-      <h1 className="text-4xl font-bold">Countdown to Final Day</h1>
-      <div className="grid grid-flow-col gap-5 mt-5">
-        <div className="grid grid-flow-row justify-items-center gap-1">
-          <span className="text-5xl">{timeLeft.days}</span>
-          <span> Days</span>
+    <div className="flex">
+      <div className="flex flex-col items-center justify-center w-full h-[300px] md:px-36 text-electricBlue border-opacity-30 bg-transparent border border-electricBlue rounded-[50px]">
+        <span className="text-xl font-bold">JOIN US ON</span>
+        <h2 className="text-5xl font-semibold text-orangeYellow">DECEMBER</h2>
+        <div className="grid grid-flow-col gap-10 font-bold text-xl text-orangeYellow">
+          <div>20th</div>
+          <div>21st</div>
         </div>
-        <span className="text-5xl font-bold">:</span>
-        <div className="grid grid-flow-row justify-items-center gap-1">
-          <span className="text-5xl">{timeLeft.hours}</span>
-          <span> Hours</span>
-        </div>
-        <span className="text-5xl font-bold ">:</span>
-        <div className="grid grid-flow-row justify-items-center gap-1">
-          <span className="text-5xl">{timeLeft.minutes}</span>
-          <span> Minutes</span>
-        </div>
-        <span className="text-5xl font-bold">:</span>
-        <div className="grid grid-flow-row justify-items-center gap-1">
-          <span className="text-5xl">{timeLeft.seconds}</span>
-          <span> Seconds</span>
+        <div className="grid grid-flow-col gap-5 mt-5">
+          <div className="grid grid-flow-row justify-items-center gap-1">
+            <span className="text-5xl">{timeLeft.days}</span>
+            <span className="text-orangeYellow">Days</span>
+          </div>
+          <span className="text-5xl font-bold">:</span>
+          <div className="grid grid-flow-row justify-items-center gap-1">
+            <span className="text-5xl">{timeLeft.hours}</span>
+            <span className="text-orangeYellow">Hours</span>
+          </div>
+          <span className="text-5xl font-bold ">:</span>
+          <div className="grid grid-flow-row justify-items-center gap-1">
+            <span className="text-5xl">{timeLeft.minutes}</span>
+            <span className="text-orangeYellow">Minutes</span>
+          </div>
+          <span className="text-5xl font-bold">:</span>
+          <div className="grid grid-flow-row justify-items-center gap-1">
+            <span className="text-5xl">{timeLeft.seconds}</span>
+            <span className="text-orangeYellow">Seconds</span>
+          </div>
         </div>
       </div>
     </div>
