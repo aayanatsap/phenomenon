@@ -83,7 +83,7 @@ export const FloatingNav = ({
     <AnimatePresence>
       <motion.div
         className={cn(
-          "grid grid-flow-col w-screen fixed bg-transparent z-[5000] lg:py-2 py-2 items-center lg:pl-10 lg:pr-7 px-5",
+          "grid grid-flow-col w-screen fixed bg-transparent z-[5000] lg:py-2 py-2 items-center lg:pl-10 lg:pr-14 px-5",
           className
         )}
       >
@@ -99,6 +99,27 @@ export const FloatingNav = ({
           transition={{
             duration: 0.4,
           }}
+          className="hidden md:block"
+        >
+          <div className="lg:size-[100px] size-[70px]">
+            <Link href={"/"} className=" md:w-[100px] justify-self-start md:relative fixed md:top-0 top-2.5 ">
+              <Image src={logo} className="lg:size-[100px] size-[70px] hover:scale-110 duration-500 md:translate-x-0 -translate-x-1" alt="logo" />
+            </Link>
+          </div>
+        </motion.div>
+        <motion.div
+          initial={{
+            opacity: 0
+          }}
+          animate={isOpen ? {
+            opacity: visible ? 1 : 0,
+          } : {
+            opacity: 1,
+          }}
+          transition={{
+            duration: 0.4,
+          }}
+          className="md:hidden"
         >
           <div className="lg:size-[100px] size-[70px]">
             <Link href={"/"} className=" md:w-[100px] justify-self-start md:relative fixed md:top-0 top-2.5 ">
@@ -136,7 +157,7 @@ export const FloatingNav = ({
             transition={{
               duration: 0.4
             }}
-            className="flex flex-row gap-5 justify-self-center justify-items-center mr-[89px] py-5 border-2 border-opacity-70 bg-galaxyBlue bg-opacity-90 px-[25px] rounded-full border-electricBlue">
+            className="flex flex-row gap-5 justify-self-center justify-items-center mr-[60px] py-5 bg-galaxyBlue bg-opacity-90 px-[25px] rounded-3xl">
               {navItems.map((navItem, idx) => (
                 <motion.div
                   key={`nav-link-${navItem.link}-${idx}`} // Unique key for each item
@@ -150,7 +171,7 @@ export const FloatingNav = ({
                     onMouseEnter={() => setHoveredIndex(idx)}
                     onMouseLeave={() => setHoveredIndex(null)}
                     className={cn(
-                      "relative items-center flex text-lightGray hover:text-aquaBlue hover:scale-105 duration-500"
+                      "relative items-center flex text-neonPurple hover:text-electricBlue hover:scale-105 duration-500"
                     )}
                   >
                     <span className="font-bold text-base px-0.5 text-center">
@@ -167,7 +188,7 @@ export const FloatingNav = ({
                     transition={{
                       duration: 0.35,
                     }}
-                    className="nav-underline bg-darkGray h-[2.25px]"
+                    className="nav-underline bg-black h-[2.5px]"
                   />
                 </motion.div>
               ))}
@@ -177,7 +198,7 @@ export const FloatingNav = ({
         <motion.div 
           initial={{ y: -25, opacity: 0 }}
           animate={!isEventsPage ? { 
-              y: isAtBottom ? "67vh" : showElements ? 0 : "87vh", // Adjust this value as necessary
+              y: isAtBottom ? "67vh" : showElements ? 0 : "85vh", // Adjust this value as necessary
               opacity: 1 
           } : { 
               y: 0 , 
@@ -189,7 +210,7 @@ export const FloatingNav = ({
               duration: 0.2,
           }} className="justify-self-end hidden lg:block">
           <Link href={"/registrations"}
-              className="flex items-center border-2 bg-softYellow border-softYellow hover:scale-105 duration-500 hover:bg-aquaBlue hover:border-aquaBlue justify-self-end font-medium relative text-darkGray hover:text-white px-4 py-1.5 rounded-full"
+              className="flex items-center text-galaxyBlue border-2 bg-electricBlue border-electricBlue hover:scale-105 duration-500 hover:bg-neonPurple hover:border-aquaBlue justify-self-end font-medium relative hover:text-white px-4 py-1.5 rounded-full"
           >
             <span>Register</span>
           </Link>
@@ -197,9 +218,9 @@ export const FloatingNav = ({
         <div className="lg:hidden flex justify-self-end items-center ">
           <button onClick={() => setIsOpen(!isOpen)}>
             {isOpen ? (
-              <AiOutlineClose className="w-7 h-7 text-[#0BB3BA]" /> // Close icon
+              <AiOutlineClose className="w-7 h-7 text-aquaBlue" /> // Close icon
             ) : (
-              <AiOutlineMenu className="w-7 h-7 text-[#0BB3BA]" /> // Hamburger menu icon
+              <AiOutlineMenu className="w-7 h-7 text-aquaBlue" /> // Hamburger menu icon
             )}
           </button>
         </div>
@@ -209,24 +230,24 @@ export const FloatingNav = ({
           y: 0,
         }}
         animate={{
-          y: visible ? 0 : -58,
+          y: visible ? 0 : -80,
         }}
         transition={{
           type: "tween",
           duration: 0.4,
         }}
-        className="fixed "
+        className="fixed z-[5000]"
       >
         <AnimatePresence>
           {isOpen && (
             <motion.div 
-              initial={{ opacity: 0, y: -30 }}
+              initial={{ opacity: 0, y: -140 }}
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -140 }}
-              transition={{ type: "spring", stiffness: 400, duration: 0.1 }}
-              className="lg:hidden fixed justify-self-end top-[60px] w-screen"
+              transition={{ type: "spring", stiffness: 70, duration: 0.1 }}
+              className="lg:hidden fixed justify-self-end top-[85px] w-screen"
             >
-              <div className="grid grid-flow-col bg-galaxyBlue rounded-3xl border-2   border-[#FFF89A] py-5 md:px-5 px-3 md:gap-0 gap-2 justify-items-center">
+              <div className="grid grid-flow-col bg-galaxyBlue rounded-full border-2   border-electricBlue py-5 md:px-5 px-3 md:gap-0 gap-2 justify-items-center">
                 {navItems.map((navItem, idx) => (
                   <motion.div
                     initial={{

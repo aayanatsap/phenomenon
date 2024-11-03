@@ -41,10 +41,11 @@ const config = {
       colors: {
         lightGray: '#E5E5E5', 
         aquaBlue: '#0BB3BA',    
-        softYellow: '#FFF89A',  
+        softYellow: '#FFC700',  
         electricBlue: '#7DF9FF', 
         galaxyBlue: '#0A0A1A',
         crimsonRed: "#DC143C",
+        neonPurple: "#B287F0"
       },
     },
   },

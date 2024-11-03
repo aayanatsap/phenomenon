@@ -4,7 +4,7 @@ import Timer from "../components/ui/Timer"
 
 export default function Home() {
   return (
-      <div className="">
+      <div className="h-[500vh]">
         <Timer/>
       </div>
   );

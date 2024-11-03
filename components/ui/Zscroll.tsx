@@ -90,7 +90,7 @@ export const ZoomScrollCards = ({
                     </div>  
                     <div className='self-end'>
                       <button
-                        className="w-full font-semibold justify-self-end self-end mt-auto text-black hover:text-white hover:cursor-pointer rounded-xl py-1 bg-[#FFF89A] hover:bg-[#0BB3BA] duration-500"
+                        className="w-full font-semibold justify-self-end self-end mt-auto text-galaxyBlue hover:text-electricBlue hover:cursor-pointer rounded-xl py-1 bg-electricBlue hover:bg-crimsonRed duration-500"
                         onClick={() => setViewRules(!viewRules)}
                       >
                         {viewRules ? (
