@@ -37,7 +37,7 @@ export const ZoomScrollCards = ({
 
   return (
     <div className="h-[400vh]">
-      <div className="sticky -top-8 h-screen flex items-center justify-center overflow-hidden">
+      <div className="sticky top-0 lg:translate-y-12 h-screen flex items-start justify-center overflow-hidden">
         {cardsData.map((card, index) => (
           <AnimatePresence key={index}>
             {currentCard === index && (

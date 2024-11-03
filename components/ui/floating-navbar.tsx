@@ -27,6 +27,7 @@ export const FloatingNav = ({
   const currentPath = usePathname(); // Get the current path
   // Check if we are on the Events page and store it as a boolean
   const isEventsPage = currentPath === "/events";
+  const [isAtBottom, setIsAtBottom] = useState(false);
 
   // Scroll event handler
   const handleScroll = () => {
@@ -39,6 +40,16 @@ export const FloatingNav = ({
         setIsVisible(true);
       }
       setLastScrollY(window.scrollY);
+    }
+    const windowHeight = window.innerHeight;
+    const documentHeight = document.documentElement.scrollHeight;
+    const scrollY = window.scrollY;
+
+    // If the sum of scrollY and window height equals or exceeds the document height, we are at the bottom
+    if (scrollY + windowHeight >= documentHeight - 1) {
+      setIsAtBottom(true);
+    } else {
+      setIsAtBottom(false);
     }
   };
 
@@ -65,6 +76,7 @@ export const FloatingNav = ({
       window.removeEventListener("scroll", handleScroll);
     };
   }, []);
+
 
   return (
     
@@ -122,7 +134,7 @@ export const FloatingNav = ({
             transition={{
               duration: 0.4
             }}
-            className="flex flex-row gap-5 justify-self-center justify-items-center mr-[60px] py-3 border-2 border-opacity-70 bg-black bg-opacity-85 px-[25px] rounded-full border-electricBlue">
+            className="flex flex-row gap-5 justify-self-center justify-items-center mr-[60px] py-3 border-2 border-opacity-70 bg-galaxyBlue bg-opacity-90 px-[25px] rounded-full border-electricBlue">
               {navItems.map((navItem, idx) => (
                 <motion.div
                   key={`nav-link-${navItem.link}-${idx}`} // Unique key for each item
@@ -163,22 +175,22 @@ export const FloatingNav = ({
         <motion.div 
           initial={{ y: -25, opacity: 0 }}
           animate={!isEventsPage ? { 
-            y: showElements ? 0 : "87vh" , 
-            opacity: 1 
+              y: isAtBottom ? "70vh" : showElements ? 0 : "87vh", // Adjust this value as necessary
+              opacity: 1 
           } : { 
-            y: 0 , 
-            opacity: 1 
+              y: 0 , 
+              opacity: 1 
           }}
           transition={{
-            type: "spring",
-            stiffness: 45,
-            duration: 0.2,
+              type: "spring",
+              stiffness: 45,
+              duration: 0.2,
           }} className="justify-self-end hidden lg:block">
-            <Link href={"/registrations"}
+          <Link href={"/registrations"}
               className="flex items-center border-2 bg-softYellow border-softYellow hover:scale-105 duration-500 hover:bg-aquaBlue hover:border-aquaBlue justify-self-end font-medium relative text-darkGray hover:text-white px-4 py-1.5 rounded-full"
-            >
-              <span>Register</span>
-            </Link>
+          >
+            <span>Register</span>
+          </Link>
         </motion.div>
         <div className="lg:hidden flex justify-self-end items-center ">
           <button onClick={() => setIsOpen(!isOpen)}>
@@ -212,7 +224,7 @@ export const FloatingNav = ({
               transition={{ type: "spring", stiffness: 400, duration: 0.1 }}
               className="lg:hidden fixed justify-self-end top-[60px] w-screen"
             >
-              <div className="grid grid-flow-col bg-[#0B0C10] rounded-3xl border-2   border-[#FFF89A] py-5 md:px-5 px-3 md:gap-0 gap-2 justify-items-center">
+              <div className="grid grid-flow-col bg-galaxyBlue rounded-3xl border-2   border-[#FFF89A] py-5 md:px-5 px-3 md:gap-0 gap-2 justify-items-center">
                 {navItems.map((navItem, idx) => (
                   <motion.div
                     initial={{
