@@ -83,7 +83,7 @@ export const FloatingNav = ({
     <AnimatePresence>
       <motion.div
         className={cn(
-          "grid grid-flow-col w-screen fixed bg-transparent z-[5000] lg:py-2 py-[1.094rem] items-center lg:pl-10 lg:pr-7 px-3",
+          "grid grid-flow-col w-screen fixed bg-transparent z-[5000] lg:py-2 py-2 items-center lg:pl-10 lg:pr-7 px-5",
           className
         )}
       >
@@ -100,9 +100,11 @@ export const FloatingNav = ({
             duration: 0.4,
           }}
         >
-          <Link href={"/"} className="justify-self-start hidden lg:block hover:scale-110 duration-500 ">
-            <Image src={logo} className="lg:size-[70px] size-[40px]" alt="logo" />
-          </Link>
+          <div className="lg:size-[100px] size-[70px]">
+            <Link href={"/"} className=" md:w-[100px] justify-self-start md:relative fixed md:top-0 top-2.5 ">
+              <Image src={logo} className="lg:size-[100px] size-[70px] hover:scale-110 duration-500 md:translate-x-0 -translate-x-1" alt="logo" />
+            </Link>
+          </div>
         </motion.div>
         <motion.div 
         initial={{
@@ -134,7 +136,7 @@ export const FloatingNav = ({
             transition={{
               duration: 0.4
             }}
-            className="flex flex-row gap-5 justify-self-center justify-items-center mr-[60px] py-3 border-2 border-opacity-70 bg-galaxyBlue bg-opacity-90 px-[25px] rounded-full border-electricBlue">
+            className="flex flex-row gap-5 justify-self-center justify-items-center mr-[89px] py-5 border-2 border-opacity-70 bg-galaxyBlue bg-opacity-90 px-[25px] rounded-full border-electricBlue">
               {navItems.map((navItem, idx) => (
                 <motion.div
                   key={`nav-link-${navItem.link}-${idx}`} // Unique key for each item
@@ -175,7 +177,7 @@ export const FloatingNav = ({
         <motion.div 
           initial={{ y: -25, opacity: 0 }}
           animate={!isEventsPage ? { 
-              y: isAtBottom ? "70vh" : showElements ? 0 : "87vh", // Adjust this value as necessary
+              y: isAtBottom ? "67vh" : showElements ? 0 : "87vh", // Adjust this value as necessary
               opacity: 1 
           } : { 
               y: 0 , 
@@ -279,7 +281,7 @@ export const FloatingNav = ({
           )}
         </AnimatePresence>
       </motion.div>
-      <AnimatePresence mode="wait">
+      {/* <AnimatePresence mode="wait">
         {showElements && (
           <motion.div
             initial={{ y: -30, opacity: 0,}}
@@ -293,7 +295,7 @@ export const FloatingNav = ({
             </Link>
           </motion.div>
         )}
-      </AnimatePresence>
+      </AnimatePresence> */}
     </AnimatePresence>
   );
 };

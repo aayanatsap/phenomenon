@@ -37,7 +37,7 @@ export const ZoomScrollCards = ({
 
   return (
     <div className="h-[400vh]">
-      <div className="sticky top-0 lg:translate-y-12 h-screen flex items-start justify-center overflow-hidden">
+      <div className="sticky top-0 lg:translate-y-20 h-screen flex items-start justify-center overflow-hidden">
         {cardsData.map((card, index) => (
           <AnimatePresence key={index}>
             {currentCard === index && (
@@ -51,7 +51,7 @@ export const ZoomScrollCards = ({
               >   
                 <div className="grid grid-flow-col h-full w-full gap-20">
                   <div className="md:h-full lg:h-5/6 bg-white rounded-3xl md:w-[280px] lg:w-[340px] self-center justify-self-start"></div>
-                  <div className="grid grid-flow-row lg:py-10 lg:pl-16 gap-6 h-full w-full">
+                  <div className="grid grid-flow-row lg:py-12 lg:pl-16 gap-6 h-full w-full">
                     <div>
                       <h2 className="text-4xl font-bold justify-self-center text-electricBlue">{card.title}</h2>
                     </div>
@@ -79,7 +79,7 @@ export const ZoomScrollCards = ({
                             className="flex flex-col"
                           >
                             <span className=" font-semibold mb-2 text-electricBlue text-2xl">Rules:</span>
-                            <ul className="list-disc list-inside space-y-2 overflow-y-auto scrollbar scrollbar-track-transparent scrollbar-thumb-[#0BB3BA] md:h-[170px] lg:h-[200px] pr-1">
+                            <ul className="list-disc list-inside space-y-2 overflow-y-auto scrollbar scrollbar-track-transparent scrollbar-thumb-[#0BB3BA] md:h-[170px] lg:h-[190px] pr-1">
                               {card.rules.map((rule, ruleIndex) => (
                                 <li key={ruleIndex} className='text-electricBlue'>{rule}</li>
                               ))}
