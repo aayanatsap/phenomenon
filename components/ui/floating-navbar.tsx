@@ -91,39 +91,17 @@ export const FloatingNav = ({
           initial={{
             opacity: 0
           }}
-          animate={!isEventsPage ? {
+          animate={{
             opacity: showElements ? 1 : 0
-          } : {
-            opacity : 1,
           }}
           transition={{
             duration: 0.4,
           }}
-          className="hidden md:block"
+          className=""
         >
-          <div className="lg:size-[100px] size-[70px]">
+          <div className="lg:size-[100px] md:size-[85px] size-[70px]">
             <Link href={"/"} className=" md:w-[100px] justify-self-start md:relative fixed md:top-0 top-2.5 ">
-              <Image src={logo} className="lg:size-[100px] size-[70px] hover:scale-110 duration-500 md:translate-x-0 -translate-x-1" alt="logo" />
-            </Link>
-          </div>
-        </motion.div>
-        <motion.div
-          initial={{
-            opacity: 0
-          }}
-          animate={isOpen ? {
-            opacity: visible ? 1 : 0,
-          } : {
-            opacity: 1,
-          }}
-          transition={{
-            duration: 0.4,
-          }}
-          className="md:hidden"
-        >
-          <div className="lg:size-[100px] size-[70px]">
-            <Link href={"/"} className=" md:w-[100px] justify-self-start md:relative fixed md:top-0 top-2.5 ">
-              <Image src={logo} className="lg:size-[100px] size-[70px] hover:scale-110 duration-500 md:translate-x-0 -translate-x-1" alt="logo" />
+              <Image src={logo} className="lg:size-[100px] md:size-[85px] size-[70px] hover:scale-110 duration-500 md:translate-x-0 -translate-x-1" alt="logo" />
             </Link>
           </div>
         </motion.div>
@@ -132,12 +110,9 @@ export const FloatingNav = ({
           opacity: 1,
           y: -100,
         }}
-        animate={!isEventsPage ? {
+        animate={{
           y: visible ? 0 : -100,
           opacity: visible ? 1 : 0,
-        } : {
-          y : 0,
-          opacity: 1
         }}
         transition={{
           type: "tween",
@@ -149,10 +124,8 @@ export const FloatingNav = ({
             initial={{
               opacity: 0
             }}
-            animate={!isEventsPage ? {
+            animate={{  
               opacity: visible ? 1 : 0
-            } : {
-              opacity: 1
             }}
             transition={{
               duration: 0.4
@@ -197,11 +170,8 @@ export const FloatingNav = ({
         </motion.div>
         <motion.div 
           initial={{ y: -25, opacity: 0 }}
-          animate={!isEventsPage ? { 
-              y: isAtBottom ? "67vh" : showElements ? 0 : "85vh", // Adjust this value as necessary
-              opacity: 1 
-          } : { 
-              y: 0 , 
+          animate={{ 
+              y: showElements ? 0 : "85vh", // Adjust this value as necessary
               opacity: 1 
           }}
           transition={{
@@ -230,7 +200,7 @@ export const FloatingNav = ({
           y: 0,
         }}
         animate={{
-          y: visible ? 0 : -80,
+          y: visible ? 0 : -84,
         }}
         transition={{
           type: "tween",
@@ -245,7 +215,7 @@ export const FloatingNav = ({
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -140 }}
               transition={{ type: "spring", stiffness: 70, duration: 0.1 }}
-              className="lg:hidden fixed justify-self-end top-[85px] w-screen"
+              className="lg:hidden fixed justify-self-end top-[85px] md:top-[95px] w-screen"
             >
               <div className="grid grid-flow-col bg-galaxyBlue rounded-full border-2   border-electricBlue py-5 md:px-5 px-3 md:gap-0 gap-2 justify-items-center">
                 {navItems.map((navItem, idx) => (
@@ -265,10 +235,10 @@ export const FloatingNav = ({
                       key={`mobile-nav-link-${navItem.link}-${idx}`} // Unique key for mobile menu items
                       href={navItem.link}
                       className={
-                        "items-center flex md:text-[#E5E5E5] text-[#E5E5E5] justify-items-center hover:text-[#0BB3BA] hover:scale-105 duration-500"
+                        "items-center flex text-neonPurple justify-items-center hover:text-aquaBlue hover:scale-105 duration-500"
                       }
                     >
-                      <span className="font-semibold lg:px-1 text-center md:text-base text-xs">
+                      <span className="font-semibold lg:px-1 text-center md:text-base text-[10px]">
                         {navItem.name}
                       </span>
                     </Link>
@@ -289,10 +259,10 @@ export const FloatingNav = ({
                   <Link
                     href={"/registrations"}
                     className={
-                      "items-center flex justify-items-center md:text-[#E5E5E5] text-[#E5E5E5] hover:text-[#0BB3BA] hover:scale-105 duration-500"
+                      "items-center flex justify-items-center text-neonPurple hover:text-aquaBlue hover:scale-105 duration-500"
                     }
                   >
-                    <span className="font-semibold lg:px-1 text-center md:text-base text-xs">
+                    <span className="font-semibold lg:px-1 text-center md:text-base text-[10px]">
                       REGISTER
                     </span>
                   </Link>
@@ -302,21 +272,6 @@ export const FloatingNav = ({
           )}
         </AnimatePresence>
       </motion.div>
-      {/* <AnimatePresence mode="wait">
-        {showElements && (
-          <motion.div
-            initial={{ y: -30, opacity: 0,}}
-            animate={{ y: 0, opacity: 1,}}
-            exit={{ opacity: 0,}}
-            transition={{ type: "tween", duration: 0.3 }}
-            className="fixed -z-[1000]"
-          >
-            <Link href={"/"} className="justify-self-start lg:hidden fixed top-3 left-3">
-              <Image src={""} className="lg:size-[40px] size-[40px] bg-white" alt="logo" />
-            </Link>
-          </motion.div>
-        )}
-      </AnimatePresence> */}
     </AnimatePresence>
   );
 };

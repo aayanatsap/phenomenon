@@ -1,59 +1,51 @@
-import React, { useEffect, useRef, useState } from 'react';
+"use client"
+import React, { useState, useEffect } from 'react';
 
-const cards = [
-  { id: 1, content: 'Card 1' },
-  { id: 2, content: 'Card 2' },
-  { id: 3, content: 'Card 3' },
-  { id: 4, content: 'Card 4' },
-];
+const cards = ["Card 1", "Card 2", "Card 3", "Card 4"];
 
-const CardScroller: React.FC = () => {
-  const [currentCard, setCurrentCard] = useState(0);
-  const containerRef = useRef<HTMLDivElement>(null);
+const CardScrollPage = () => {
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [scrollOffset, setScrollOffset] = useState(0);
 
-  const handleScroll = () => {
-    if (containerRef.current) {
-      const scrollY = containerRef.current.scrollTop;
-      const cardHeight = window.innerHeight; // Full viewport height for each card
-      const newCardIndex = Math.floor(scrollY / cardHeight);
-      setCurrentCard(Math.max(0, Math.min(newCardIndex, cards.length - 1)));
+  // Function to handle scroll event
+  const handleScroll = (event: WheelEvent) => {
+    // Accumulate scroll offset based on scroll direction
+    setScrollOffset((prevOffset) => prevOffset + event.deltaY);
+
+    // Check if cumulative scroll offset has reached ±100vh
+    const threshold = window.innerHeight;
+    if (scrollOffset >= threshold) {
+      setCurrentIndex((prevIndex) => Math.min(prevIndex + 1, cards.length - 1));
+      setScrollOffset(0); // Reset scroll offset after card change
+    } else if (scrollOffset <= -threshold) {
+      setCurrentIndex((prevIndex) => Math.max(prevIndex - 1, 0));
+      setScrollOffset(0); // Reset scroll offset after card change
     }
   };
 
+  // Set up scroll event listener
   useEffect(() => {
-    const container = containerRef.current;
-    if (container) {
-      container.addEventListener('scroll', handleScroll);
-    }
-
+    window.addEventListener('wheel', handleScroll);
     return () => {
-      if (container) {
-        container.removeEventListener('scroll', handleScroll);
-      }
+      window.removeEventListener('wheel', handleScroll);
     };
-  }, []);
+  }, [scrollOffset]);
 
   return (
-    <div
-      ref={containerRef}
-      className="h-screen overflow-y-scroll relative"
-      style={{ scrollBehavior: 'smooth' }} // Optional: smooth scrolling
-    >
-      {cards.map((card, index) => (
-        <div
-          key={card.id}
-          className={`absolute inset-0 flex items-center justify-center transition-opacity duration-500 ${
-            index === currentCard ? 'opacity-100' : 'opacity-0'
-          }`}
-          style={{ height: '100vh' }} // Each card takes the full height of the viewport
-        >
-          <div className="bg-blue-500 w-full h-full flex items-center justify-center text-white text-3xl">
-            {card.content}
-          </div>
-        </div>
-      ))}
+    <div className="fixed inset-0 flex items-center justify-center bg-gray-900 text-white">
+      <div
+        className="text-5xl font-bold"
+        style={{
+          transition: 'opacity 0.5s ease',
+          backgroundColor: `hsl(${currentIndex * 90}, 70%, 50%)`,
+          padding: '20px',
+          borderRadius: '8px',
+        }}
+      >
+        {cards[currentIndex]}
+      </div>
     </div>
   );
 };
 
-export default CardScroller;
+export default CardScrollPage;

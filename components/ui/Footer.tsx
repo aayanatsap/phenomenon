@@ -4,54 +4,56 @@ import { usePathname } from "next/navigation";
 import Link from "next/link";
 import Image from "next/image";
 import logo from "../../media/logo.png"
-import { FaFacebookF, FaInstagram } from "react-icons/fa6";
 import { BsGlobe } from "react-icons/bs";
+import { FaInstagram } from "react-icons/fa";
+import { FaFacebookF } from "react-icons/fa6";
 
 export function Footer() {
   const currentPath = usePathname(); // Get the current path
   const isEventsPage = currentPath === "/events"; // Check if we are on the Events page
 
   return (
-    <div
-      className={`${
-        isEventsPage ? "fixed bottom-0" : "relative"
-      } grid md:grid-flow-col grid-flow-row md:gap-0 gap-2 md:py-0 py-2.5 items-center md:pr-1 lg:px-12 md:px-10 pr-2 pl-1 lg:h-[120px] md:h-[100px] text-electricBlue bg-galaxyBlue md:bg-opacity-70 w-screen border-t-2 border-electricBlue border-opacity-20`}
-    >
-      <div className="grid grid-flow-col md:w-full">
-        <Link href={"/"} className="md:justify-self-start md:hidden justify-self-center hover:scale-110 duration-500 ">
-          <Image src={logo} className="lg:size-[100px] md:size-[70px] size-[55px]" alt="logo" />
-        </Link>
-        <div className="grid md:grid-flow-col grid-flow-row items-center w-full">
-          <div className="flex flex-row items-center">
-            <Link href={"/"} className="md:justify-self-start md:block hidden justify-self-center hover:scale-110 duration-500 ">
-              <Image src={logo} className="lg:size-[100px] md:size-[70px] size-[50px]" alt="logo" />
-            </Link>
-            <div className="grid grid-flow-row gap-2 justify-items-center">
-              <span className="text-xs text-aquaBlue text-center">© 2024 St <a href="www.sjbhs.edu.in" className="hover:underline">Joseph's Boys' High School</a>. All Rights Reserved.</span>
-              <div className="flex flex-row gap-3 items-center md:justify-start justify-center md:w-auto w-full">
-                <Link href={"https://www.facebook.com/Sjbhsbangalore/"} target="__blank">
-                  <FaFacebookF className="text-aquaBlue md:size-auto size-[12.5px] hover:scale-105 hover:cursor-pointer duration-500"/>
+    <footer className='grid grid-flow-row bg-bacgr w-screen md:px-10 md:py-8 px-4 py-5 md:gap-3 gap-1.5'>
+      <div className='grid grid-flow-col items-center md:pl-4 md:pr-5 pr-3 pl-2 md:mb-3 mb-2'>
+        <div className='justify-self-start'>
+            <div className='flex flex-col juistify-self-start justify-center items-center'>
+              <Link href={"/"} className='flex justify-items-center'>
+                  <Image src={logo} alt='logo' className='md:size-[150px] size-[100px] hover:scale-105 duration-500 justify-self-center'/>
+              </Link>
+              <div className="grid grid-flow-col w-2/3 justify-self-center justify-items-center -translate-x-0.5">
+                <Link href={"/"}>
+                  <BsGlobe className="fill-aquaBlue hover:fill-superNovaYellow hover:scale-105 duration-500 mr-1"/>
                 </Link>
-                <Link href={""} target="__blank">
-                  <FaInstagram className="md:size-[19.5px] size-[14.5px] text-aquaBlue hover:scale-105 hover:cursor-pointer duration-500" />
+                <Link href={"/"}>
+                  <FaInstagram className="fill-aquaBlue hover:fill-superNovaYellow hover:scale-105 duration-500"/>
                 </Link>
-                <Link href={"www.sjbhs.edu.in"} target="__blank">
-                  <BsGlobe className="text-aquaBlue md:size-auto size-[12.5px] hover:scale-105 hover:cursor-pointer duration-500"/>
-                </Link>
+                <Link href={"/"}>
+                  <FaFacebookF className="fill-aquaBlue hover:fill-superNovaYellow hover:scale-105 duration-500"/>
+                </Link>  
               </div>
             </div>
-          </div>
-          <div className="hidden md:justify-self-end justify-self-center items-center md:block">
-            <span className="text-aquaBlue md:text-base text-xs duration font-light">Website developed by: <a href=" https://www.linkedin.com/in/roshan-pramod-0b7806322/" target="__blank" className=""><span className="hover:text-crimsonRed text-neonPurple duration-500 font-normal">T Roshan Pramod</span></a></span>
-          </div> 
+        </div>
+        <div className='justify-self-end'>
+            <div className='flex flex-col md:text-base text-sm'>
+                <span className='font-bold mb-1 text-aquaBlue'>CHECK OUT</span>
+                <Link href={"/"} className='text-electricBlue hover:text-hili duration-500 font-semibold'>Home</Link>
+                <Link href={"/about"} className='text-electricBlue hover:text-hili duration-500 font-semibold'>About</Link>
+                <Link href={"/artist"} className='text-electricBlue hover:text-hili duration-500 font-semibold'>Artist</Link>
+                <Link href={"/events"} className='text-electricBlue hover:text-hili duration-500 font-semibold'>Events</Link>
+                <Link href={"/rules"} className='text-electricBlue hover:text-hili duration-500 font-semibold'>Rules</Link>
+                <Link href={"/contact"} className='text-electricBlue hover:text-hili duration-500 font-semibold'>Contact</Link>
+            </div>
         </div>
       </div>
-      <div className="w-full px-3 md:hidden">
-        <hr className="border-t border-electricBlue w-full opacity-70" />
+      <hr className='w-full border-t border-aquaBlue'/>
+      <div className='flex justify-center md:text-sm my-3 text-xs'>
+        <span className="text-aquaBlue">© 2024 <a href="https://sjbhs.edu.in" target='__blank' className='hover:underline'>St Joseph's Boys' High School</a>. All Rights Reserved.</span>
       </div>
-      <div className=" md:justify-self-end justify-self-center items-center md:hidden">
-        <span className="text-aquaBlue md:text-base text-xs duration font-light">Website developed by: <a href=" https://www.linkedin.com/in/roshan-pramod-0b7806322/" target="__blank" className="text-neonPurple"><span className="hover:text-crimsonRed text-neonPurple duration-500 font-normal">T Roshan Pramod</span></a></span>
+      <hr className='w-full border-t border-aquaBlue'/>
+      <div className="flex flex-col w-full md:text-base text-sm">
+        <span className="text-center text-electricBlue font-semibold">Website developed by</span>
+        <span className='text-center text-superNovaYellow font-semibold'><a href=" https://www.linkedin.com/in/roshan-pramod-0b7806322/" target="__blank" className=""><span className="hover:text-crimsonRed duration-500 font-bold">T Roshan Pramod</span></a></span>
       </div>
-    </div>
+    </footer>
   );
 }

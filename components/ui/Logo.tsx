@@ -13,8 +13,8 @@ const JumpLogo: React.FC = () => {
     <Image
       src={logo}
       alt="Jumping Image"
-      className={`size-[500px] cursor-pointer transition-transform ease ${
-        isAnimating ? 'animate-jumpAndRotate' : 'animate-throb'
+      className={`lg:size-[500px] md:size-[450px] size-[300px] cursor-pointer transition-transform ease ${
+        isAnimating ? 'animate-zoom' : 'animate-throb'
       }`}
       onClick={handleAnimation}
       onAnimationEnd={() => setIsAnimating(false)} // Reset animation state

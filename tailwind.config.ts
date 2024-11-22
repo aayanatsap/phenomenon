@@ -38,19 +38,18 @@ const config = {
           '0%, 100%': { transform: 'scale(1)'},
           '50%': { transform: 'scale(1.07)' } // specify units like 'px' or '%'
         },
-        jumpAndRotate: {
-          '0%': { transform: 'translateY(0) rotate(0deg)' },
-          '25%': { transform: 'translateY(-70px) rotate(180deg) scale(0.75)' },
-          '50%': { transform: 'translateY(0) rotate(180deg) scale(0.5)' },
-          '75%': { transform: 'translateY(-70px) rotate(360deg) scale(0.75)' },
-          '100%': { transform: 'translateY(0) rotate(360deg)' } 
-        },
+        zoom: {
+          '0%, 100%': { transform: 'scale(1)', opacity: '1' },
+          '20%': { transform: 'scale(5)', opacity: '0' },
+          '25%': { transform: 'scale(0)', opacity: '0' },
+          '30%': { transform: 'scale(0)', opacity: '0.5' },
+        }
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
         'throb': 'movement 3.5s ease-in-out infinite',
-        'jumpAndRotate': 'jumpAndRotate 1s ease-in',
+        'zoom': 'zoom 3s ease-in-out',
       },
       colors: {
         lightGray: '#E5E5E5', 
