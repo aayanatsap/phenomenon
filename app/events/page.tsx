@@ -154,8 +154,6 @@ const cardsData = [
       "Participants are required to get their own devices."
     ]
   },
-]
-const withoutInst = [
   { 
     title: 'BATTLE OF THE BANDS',
     content: "Live and unsigned. Battle it out for bragging rights.",
@@ -233,17 +231,11 @@ const withoutInst = [
 
 function Events() {
   return (
-    <div className="mb-56">
-      {cardsData.map((card, idx) => (
-        <EventsCard title={card.title} content={card.content} rules={card.rules} banner={card.banner} key={idx}/>
-      ))}
-      <div className="w-screen flex justify-center">
-        <div className="flex flex-col w-3/4 mb-36">
-            <span className="text-center text-electricBlue md:text-3xl text-2xl underline">EVENTS THAT ARE NOT A PART OF THE INSTITUTION PACKAGE</span>
-            <span className="text-center text-electricBlue md:text-2xl text-xl">NOTE: Kindly go through the rules under each event thoroughly. Institutions that wish to take part in the following events are to register for them separately.</span>
-        </div>
+    <div className="mb-24">
+      <div className="flex justify-center">
+        <span className="text-6xl text-electricBlue text-center font-bold mb-24">Our Events</span>
       </div>
-      {withoutInst.map((card, idx) => (
+      {cardsData.map((card, idx) => (
         <EventsCard title={card.title} content={card.content} rules={card.rules} banner={card.banner} key={idx}/>
       ))}
     </div>
