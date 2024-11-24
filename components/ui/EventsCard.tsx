@@ -1,14 +1,14 @@
 "use client";
 import React, { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
-import empty from "../../media/emptylongimage.png"
-import Image from 'next/image';
+
+import Image, { StaticImageData } from 'next/image';
 
 export const EventsCard = ({title, content, rules, banner, key} : {
   title: string, 
   content: string,
   rules: string[],
-  banner: any,
+  banner: StaticImageData,
   key: number
 }) => {
   const [viewRules, setViewRules] = useState(false)
@@ -19,8 +19,8 @@ export const EventsCard = ({title, content, rules, banner, key} : {
         <span className='text-electricBlue text-4xl md:text-5xl font-bold md:hidden text-center'>{title}</span>
       </div>
       <div className='flex w-full md:h-3/5 md:flex-row flex-col justify-center items-center gap-10 md:gap-16'>
-        <div className='bg-electricBlue md:h-[400px] md:w-[320px] w-[250px] h-[350px] rounded-2xl'>
-          <Image src={empty}  alt="empty" className='w-full h-full rounded-2xl'/>
+        <div className=' md:h-[400px] md:w-[320px] w-[250px] h-[350px] rounded-2xl'>
+          <Image src={banner}  alt="empty" className='w-full h-full rounded-2xl'/>
         </div>
         <div className='flex flex-col  md:w-1/3 w-2/3 items-center h-full gap-10'>
           <span className='text-electricBlue text-4xl md:text-4xl font-bold md:block hidden text-center'>{title}</span>

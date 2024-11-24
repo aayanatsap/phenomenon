@@ -1,6 +1,24 @@
 "use client";
 import { EventsCard } from "@/components/ui/EventsCard";
 import React from "react";
+import personality from "../../media/pictures/Ms-Mr Phenomenon.png";
+import empty from "../../media/emptylongimage.png";
+import vocal_solo from "../../media/pictures/Western Vocal Solo.png";
+import dance_solo from "../../media/pictures/Western Dance Solo.png";
+import dance_group from "../../media/pictures/Western Dance Group.png";
+import mystry from "../../media/pictures/Mystery Inc.png";
+import trilogy from "../../media/pictures/Trilogy.png";
+import movie from "../../media/pictures/The Movie Business.png";
+import poster from "../../media/pictures/Printmysoul.png";
+import vend from "../../media/pictures/Vend.png";
+import pensworth from "../../media/pictures/Pensworthy.png"
+import food from "../../media/pictures/Smogasboard.png";
+import stem from "../../media/pictures/Egnites.png";
+import band from "../../media/pictures/Battle Of Bands.png";
+import fashion from "../../media/pictures/Rampaeon.png";
+import disco from "../../media/pictures/Disc O Fever.png"
+import basketball from "../../media/pictures/3 A Side Basketball.png";
+import cricket from "../../media/pictures/Box Cricket.png";
 
 // Define the card data
 const cardsData = [
@@ -14,7 +32,7 @@ const cardsData = [
       "There will be multiple rounds with eliminations.",
       "Further details regarding the event will be communicated after registrations.",
     ],
-    banner: "",
+    banner: personality,
   },
   { 
     title: 'WESTERN VOCAL SOLO',
@@ -30,7 +48,7 @@ const cardsData = [
       "No extra vocals are allowed on the backing track.",
       "Timings: 2.5+1 minutes.",
     ],
-    banner: "",
+    banner: vocal_solo,
   },
   { 
     title: 'WESTERN DANCE SOLO',
@@ -42,7 +60,7 @@ const cardsData = [
       "All music and media required for events must be submitted at the console 45 minutes before the start of the event. The music in .mp3 format, and the media in recognized formats, must be submitted in labeled pen drives.",
       "Timing: 2+1 minutes.", 
     ],
-    banner: "",
+    banner: dance_solo,
   },
   { 
     title: 'WESTERN DANCE GROUP',
@@ -56,7 +74,7 @@ const cardsData = [
       "Participants may use props.",
       "All music and media required for events must be submitted at the console 45 minutes prior to the start of the event. The music in .mp3 format, and the media in recognised formats, must be submitted in pen drives that are labelled.",
     ],
-    banner: "",
+    banner: dance_group,
   },
   { 
     title: 'MYSTERY INC. (TREASURE HUNT)',
@@ -66,7 +84,7 @@ const cardsData = [
       "This event is open to students from grades 9th to 1st Year Degree. ",
       "There will be multiple rounds with elimination ",
     ],
-    banner: "",
+    banner: mystry,
   },
   { 
     title: 'TRILOGY (POTPOURRI)',
@@ -76,7 +94,7 @@ const cardsData = [
       "This event is open to students from grades 9th to 1st Year Degree.",
       "There will be multiple rounds with elimination.",
     ],
-    banner: "",
+    banner: trilogy,
   },
   { 
     title: 'THE MOVIE BUSINESS (FILMMAKING)',
@@ -89,7 +107,7 @@ const cardsData = [
       "There will be multiple rounds with elimination ",
       "Participants must have ready access to the internet to upload their films to Google Drive.",
     ],
-    banner: "",
+    banner: movie,
   },
   { 
     title: 'PRINTMYSOUL (POSTER MAKING)',
@@ -102,7 +120,7 @@ const cardsData = [
       "Materials allowed: any kind of paints, colour pencils, sketch pens no crayons.",
       "Posters to be done in A2 size sheet only.",
     ],
-    banner: "",
+    banner: poster,
   },
   { 
     title: 'VEND (COMMERCE EVENT)',
@@ -112,7 +130,7 @@ const cardsData = [
       "This event is open to students from grades 9th to 1st Year Degree.",
       "There will be multiple rounds with elimination.",
     ],
-    banner: "",
+    banner: vend,
   },
   { 
     title: 'PENSWORTHY (CREATIVE WRITING)',
@@ -125,7 +143,7 @@ const cardsData = [
       "Topics and timings will be given on the spot.",
       "The use of the Internet is not permitted for any of the rounds.",
     ],
-    banner: "",
+    banner: pensworth,
   },
   { 
     title: 'SMOGASBOARD (FOOD TASTING)',
@@ -134,16 +152,7 @@ const cardsData = [
       "This event is open to students from grades 9th to 1st Year Degree.",
       "Participants with any food related allergies will not be allowed to participate.",
     ],
-    banner: "",
-  },
-  { 
-    title: 'SMOGASBOARD (FOOD TASTING)',
-    content: "This will be a gastronomer's delight. The participants will have to identify the ingredients in a dish by tasting it.",
-    rules: [
-      "This event is open to students from grades 9th to 1st Year Degree.",
-      "Participants with any food related allergies will not be allowed to participate.",
-    ],
-    banner: "",
+    banner: food,
   },
   {
     title : "EGNITES (STEM EVENT)",
@@ -152,7 +161,8 @@ const cardsData = [
       "Individual participation",
       "This event is open to students from grades 9th to 1st Year Degree.",
       "Participants are required to get their own devices."
-    ]
+    ],
+    banner: stem,
   },
   { 
     title: 'BATTLE OF THE BANDS',
@@ -169,7 +179,7 @@ const cardsData = [
       "If all the team members are from one particular school or college, then only one team will be permitted in such a situation.",
       "Timings: 5+3 minutes. (5 mins for performance, 3 mins for soundcheck)",
     ],
-    banner: "",
+    banner: band,
   },
   {
     title : "RAMPAEON (FASHION SHOW)",
@@ -186,7 +196,8 @@ const cardsData = [
       "Dress code restrictions will be conveyed to the teams after the registrations close.",
       "Violations pertaining to the dress code will lead to disqualification or negative marking.",
       "The dimensions of the ramp will be disclosed after the registrations close.",
-    ]
+    ],
+    banner: fashion,
   },
   {
     title: "DISC-O FEVER (DISC BATTLE)",
@@ -201,7 +212,8 @@ const cardsData = [
       "Contestants are required to submit the mix on a labelled pen drive.",
       "The top 4 will be chosen by the evening of Day 1 and the results put up at the earliest. The top 4 will get to play on the main stage on Day 2 during the ‘DANCE MUSIC FESTIVAL’ for a maximum of 10 minutes",
       "Contenders wanting to use any other sort of equipment will have to carry it with them and notify the event heads at the earliest.",
-    ]
+    ],
+    banner: disco
   },
   {
     title : "3 - A - SIDE BASKETBALL",
@@ -215,6 +227,7 @@ const cardsData = [
       "The tournament will be conducted in a knockout format.",
       "The referee’s decision is final.",
     ],
+    banner: basketball
   },
   {
     title : "BOX CRICKET",
@@ -226,6 +239,7 @@ const cardsData = [
       "Participants must bring their own bat.",
       "Maximum number of teams = 16",
     ],
+    banner: cricket,
   },
 ];
 
