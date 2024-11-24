@@ -7,7 +7,7 @@ import JumpLogo from "@/components/ui/Logo";
 export default function Home() {
   return (
       <div className="flex h-[500vh] w-screen -translate-y-10">
-        <div className="grid grid-flow-row w-screen h-screen justify-center justify-items-center lg:px-40">
+        <div className="grid grid-flow-row w-screen h-screen justify-center justify-items-center lg:px-40 md:gap-10">
           <JumpLogo/>
           <Timer/>
         </div>

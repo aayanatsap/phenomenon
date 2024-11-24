@@ -1,6 +1,6 @@
 // app/components/Timer.tsx
 "use client";
-
+import { CanvasRevealEffect } from "./canvas-reveal-effect";
 import React, { useState, useEffect } from "react";
 
 const CountdownTimer: React.FC = () => {
@@ -68,6 +68,10 @@ const CountdownTimer: React.FC = () => {
             <span className="text-orangeYellow">Seconds</span>
           </div>
         </div>
+        <CanvasRevealEffect
+            animationSpeed={5.1}
+            containerClassName="bg-emerald-900"
+          />
       </div>
     </div>
   );
