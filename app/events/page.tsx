@@ -245,7 +245,7 @@ const cardsData = [
 
 function Events() {
   return (
-    <div className="mb-24">
+    <div className="lg:mb-24 md:mb-0 mb-52">
       <div className="flex justify-center">
         <span className="text-6xl text-electricBlue text-center font-bold mb-24">Our Events</span>
       </div>

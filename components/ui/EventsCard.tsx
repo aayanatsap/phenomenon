@@ -14,7 +14,7 @@ export const EventsCard = ({title, content, rules, banner, key} : {
   const [viewRules, setViewRules] = useState(false)
 
   return (
-    <div className='w-screen md:h-screen md:mb-8 mb-36' key={key}>
+    <div className='w-screen md:h-screen md:mb-8 mb-36 md:px-0 px-1' key={key}>
       <div className='w-full flex justify-center mb-8'>
         <span className='text-electricBlue text-4xl md:text-5xl font-bold md:hidden text-center'>{title}</span>
       </div>
