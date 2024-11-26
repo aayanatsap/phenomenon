@@ -68,7 +68,10 @@ const CountdownTimer: React.FC = () => {
             <span className="text-orangeYellow md:text-base text-xs">Seconds</span>
           </div>
         </div>
-
+        <CanvasRevealEffect
+            animationSpeed={5.1}
+            containerClassName="bg-emerald-900"
+          />
       </div>
     </div>
   );

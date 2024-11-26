@@ -19,9 +19,17 @@ import disco from "../../media/pictures/Disc O Fever.png"
 import basketball from "../../media/pictures/3 A Side Basketball.png";
 import cricket from "../../media/pictures/Box Cricket.png";
 
+type EventsCardProps = {
+  title: string;
+  content: string;
+  rules: string[];
+  banner: any;
+};
+
 // Define the card data
 const cardsData = [
   { 
+    id:"1",
     title: 'PERSONALITY',
     content: "\"The art of pleasing is the art of deception.\" – Luc de Clapiers Pressure creates diamonds and only then can they demonstrate what they truly are. You might have stolen the show more times than you can count, but can you be the one who takes the limelight when you're surrounded by people who've been doing the same thing all this while, do you have what it takes to take the crown of Mr/Ms Phenomenon?",
     rules: [
@@ -261,13 +269,21 @@ function Events() {
         <div className="flex justify-center">
           <span className="text-6xl text-electricBlue text-center font-bold mb-24">Our Events</span>
         </div>
-        {cardsData.map((card, idx) => (
-          <EventsCard title={card.title} content={card.content} rules={card.rules} banner={card.banner} key={idx}/>
+        {cardsData.map((card) => (
+          <EventsCard
+            title={card.title}
+            content={card.content}
+            rules={card.rules}
+            banner={card.banner}
+            key={Number(card.id)} // Correctly set key for React
+          />
         ))}
       </div>
     </div>
-  )
+  );
 }
+
+
 
 export default Events
 
