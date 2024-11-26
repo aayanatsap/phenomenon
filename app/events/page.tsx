@@ -2,7 +2,6 @@
 import { EventsCard } from "@/components/ui/EventsCard";
 import React from "react";
 import personality from "../../media/pictures/Ms-Mr Phenomenon.png";
-import empty from "../../media/emptylongimage.png";
 import vocal_solo from "../../media/pictures/Western Vocal Solo.png";
 import dance_solo from "../../media/pictures/Western Dance Solo.png";
 import dance_group from "../../media/pictures/Western Dance Group.png";

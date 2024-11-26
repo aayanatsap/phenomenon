@@ -20,16 +20,13 @@ export function Footer() {
               <Link href={"/"} className='flex justify-items-center'>
                   <Image src={logo} alt='logo' className='md:size-[150px] size-[100px] hover:scale-105 duration-500 justify-self-center'/>
               </Link>
-              <div className="grid grid-flow-col w-2/3 justify-self-center justify-items-center -translate-x-0.5">
-                <Link href={"/"}>
+              <div className="grid grid-flow-col w-1/3 justify-self-center justify-items-center -translate-x-0.5">
+                <Link href={"https://sjbhs.edu.in/"}>
                   <BsGlobe className="fill-aquaBlue hover:fill-superNovaYellow hover:scale-105 duration-500 mr-1"/>
                 </Link>
-                <Link href={"/"}>
+                <Link href={"https://www.instagram.com/phenomenon.sjbhs/"}>
                   <FaInstagram className="fill-aquaBlue hover:fill-superNovaYellow hover:scale-105 duration-500"/>
-                </Link>
-                <Link href={"/"}>
-                  <FaFacebookF className="fill-aquaBlue hover:fill-superNovaYellow hover:scale-105 duration-500"/>
-                </Link>  
+                </Link> 
               </div>
             </div>
         </div>
