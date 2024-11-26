@@ -141,7 +141,7 @@ function swipcards() {
           nextEl: '.swiper-button-next',
           prevEl: '.swiper-button-prev',
           clickable: true
-        }}
+        } as any}
         modules={[EffectCoverflow, Pagination, Navigation]}
         className='text-electricBlue flex flex-col items-center'
       >
