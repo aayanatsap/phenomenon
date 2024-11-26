@@ -40,7 +40,7 @@ function About() {
         So, what are you waiting for? The spotlight awaits you!
       </p>
       <p>
-        If you are looking to make memories that last a lifetimePhenomenon 2024 is the place to be!
+        If you are looking to make memories that last a lifetime Phenomenon 2024 is the place to be!
       </p>
     </div>
   )
