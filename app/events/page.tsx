@@ -142,7 +142,6 @@ const cardsData = [
   { 
     title: 'PRINTMYSOUL (POSTER MAKING)',
     content: "\"Creativity is intelligence having fun\" -Albert Einstein. Express your creativity through impactful visuals and powerful ideas. Bold, eye-catching, visually intense yet minimal and elegant, bring out this true art form.",
-
     rules: [
       "Individual Event.",
       "This event is open to students from grades 9th to 1st Year Degree.",
