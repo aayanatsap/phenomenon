@@ -473,9 +473,9 @@ export function Indiregister() {
       </h1>
       <form
         onSubmit={handleSubmit}
-        className="flex flex-col justify-center items-center mb-20"
+        className="flex flex-col justify-center items-center mb-52"
       >
-        <div className="flex flex-col justify-center items-center items-start mt-1">
+        <div className="flex flex-col justify-center items-center mt-1">
           <div className="sm:w-auto w-[70vw] mt-11 mx-14 px-5 shadow-lg my-10 ">
             {members === 2 ? (
               <h1 className="text-white text-4xl text-center mb-10">
@@ -842,7 +842,7 @@ export function Indiregister() {
           className="flex flex-col justify-center items-center p-10 h-full mx-24 rounded-lg shadow-emerald-500 shadow-sm bg-black"
         >
           <p className="mb-3 text-4xl text-white">
-            Congrats you are officially part of SJBHSMUN 2024 🎉
+            Congrats you are officially part of Phenomenon 2024 🎉
           </p>
 
           <p className="mb-3 text-xl text-white">
@@ -851,7 +851,7 @@ export function Indiregister() {
           <ul className="list-none mt-14 text-lg">
             {ids.map((person) => (
               <li className="text-white" key={person}>
-                {person[0]} : SJBHSMUN{person[1]}
+                {person[0]} : PHENOMENON{person[1]}
               </li>
             ))}
           </ul>
