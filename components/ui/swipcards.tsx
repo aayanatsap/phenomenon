@@ -149,8 +149,8 @@ function swipcards() {
           <SwiperSlide key={idx} className="flex justify-center !w-[250px] !h-[300px] md:!w-[350px] md:!h-[400px] lg:!w-[420px] lg:!h-[470px] !rounded-2xl relative">
             <Image src={card.banner} alt={card.title} className="w-full h-full rounded-2xl absolute -z-[500]" />
             <div className='w-full grid grid-flow-row px-3 md:py-5 items-center h-full'>
-              <span className='font-bold lg:text-4xl text-2xl md:text-3xl text-center self-start md:mt-3 mt-2 text-superNovaYellow'>{card.title}</span>
-              <p className='text-center lg:px-10 lg:text-lg md:text-base md:px-4 text-[13px]'>{card.content}</p>
+              <span className='font-bold text-xl md:text-3xl text-center self-start md:mt-3 mt-3 text-superNovaYellow'>{card.title}</span>
+              <p className='text-center lg:px-10 lg:text-lg md:text-base text-xs md:px-4 text-[13px]'>{card.content}</p>
             </div>
           </SwiperSlide>        
         ))}
