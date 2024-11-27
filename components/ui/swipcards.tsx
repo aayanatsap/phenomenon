@@ -32,7 +32,7 @@ import { FaArrowLeft } from "react-icons/fa";
 function swipcards() { 
   const cardsData = [
     { 
-      title: 'PERSONALITY',
+      title: 'MR/MS PHENOMENON (PERSONALITY)',
       content: "\"The art of pleasing is the art of deception.\" – Luc de Clapiers Pressure creates diamonds and only then can they demonstrate what they truly are. You might have stolen the show more times than you can count, but can you be the one who takes the limelight when you're surrounded by people who've been doing the same thing all this while, do you have what it takes to take the crown of Mr/Ms Phenomenon?",
       banner: personality,
     },

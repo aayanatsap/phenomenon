@@ -9,7 +9,7 @@ import logo from "../../media/logo.png";
 export function Individual() {
   return (
     <CardContainer className="inter-var text-center">
-      <CardBody className="bg-purple-900 relative group/card dark:hover:shadow-2xl dark:hover:shadow-emerald-500/[0.1] dark:bg-black dark:border-white/[0.2] border-black/[0.1] w-auto sm:w-[30rem] h-auto rounded-xl p-6 border text-center flex flex-col items-center">
+      <CardBody className="bg-purple-900 relative  dark:bg-black dark:border-white/[0.2] border-black/[0.1] w-auto sm:w-[30rem] h-auto rounded-xl px-6 py-12 border text-center flex flex-col items-center">
         <CardItem
           translateZ="50"
           className="text-3xl font-bold text-neutral-600 dark:text-white mx-auto"
@@ -21,34 +21,34 @@ export function Individual() {
           className="text-neutral-500 text-sm max-w-sm mt-2 dark:text-neutral-300 text-center"
         >
           <>
-            <div className="flex flex-col justify-center items-center my-8">
-              <span className="text-5xl font-extrabold">₹1450</span>
+            <div className="flex flex-col justify-center items-center my-4">
+              <span className="text-5xl font-extrabold">₹300 per person</span>
             </div>
 
-            <ul role="list" className="mb-10 space-y-4 text-center">
+            <ul role="list" className="mb-10 space-y-2 text-center">
               <li className="text-center">
-                <span>UNSC and BBMP are double</span>
+                <span>Some events require more than one participant</span>
               </li>
               <li className="text-center">
-                <span>delegation committees.</span>
+                <span>you can register for a maximum of 2 events</span>
               </li>
               <li className="text-center">
-                <span>Only one of the delegates should register</span>
+                <span>you can only register for one event per day</span>
               </li>
             </ul>
           </>
         </CardItem>
-        <CardItem translateZ="100" className="w-full mt-4">
+        <CardItem translateZ="100" className="w-full mt-0 bg-opacity-0">
           <Image
             src={logo}
             height="1000"
             width="1000"
-            className="h-72 w-full object-contain rounded-xl group-hover/card:shadow-xl"
+            className="h-60 w-full object-contain rounded-xl "
             alt="thumbnail"
           />
         </CardItem>
-        <div className="justify-center items-center mt-20 w-full inline-block">
-        <Link href="/registration/individual/"><CardItem
+        <CardItem translateZ="60" className="justify-center items-center mt-12 w-full inline-block">
+        <Link href={"/registrations/individual/"}><CardItem
             translateZ={20}
             as="button"
             className="px-4 py-2 rounded-xl bg-black dark:bg-white dark:text-black text-white text-xs font-bold w-[80%] mx-auto"
@@ -56,7 +56,7 @@ export function Individual() {
             REGISTER NOW!
           </CardItem>
           </Link>
-        </div>
+        </CardItem>
       </CardBody>
     </CardContainer>
   );

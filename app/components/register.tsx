@@ -1,6 +1,6 @@
 "use client";
-import logo from "../media/munlogo.png"
-import { useState, useCallback, AwaitedReactNode, JSXElementConstructor, ReactElement, ReactNode, ReactPortal } from "react";
+import logo from "../../media/logo.png"
+import {useRef, useState, useCallback, AwaitedReactNode, JSXElementConstructor, ReactElement, ReactNode, ReactPortal, useEffect, useActionState } from "react";
 
 declare global {
   interface Window {
@@ -8,9 +8,299 @@ declare global {
   }
 }
 export function Indiregister() {
+  const isInitialRender1 = useRef(true);
+  const isInitialRender2 = useRef(true);
   const [currentStatus, changeStatus] = useState("entering");
   const [members, changeMembers] = useState(1);
   const [ids, putIds] = useState([]);
+  const [isChecked, setIsChecked] = useState(false);
+  const [day2, setDay2] = useState(false);
+  const [show1, setShow1] = useState(true);
+  const [show2, setShow2] =  useState(false);
+  const [event1, setEvent1] = useState("");
+  const [event2, setEvent2] = useState("");
+  const [members1, setMembers1] = useState(0)
+  const [members2, setMembers2] = useState(0)
+  const [showCount1, setShowCount1] = useState(false)
+  const [showCount2, setShowCount2] = useState(false)
+  const [minMem1, setMinMem1] = useState(0)
+  const [maxMem1, setMaxMem1] = useState(0)
+  const [minMem2, setMinMem2] = useState(0)
+  const [maxMem2, setMaxMem2] = useState(0)
+
+  const eventsConst = [
+    {
+      title: "Mr/Ms_PHENOMENON",
+      members: 1,
+    },
+    {
+      title: "Western_Vocal_Solo",
+      members: 1,
+    },
+    {
+      title: "Western_Dance_Solo",
+      members: 1,
+    },
+    {
+      title: "Pensworthy",
+      members: 1,
+    },
+    {
+      title: "Printmysoul",
+      members: 1,
+    },
+    {
+      title: "Smogasboard",
+      members: 1,
+    },
+    {
+      title: "Disc-O_Fever",
+      members: 1,
+    },
+    {
+      title: "Egnites",
+      members: 2,
+    },
+    {
+      title: "The_Movie_Busniess",
+      members: 3,
+    },
+    {
+      title: "Vend",
+      members: 3,
+    },
+    {
+      title: "Trilogy",
+      members: 3,
+    },
+    {
+      title: "Mystry_Inc.",
+      members: 3,
+    },
+  ]
+
+  const eventsVar = [
+    {
+      title: "Box_Cricket",
+      min: 4,
+      max: 5,
+    },
+    {
+      title: "3-A-Side_Basketball",
+      min: 3,
+      max: 4,
+    },
+    {
+      title: "Rampaeon",
+      min: 10,
+      max: 12,
+    },
+    {
+      title: "Battle_Of_Bands",
+      min: 5,
+      max: 7,
+    },
+    {
+      title: "Western_Dance_Group",
+      min: 4,
+      max: 8,
+    },
+  ]
+
+  useEffect(() => {  
+    if (isInitialRender2.current) {
+      // Skip the effect logic on initial render
+      isInitialRender2.current = false;
+      return;
+    }  
+    let i = 0 
+    let j = 0
+    let flag = false
+    for(i ; i<eventsConst.length; i++){
+      if(event2 === eventsConst[i].title){
+        members2 === eventsConst[i].members
+        flag = true
+        break
+      }
+    }
+    if(flag === true){
+      setShowCount2(false)
+    }else{
+      setShowCount2(true)
+      for(j ; j<eventsVar.length; j++){
+        if(event2 === eventsVar[j].title){
+          setMaxMem2(eventsVar[j].max)
+          setMinMem2(eventsVar[j].min)
+          break
+        }
+      }
+      if (!showCount2) setShowCount2(true);
+    }
+  }, [event2, showCount2])
+
+  useEffect(() => {  
+    if (isInitialRender1.current) {
+      // Skip the effect logic on initial render
+      isInitialRender1.current = false;
+      return;
+    }  
+    let i = 0 
+    let j = 0
+    let flag = false
+    console.log(event1)
+    for(i ; i<eventsConst.length; i++){
+      if(event1 === eventsConst[i].title){
+        members1 === eventsConst[i].members
+        console.log(eventsConst[i].title)
+        flag = true
+        break
+      }
+    }
+    if(flag === true){
+      setShowCount1(false)
+    }else{
+      setShowCount1(true)
+      for(j ; j<eventsVar.length; j++){
+        if(event1 === eventsVar[j].title){
+          setMaxMem1(eventsVar[j].max)
+          setMinMem1(eventsVar[j].min)
+          break
+        }
+      }
+      if (!showCount1) setShowCount1(true);
+    }
+  }, [event1, showCount1])
+
+  useEffect(() => {
+    if(isChecked === true){
+      setShow1(true);
+      setShow2(true);
+      setDay2(false)
+    }else{
+      if(day2 === true){
+        setShow1(false);
+        setShow2(true);
+      }else if(day2 === false){
+        setShow1(true);
+        setShow2(false);
+      }
+    }
+  }, [day2, isChecked])
+
+  useEffect(() => {
+
+  }, [members1])
+
+  const Template = useCallback((props: { name: string | number | bigint | boolean | ReactElement<any, string | JSXElementConstructor<any>> | Iterable<ReactNode> | ReactPortal | Promise<AwaitedReactNode> | null | undefined; member: any; }) => {
+    return (
+      <div className="flex flex-col justify-center items-center mt-11 mx-14 px-5 shadow-lg my-10">
+        <h1 className="text-white text-5xl text-center">{props.name}</h1>;
+        {/* register htmlForm */}
+        <div className="grid md:grid-cols-2 md:gap-6 ">
+          <div className="relative z-0 w-full mb-6 group">
+            <input
+              type="text"
+              name={`${props.member}_first_name`}
+              id={`${props.member}_first_name`}
+              className="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+              placeholder=" "
+              required
+            />
+            <label
+              htmlFor={`${props.member}_first_name`}
+              className="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transhtmlForm -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
+            >
+              First name
+            </label>
+          </div>
+          <div className="relative z-0 w-full mb-6 group">
+            <input
+              type="text"
+              name={`${props.member}_last_name`}
+              id={`${props.member}_last_name`}
+              className="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+              placeholder=" "
+              required
+            />
+            <label
+              htmlFor={`${props.member}_last_name`}
+              className="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transhtmlForm -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
+            >
+              Last name
+            </label>
+          </div>  
+        </div>
+        <div className="relative z-0 w-full mb-6 group">
+          <input
+            type="email"
+            name={`${props.member}_email`}
+            id={`${props.member}_email`}
+            className="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+            placeholder=" "
+            required
+          />
+          <label
+            htmlFor="email"
+            className="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transhtmlForm -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
+          >
+            Email address
+          </label>
+        </div>
+        <div className="grid  md:gap-6">
+          <div className="relative z-0 w-full mb-6 group">
+            <input
+              type="tel"
+              name={`${props.member}_phone`}
+              id={`${props.member}_phone`}
+              className="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+              placeholder=" "
+              required
+            />
+            <label
+              htmlFor={`${props.member}_phone`}
+              className="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transhtmlForm -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
+            >
+              Phone number
+            </label>
+          </div>
+        </div>
+        <div  className="grid md:grid-cols-2 md:gap-6 ">
+          <div className="relative z-0 w-full mb-6 group">
+            <input
+              type="date"
+              name={`${props.member}_date_of_birth`}
+              id={`${props.member}_date_of_birth`}
+              className="block py-2.5 px-0 w-full text-sm text-gray-500 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer "
+              placeholder=" "
+              required
+            />
+            <label
+              htmlFor={`${props.member}_date_of_birth`}
+              className="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transhtmlForm -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
+            >
+              Date Of Birth
+            </label>
+          </div>
+          <div className="relative z-0 w-full mb-5 group">
+            <input
+              type="file" 
+              name={`${props.member}_id_proof`}
+              id={`${props.member}_id_proof`}
+              className="block py-2.5 px-0 w-full text-sm text-gray-500 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer file:bg-transparent file:text-blue-600 file:border-none file:hover:text-electricBlue file:hover:cursor-pointer file:hidden"
+              placeholder=" "
+              required
+            />
+            <label
+              htmlFor={`${props.member}_id_proof`}
+              className="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transhtmlForm -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
+            >
+              ID Proof
+            </label>
+          </div>
+        </div>
+      </div>
+    );
+  }, []);
 
   const makePayment = async (info: { name?: string; institution?: any; country?: any; experience?: any; placements?: any; backupCountry?: any; email?: any; phoneNumber?: any; backupCommittee?: any; committee?: any; food?: any; person_two_name?: string | undefined; person_two_institution?: any; person_two_experience?: any; person_two_placements?: any; person_two_email?: any; person_two_phone?: any; person_two_backupCommittee?: any; person_two_food?: any; total?: number; order_id?: any; payment_id?: any; razorpay_signature?: any; }) => {
     changeStatus("loading");
@@ -102,7 +392,7 @@ export function Indiregister() {
     });
   };
 
-  const handleSubmit = async (event: { preventDefault: () => void; target: { first_name: { value: string; }; last_name: { value: string; }; institution: { value: any; }; country: { value: any; }; number_muns: { value: any; }; placements: { value: any; }; backupCountry: { value: any; }; email: { value: any; }; phone: { value: any; }; backupCommittee: { value: any; }; committee: { value: any; }; food: { value: any; }; person_two_first_name: { value: string; }; person_two_last_name: { value: string; }; person_two_institution: { value: any; }; person_two_experience: { value: any; }; person_two_placements: { value: any; }; person_two_email: { value: any; }; person_two_phone: { value: any; }; person_two_backupCommittee: { value: any; }; person_two_food: { value: any; }; }; }) => {
+  const handleSubmit = async (event: {preventDefault: () => void; target: { first_name: { value: string; }; last_name: { value: string; }; institution: { value: any; }; country: { value: any; }; number_muns: { value: any; }; placements: { value: any; }; backupCountry: { value: any; }; email: { value: any; }; phone: { value: any; }; backupCommittee: { value: any; }; committee: { value: any; }; food: { value: any; }; person_two_first_name: { value: string; }; person_two_last_name: { value: string; }; person_two_institution: { value: any; }; person_two_experience: { value: any; }; person_two_placements: { value: any; }; person_two_email: { value: any; }; person_two_phone: { value: any; }; person_two_backupCommittee: { value: any; }; person_two_food: { value: any; }; }; }) => {
     console.log("On it ");
 
     // Stop the htmlForm from submitting and refreshing the page.
@@ -166,7 +456,7 @@ export function Indiregister() {
   };
 
   return (
-    <div className="flex flex-col justify-center items-center mt-11">
+    <div className="flex flex-col justify-center items-center ">
       <h1 className="text-white font-bold sm:text-5xl text-4xl  text-center mun-gradient">
         INDIVIDUAL REGISTRATION
       </h1>
@@ -181,7 +471,7 @@ export function Indiregister() {
           <div className="sm:w-auto w-[70vw] mt-11 mx-14 px-5 shadow-lg my-10 ">
             {members === 2 ? (
               <h1 className="text-white text-4xl text-center mb-10">
-                DELEGATE 1
+                Participant 1
               </h1>
             ) : (
               ""
@@ -219,7 +509,7 @@ export function Indiregister() {
                 >
                   Last name
                 </label>
-              </div>
+              </div>  
             </div>
             <div className="relative z-0 w-full mb-6 group">
               <input
@@ -255,140 +545,158 @@ export function Indiregister() {
                 </label>
               </div>
             </div>
-            <div className="relative z-0 w-full mb-5 group">
-              <input
-                type="text"
-                name="institution"
-                id="institution"
-                className="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
-                placeholder=" "
-                required
-              />
-              <label
-                htmlFor="phone"
-                className="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transhtmlForm -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
-              >
-                Name of Institution
-              </label>
-            </div>
-            <div className="grid md:grid-cols-2 md:gap-6">
-              <div className="mb-6">
-                <label htmlFor="committee" className="text-sm text-gray-400 ">
-                  COMMITTEE PREFERENCE
-                </label>
-                <select
-                  id="committee"
-                  className="  mt-3 text-sm rounded-lg focus:ring-blue-500  block w-full p-2.5 bg-gray-700 border-gray-600 placeholder-gray-400 text-white "
-                  onChange={(e) =>
-                    e.target.value === "UNSC"|| e.target.value === "BBMP"
-                      ? changeMembers(2)
-                      : changeMembers(1)
-                  }
-                >
-                  <option value="CCC">CCC</option>
-                  <option value="BBMP">BBMP</option>
-                  <option value="Historic_Lok_Sabha">Historic Lok Sabha</option>
-                  <option value="SCC">SCC</option>
-                  <option value="UNSC">UNSC</option>
-                  <option value="SOCHUM">SOCHUM</option>
-                  <option value="UNHRC">UNHRC</option>
-                </select>
-              </div>
-              <div className="mb-6">
-                <label
-                  htmlFor="backupCommittee"
-                  className="text-sm text-gray-400 "
-                >
-                  BACKUP COMMITTEE
-                </label>
-                <select
-                  id="backupCommittee"
-                  className="  mt-3 text-sm rounded-lg focus:ring-blue-500  block w-full p-2.5 bg-gray-700 border-gray-600 placeholder-gray-400 text-white "
-                >
-                  <option value="CCC">CCC</option>
-                  <option value="BBMP">BBMP</option>
-                  <option value="Historic_Lok_Sabha">Historic Lok Sabha</option>
-                  <option value="SCC">SCC</option>
-                  <option value="UNSC">UNSC</option>
-                  <option value="SOCHUM">SOCHUM</option>
-                  <option value="UNHRC">UNHRC</option>
-                </select>
-              </div>
-            </div>
-            <div className="grid md:grid-cols-2 md:gap-6">
+            <div  className="grid md:grid-cols-2 md:gap-6 ">
               <div className="relative z-0 w-full mb-6 group">
                 <input
-                  type="text"
-                  name="country"
-                  id="country"
-                  className="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+                  type="date"
+                  name="date_of_birth"
+                  id="date_of_birth"
+                  className="block py-2.5 px-0 w-full text-sm text-gray-500 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer "
                   placeholder=" "
                   required
                 />
                 <label
-                  htmlFor="country"
+                  htmlFor="date_of_birth"
                   className="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transhtmlForm -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
                 >
-                  Country Preference 1
+                  Date Of Birth
                 </label>
               </div>
-              <div className="relative z-0 w-full mb-6 group">
+              <div className="relative z-0 w-full mb-5 group">
                 <input
-                  type="text"
-                  name="backupCountry"
-                  id="backupCountry"
-                  className="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+                  type="file" 
+                  name="id_proof"
+                  id="id_proof"
+                  className="block py-2.5 px-0 w-full text-sm text-gray-500 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer file:bg-transparent file:text-blue-600 file:border-none file:hover:text-electricBlue file:hover:cursor-pointer file:hidden"
                   placeholder=" "
                   required
                 />
                 <label
-                  htmlFor="backupCountry"
+                  htmlFor="id_proof"
                   className="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transhtmlForm -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
                 >
-                  Country Preference 2
+                  ID Proof
                 </label>
               </div>
             </div>
-            <div className="mb-6">
-              <label htmlFor="number_muns" className="text-sm text-gray-400 ">
-                MUN EXPERIENCE
-              </label>
-              <select
-                id="number_muns"
-                className="  mt-3 text-sm rounded-lg focus:ring-blue-500  block w-full p-2.5 bg-gray-700 border-gray-600 placeholder-gray-400 text-white "
-              >
-                <option value="First Timer">First Timer</option>
-                <option value="11-3 MUNs">1-3 MUNs</option>
-                <option value="4-10 MUNs">4-10 MUNs</option>
-                <option value="10+ MUNs">10+ MUNs</option>
-              </select>
+            <div className="grid md:grid-cols-2 md:gap-6 items-center mb-5">
+              <div className="relative z-0 w-full group flex flex-row items-center text-electricBlue gap-2">
+                <div className="relative inline-block w-11 h-5">
+                  <input id="switch-component" type="checkbox" className="peer appearance-none w-11 h-5 bg-slate-500 rounded-full checked:bg-slate-800 cursor-pointer transition-colors duration-300" checked={isChecked} onChange={(e) => setIsChecked(e.target.checked)}/>
+                  <span className="absolute top-0 left-0 w-5 h-5 bg-white rounded-full border border-slate-300 shadow-sm transition-transform duration-300 peer-checked:translate-x-6 peer-checked:border-slate-800 cursor-pointer">
+                  </span>
+                </div>
+                <label htmlFor="switch-component" className={`${isChecked ? "text-blue-500" : "text-gray-500"} text-sm`}>Participate on both days</label>
+              </div>
+              <div className={`${isChecked ? "hidden" : "flex"} md:flex-row flex-col md:gap-5 md:text-base text-sm items-center`}>
+                <div
+                  onClick={() => setDay2(false)}
+                  className={`${
+                    !day2 ? "bg-black text-blue-500" : "text-electricBlue"
+                  } font-semibold py-1 px-4 rounded-2xl text-center cursor-pointer`}
+                >
+                  <span className="text-sm">Only Day 1</span>
+                  <input type="radio" name="cycle" id="without" className="hidden" checked={!day2} />
+                </div>
+                <div
+                  onClick={() => setDay2(true)}
+                  className={`${
+                    day2 ? "bg-black text-blue-500" : "text-electricBlue"
+                  } font-semibold py-1 px-4 rounded-2xl text-center cursor-pointer`}
+                >
+                  <span className="text-sm">Only Day 2</span>
+                  <input type="radio" name="cycle" id="with" className="hidden" checked={day2} />
+                </div>
+              </div>
             </div>
-            <div className="mb-6">
-              <label htmlFor="food" className="text-sm text-gray-400 ">
-                FOOD PREFERENCE
-              </label>
-              <select
-                id="food"
-                className="  mt-3 text-sm rounded-lg focus:ring-blue-500  block w-full p-2.5 bg-gray-700 border-gray-600 placeholder-gray-400 text-white "
-              >
-                <option value="veg">Veg</option>
-                <option value="non-veg">Non Veg</option>
-              </select>
-            </div>
-            <div className="relative z-0 w-full mb-6 group">
-              <label
-                htmlFor="placements"
-                className="peer peer-focus:font-medium  text-sm text-gray-400 "
-              >
-                LIST YOUR MUN PLACEMENTS (OPTIONAL)
-              </label>
-              <textarea
-                id="placements"
-                className="block py-2.5 my-5 h-44 px-0 w-full text-sm text-white bg-gray-800 rounded border-2  appearance-nonetext-white border-gray-600  focus:outline-none focus:ring-0 0 peer"
-                placeholder={
-                  "  Example:\n  ->Honourable Delegate : 2 \n  ->Specmen: 1"
-                }
-              />
+            <div className="grid md:grid-row-2 md:gap-6 mb-6">
+              <div className={`grid grid-flow-col md:gap-3 ${show1 ? "block" : "hidden"}`}>
+                <div className={``}>
+                  <label htmlFor="committee" className="text-sm text-gray-400 ">
+                    Event (Day 1)
+                  </label>
+                  <select
+                    id="committee"
+                    className="  mt-3 text-sm rounded-lg focus:ring-blue-500  block w-full p-2.5 bg-gray-700 border-gray-600 placeholder-gray-400 text-white "
+                    onChange={(e) => (setEvent1(e.target.value))}
+                  >
+                    <option value="Mr/Ms_Phenomenon">Mr/Ms Phenomenon (Personality)</option>
+                    <option value="Mystry_Inc.">Mystry Inc.(Treasure Hunt)</option>
+                    <option value="Western_Vocal_Solo">Western Vocal Solo</option>
+                    <option value="Western_Dance_Solo">Western Dance Solo</option>
+                    <option value="Western_Dance_Group">Western Dance Group</option>
+                    <option value="Trilogy">Trilogy (Potpourri)</option>
+                    <option value="Vend">Vend (Commerce)</option>
+                    <option value="The_Movie_Business">The Movie Business (Film Making)</option>
+                    <option value="Pensworthy">Pensworthy (Creative Writing)</option>
+                    <option value="Printmysoul">Printmysoul (Poster Making)</option>
+                    <option value="Smogasboard">Smogasboard (Food Tasting)</option>
+                    <option value="Egnites">Egnites (STEM)</option>
+                    <option value="Battle_Of_Bands">Battle Of Bands</option>
+                    <option value="Rampaeon">Rampaeon (Fashion Show)</option>
+                    <option value="Disc-O_Fever">Disc-O Fever (Disc Battle)</option>
+                    <option value="3-A-Side_Basketball">3-A-Side Basketball</option>
+                    <option value="Box_Cricket">Box Cricket</option>
+                  </select>
+                </div>
+                <div className={`${showCount1 ? "block": "hidden"}`}>
+                  <label htmlFor="members" className="text-sm text-gray-400">Number of Members</label>
+                  <input 
+                    type="number" 
+                    name="members" 
+                    id="members" 
+                    max={maxMem1} 
+                    min={minMem1} 
+                    onChange={(e) => (setMembers1(parseInt(e.target.value)))} 
+                    className="  mt-3 text-sm rounded-lg focus:ring-blue-500  block w-full p-2.5 bg-gray-700 border-gray-600 placeholder-gray-400 text-white "
+                  />
+                </div>
+              </div>
+              <div className={`grid grid-flow-col md:gap-3 ${show2 ? "block" : "hidden"}`}>
+                <div className={``}>
+                  <label
+                    htmlFor="backupCommittee"
+                    className="text-sm text-gray-400 "
+                  >
+                    Event (Day 2)
+                  </label>
+                  <select
+                    id="backupCommittee"
+                    className="mt-3 text-sm rounded-lg focus:ring-blue-500  block w-full p-2.5 bg-gray-700 border-gray-600 placeholder-gray-400 text-white "
+                    onChange={(e) => (setEvent2(e.target.value))}
+                  >
+                    <option value="Mr/Ms_Phenomenon">Mr/Ms Phenomenon (Personality)</option>
+                    <option value="Mystry_Inc.">Mystry Inc.(Treasure Hunt)</option>
+                    <option value="Western_Vocal_Solo">Western Vocal Solo</option>
+                    <option value="Western_Dance_Solo">Western Dance Solo</option>
+                    <option value="Western_Dance_Group">Western Dance Group</option>
+                    <option value="Trilogy">Trilogy (Potpourri)</option>
+                    <option value="Vend">Vend (Commerce)</option>
+                    <option value="The_Movie_Business">The Movie Business (Film Making)</option>
+                    <option value="Pensworthy">Pensworthy (Creative Writing)</option>
+                    <option value="Printmysoul">Printmysoul (Poster Making)</option>
+                    <option value="Smogasboard">Smogasboard (Food Tasting)</option>
+                    <option value="Egnites">Egnites (STEM)</option>
+                    <option value="Battle_Of_Bands">Battle Of Bands</option>
+                    <option value="Rampaeon">Rampaeon (Fashion Show)</option>
+                    <option value="Disc-O_Fever">Disc-O Fever (Disc Battle)</option>
+                    <option value="3-A-Side_Basketball">3-A-Side Basketball</option>
+                    <option value="Box_Cricket">Box Cricket</option>
+                  </select>
+                </div>
+                <div className={`${showCount2 ? "block": "hidden"}`}>
+                  <label htmlFor="members" className="text-sm text-gray-400">Number of Members</label>
+                  <input 
+                    type="number" 
+                    name="members" 
+                    id="members" 
+                    max={maxMem2} 
+                    min={minMem2} 
+                    onChange={(e) => (setMembers2(parseInt(e.target.value)))} 
+                    className="  mt-3 text-sm rounded-lg focus:ring-blue-500  block w-full p-2.5 bg-gray-700 border-gray-600 placeholder-gray-400 text-white "
+                  />
+                </div>
+              </div>
             </div>
           </div>
           {members === 2 ? (
@@ -504,7 +812,7 @@ export function Indiregister() {
                   <option value="UNSC">UNSC</option>
                   <option value="SOCHUM">SOCHUM</option>
                   <option value="UNHRC">UNHRC</option>
-                </select>
+                </select> 
               </div>
 
               <div className="mb-6">

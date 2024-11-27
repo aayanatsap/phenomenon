@@ -20,7 +20,7 @@ export default function page() {
           <div className="hidden lg:block">
             <div className=" lg:grid lg:grid-cols-2 lg:space-y-0  -space-y-28 -mt-16 -mb-20">
             <Individual/>
-              <Institutional/>
+            <Institutional/>
             </div>
           </div>
           <div className="block lg:hidden">
