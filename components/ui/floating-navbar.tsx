@@ -92,10 +92,15 @@ export const FloatingNav = ({
             opacity: 0
           }}
           animate={{
-            opacity: showElements ? 1 : 0
+            opacity: showElements ? 1 : 0,
+            visibility: showElements ? "visible" : "hidden"
+          }}
+          exit={{
+            opacity : 1
           }}
           transition={{
-            duration: 0.4,
+            opacity:{duration: 0.4, delay:0.1},
+            visibility: {delay: 0.1}
           }}
           className=""
         >

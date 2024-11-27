@@ -1,6 +1,14 @@
 "use client";
 import logo from "../../media/logo.png"
 import {useRef, useState, useCallback, AwaitedReactNode, JSXElementConstructor, ReactElement, ReactNode, ReactPortal, useEffect, useActionState } from "react";
+import { Swiper, SwiperSlide } from 'swiper/react';
+import {Navigation, Pagination, EffectCoverflow } from 'swiper/modules';
+import 'swiper/css'; 
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
+import 'swiper/css/effect-coverflow';
+import { FaArrowRight } from "react-icons/fa";
+import { FaArrowLeft } from "react-icons/fa";
 
 declare global {
   interface Window {
@@ -30,7 +38,7 @@ export function Indiregister() {
 
   const eventsConst = [
     {
-      title: "Mr/Ms_PHENOMENON",
+      title: "Mr/Ms_Phenomenon",
       members: 1,
     },
     {
@@ -118,7 +126,7 @@ export function Indiregister() {
     let flag = false
     for(i ; i<eventsConst.length; i++){
       if(event2 === eventsConst[i].title){
-        members2 === eventsConst[i].members
+        setMembers2(eventsConst[i].members)
         flag = true
         break
       }
@@ -150,7 +158,7 @@ export function Indiregister() {
     console.log(event1)
     for(i ; i<eventsConst.length; i++){
       if(event1 === eventsConst[i].title){
-        members1 === eventsConst[i].members
+        setMembers1(eventsConst[i].members)
         console.log(eventsConst[i].title)
         flag = true
         break
@@ -180,9 +188,11 @@ export function Indiregister() {
       if(day2 === true){
         setShow1(false);
         setShow2(true);
+        setMembers1(0)
       }else if(day2 === false){
         setShow1(true);
         setShow2(false);
+        setMembers2(0)
       }
     }
   }, [day2, isChecked])
@@ -467,7 +477,7 @@ export function Indiregister() {
         onSubmit={handleSubmit}
         className="flex flex-col justify-center items-center mb-20"
       >
-        <div className="flex flex-wrap justify-center items-start mt-1">
+        <div className="flex flex-col justify-center items-center items-start mt-1">
           <div className="sm:w-auto w-[70vw] mt-11 mx-14 px-5 shadow-lg my-10 ">
             {members === 2 ? (
               <h1 className="text-white text-4xl text-center mb-10">
@@ -701,165 +711,113 @@ export function Indiregister() {
               </div>
             </div>
           </div>
-          {members === 2 ? (
-            <div className="sm:w-auto w-[70vw] mt-11 mx-14 px-5 shadow-lg my-10 ">
-              {members === 2 ? (
-                <h1 className="text-white text-4xl text-center mb-10">
-                  DELEGATE 2
-                </h1>
-              ) : (
-                ""
-              )}
-
-              <div className="grid md:grid-cols-2 md:gap-6 ">
-                <div className="relative z-0 w-full mb-6 group">
-                  <input
-                    type="text"
-                    name="person_two_first_name"
-                    id="person_two_first_name"
-                    className="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
-                    placeholder=" "
-                    required
-                  />
-                  <label
-                    htmlFor="first_name"
-                    className="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transhtmlForm -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
-                  >
-                    First name
-                  </label>
-                </div>
-                <div className="relative z-0 w-full mb-6 group">
-                  <input
-                    type="text"
-                    name="last_name"
-                    id="person_two_last_name"
-                    className="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
-                    placeholder=" "
-                    required
-                  />
-                  <label
-                    htmlFor="last_name"
-                    className="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transhtmlForm -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
-                  >
-                    Last name
-                  </label>
-                </div>
+          {members1 > 1 ? (
+            <div className="w-[97vw] grid grid-cols-1 justify-items-center mt-10">
+              <hr className="border-t border-gray-200 w-full z-10"/>
+              <span className="text-electricBlue font-semibold text-5xl mt-10">
+                DAY 1
+              </span>
+              <div className="w-[95%]">
+                <Swiper
+                  effect="coverflow"
+                  spaceBetween={0}
+                  grabCursor={true}
+                  centeredSlides={true}
+                  loop={false}
+                  slidesPerView="auto"
+                  coverflowEffect={{
+                    rotate: 0,
+                    stretch: 0,
+                    depth: 0,
+                    modifier: 0,
+                  }}
+                  pagination={{ el: '.pagination', clickable: true }}
+                  navigation={{
+                    nextEl: '.swiper-button-next',
+                    prevEl: '.swiper-button-prev',
+                    clickable: true
+                  } as any}
+                  modules={[EffectCoverflow, Pagination, Navigation]}
+                  className='text-electricBlue flex flex-col items-center'
+                >
+                  
+                    {Array.from({ length: members1 - 1 }, (_, i) => {
+                      let delegateNumber = i + 2;
+                      return (
+                        <SwiperSlide className="!flex !max-w-sm md:!max-w-lg">
+                        <Template
+                          name={`Participant ${delegateNumber}`}
+                          member={`participant_${delegateNumber}`}
+                          key={i}
+                        />
+                        </SwiperSlide>
+                      );
+                    })}
+                  
+                  <div className='text-galaxyBlue flex w-full justify-center mt-5'>
+                    <div className='bg-lightGray !grid !justify-items-center pb-0.5  px-4 rounded-full bg-opacity-30'>
+                      <FaArrowLeft className='swiper-button-prev lg:!size-[50px] md:!size-[40px] !size-[30px] hover:cursor-pointer !text-electricBlue hover:!text-neonPurple duration-500 !font-bold'/>
+                      <div className="pagination"></div>
+                      <FaArrowRight className='swiper-button-next lg:!size-[50px] md:!size-[40px] !size-[30px] hover:cursor-pointer !text-electricBlue hover:!text-neonPurple duration-500 !font-bold'/>
+                    </div>
+                  </div>
+                </Swiper>
               </div>
-              <div className="relative z-0 w-full mb-6 group">
-                <input
-                  type="email"
-                  name="email"
-                  id="person_two_email"
-                  className="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
-                  placeholder=" "
-                  required
-                />
-                <label
-                  htmlFor="email"
-                  className="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transhtmlForm -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
+            </div>
+          ) : (
+            ""
+          )}
+          {members2 > 1 ? (
+            <div className="w-[97vw] grid grid-cols-1 justify-items-center mt-10">
+              <hr className="border-t border-gray-200 w-full z-10"/>
+              <span className="text-electricBlue font-semibold text-5xl mt-10">
+                DAY 2
+              </span>
+              <div className="w-[95%]">
+                <Swiper
+                  effect="coverflow"
+                  spaceBetween={0}
+                  grabCursor={true}
+                  centeredSlides={true}
+                  loop={false}
+                  slidesPerView="auto"
+                  coverflowEffect={{
+                    rotate: 0,
+                    stretch: 0,
+                    depth: 0,
+                    modifier: 0,
+                  }}
+                  pagination={{ el: '.pagination', clickable: true }}
+                  navigation={{
+                    nextEl: '.swiper-button-next',
+                    prevEl: '.swiper-button-prev',
+                    clickable: true
+                  } as any}
+                  modules={[EffectCoverflow, Pagination, Navigation]}
+                  className='text-electricBlue flex flex-col items-center'
                 >
-                  Email address
-                </label>
-              </div>
-              <div className="grid  md:gap-6">
-                <div className="relative z-0 w-full mb-6 group">
-                  <input
-                    type="tel"
-                    name="phone"
-                    id="person_two_phone"
-                    className="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
-                    placeholder=" "
-                    required
-                  />
-                  <label
-                    htmlFor="phone"
-                    className="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transhtmlForm -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
-                  >
-                    Phone number
-                  </label>
-                </div>
-              </div>
-              <div className="relative z-0 w-full mb-5 group">
-                <input
-                  type="text"
-                  name="institution"
-                  id="person_two_institution"
-                  className="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
-                  placeholder=" "
-                  required
-                />
-                <label
-                  htmlFor="phone"
-                  className="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transhtmlForm -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
-                >
-                  Name of Institution
-                </label>
-              </div>
-
-              <div className="mb-6">
-                <label
-                  htmlFor="person_two_backupCommittee"
-                  className="text-sm text-gray-400 "
-                >
-                  BACKUP COMMITTEE
-                </label>
-                <select
-                  id="person_two_backupCommittee"
-                  className="  mt-3 text-sm rounded-lg focus:ring-blue-500  block w-full p-2.5 bg-gray-700 border-gray-600 placeholder-gray-400 text-white "
-                >
-                  <option value="CCC">CCC</option>
-                  <option value="BBMP">BBMP</option>
-                  <option value="Historic_Lok_Sabha">Historic Lok Sabha</option>
-                  <option value="SCC">SCC</option>
-                  <option value="UNSC">UNSC</option>
-                  <option value="SOCHUM">SOCHUM</option>
-                  <option value="UNHRC">UNHRC</option>
-                </select> 
-              </div>
-
-              <div className="mb-6">
-                <label htmlFor="number_muns" className="text-sm text-gray-400 ">
-                  MUN EXPERIENCE
-                </label>
-                <select
-                  id="person_two_experience"
-                  className="  mt-3 text-sm rounded-lg focus:ring-blue-500  block w-full p-2.5 bg-gray-700 border-gray-600 placeholder-gray-400 text-white "
-                >
-                  <option value="First Timer">First Timer</option>
-                  <option value="11-3 MUNs">1-3 MUNs</option>
-                  <option value="4-10 MUNs">4-10 MUNs</option>
-                  <option value="10+ MUNs">10+ MUNs</option>
-                </select>
-              </div>
-              <div className="mb-6">
-                <label
-                  htmlFor="person_two_food"
-                  className="text-sm text-gray-400 "
-                >
-                  FOOD PREFERENCE
-                </label>
-                <select
-                  id="person_two_food"
-                  className="  mt-3 text-sm rounded-lg focus:ring-blue-500  block w-full p-2.5 bg-gray-700 border-gray-600 placeholder-gray-400 text-white "
-                >
-                  <option value="veg">Veg</option>
-                  <option value="non-veg">Non Veg</option>
-                </select>
-              </div>
-              <div className="relative z-0 w-full mb-6 group">
-                <label
-                  htmlFor="placements"
-                  className="peer peer-focus:font-medium  text-sm text-gray-400 "
-                >
-                  LIST YOUR MUN PLACEMENTS (OPTIONAL)
-                </label>
-                <textarea
-                  id="person_two_placements"
-                  className="block py-2.5 my-5 h-44 px-0 w-full text-sm text-white bg-gray-800 rounded border-2  appearance-nonetext-white border-gray-600  focus:outline-none focus:ring-0 0 peer"
-                  placeholder={
-                    "  Example:\n  ->Honourable Delegate : 2 \n  ->Specmen: 1"
-                  }
-                />
+                  
+                    {Array.from({ length: members2 - 1 }, (_, i) => {
+                      let delegateNumber = i + 2;
+                      return (
+                        <SwiperSlide className="!flex !max-w-md md:!max-w-lg">
+                        <Template
+                          name={`Participant ${delegateNumber}`}
+                          member={`participant_${delegateNumber}`}
+                          key={i}
+                        />
+                        </SwiperSlide>
+                      );
+                    })}
+                  
+                  <div className='text-galaxyBlue flex w-full justify-center mt-5'>
+                    <div className='bg-lightGray !grid !justify-items-center pb-0.5  px-4 rounded-full bg-opacity-30'>
+                      <FaArrowLeft className='swiper-button-prev lg:!size-[50px] md:!size-[40px] !size-[30px] hover:cursor-pointer !text-electricBlue hover:!text-neonPurple duration-500 !font-bold'/>
+                      <div className="pagination"></div>
+                      <FaArrowRight className='swiper-button-next lg:!size-[50px] md:!size-[40px] !size-[30px] hover:cursor-pointer !text-electricBlue hover:!text-neonPurple duration-500 !font-bold'/>
+                    </div>
+                  </div>
+                </Swiper>
               </div>
             </div>
           ) : (
