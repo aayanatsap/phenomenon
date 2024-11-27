@@ -71,7 +71,7 @@ export function Indiregister() {
       members: 2,
     },
     {
-      title: "The_Movie_Busniess",
+      title: "The_Movie_Business",
       members: 3,
     },
     {
@@ -661,8 +661,8 @@ export function Indiregister() {
                     className="mt-3 text-sm rounded-lg focus:ring-blue-500  block w-full p-2.5 bg-gray-700 border-gray-600 placeholder-gray-400 text-white "
                     onChange={(e) => (setEvent2(e.target.value))}
                   >
-                    <option value="Western_Vocal_Solo">Western Vocal Solo</option>
                     <option value="Western_Dance_Group">Western Dance Group</option>
+                    <option value="Western_Vocal_Solo">Western Vocal Solo</option>
                     <option value="Trilogy">Trilogy (Potpourri)</option>
                     <option value="Vend">Vend (Commerce)</option>
                     <option value="Printmysoul">Printmysoul (Poster Making)</option>
