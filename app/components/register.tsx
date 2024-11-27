@@ -20,6 +20,7 @@ export function Indiregister() {
   const isInitialRender2 = useRef(true);
   const [currentStatus, changeStatus] = useState("entering");
   const [members, changeMembers] = useState(1);
+  const [ids, putIds] = useState([]);
   const [isChecked, setIsChecked] = useState(false);
   const [day2, setDay2] = useState(false);
   const [show1, setShow1] = useState(true);
