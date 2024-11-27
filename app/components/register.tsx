@@ -598,7 +598,7 @@ export function Indiregister() {
                 </div>
                 <label htmlFor="switch-component" className={`${isChecked ? "text-blue-500" : "text-gray-500"} text-sm`}>Participate on both days</label>
               </div>
-              <div className={`${isChecked ? "hidden" : "flex"} md:flex-row flex-col md:gap-5 md:text-base text-sm items-center`}>
+              <div className={`${isChecked ? "hidden" : "flex"} flex-row md:gap-5 md:text-base text-sm items-center md:mt-0 mt-5`}>
                 <div
                   onClick={() => setDay2(false)}
                   className={`${
@@ -606,7 +606,7 @@ export function Indiregister() {
                   } font-semibold py-1 px-4 rounded-2xl text-center cursor-pointer`}
                 >
                   <span className="text-sm">Only Day 1</span>
-                  <input type="radio" name="cycle" id="without" className="hidden" checked={!day2} />
+                  <input type="radio" name="day1" id="day1" className="hidden" checked={!day2} />
                 </div>
                 <div
                   onClick={() => setDay2(true)}
@@ -615,7 +615,7 @@ export function Indiregister() {
                   } font-semibold py-1 px-4 rounded-2xl text-center cursor-pointer`}
                 >
                   <span className="text-sm">Only Day 2</span>
-                  <input type="radio" name="cycle" id="with" className="hidden" checked={day2} />
+                  <input type="radio" name="day2" id="day2" className="hidden" checked={day2} />
                 </div>
               </div>
             </div>
@@ -627,7 +627,7 @@ export function Indiregister() {
                   </label>
                   <select
                     id="committee"
-                    className="  mt-3 text-sm rounded-lg focus:ring-blue-500  block w-full p-2.5 bg-gray-700 border-gray-600 placeholder-gray-400 text-white "
+                    className="  mt-3 text-sm rounded-lg focus:ring-blue-500  block w-full p-2.5 bg-gray-700 border-gray-600 placeholder-gray-400 text-white md:mb-0 mb-5"
                     onChange={(e) => (setEvent1(e.target.value))}
                   >
                     <option value="Mr/Ms_Phenomenon">Mr/Ms Phenomenon (Personality)</option>
@@ -658,7 +658,7 @@ export function Indiregister() {
                     max={maxMem1} 
                     min={minMem1} 
                     onChange={(e) => (setMembers1(parseInt(e.target.value)))} 
-                    className="  mt-3 text-sm rounded-lg focus:ring-blue-500  block w-full p-2.5 bg-gray-700 border-gray-600 placeholder-gray-400 text-white "
+                    className="  mt-3 text-sm rounded-lg focus:ring-blue-500  block w-full p-2.5 bg-gray-700 border-gray-600 placeholder-gray-400 text-white md:mb-0 mb-5"
                     placeholder={`min: ${minMem1}, max: ${maxMem1}`}
                   />
                 </div>
