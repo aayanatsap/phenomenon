@@ -643,7 +643,7 @@ export function Indiregister() {
                     className="  mt-3 text-sm rounded-lg focus:ring-blue-500  block w-full p-2.5 bg-gray-700 border-gray-600 placeholder-gray-400 text-white md:mb-0 mb-5"
                     onChange={(e) => {e.target.value}}
                   >
-                    <option value="Junior">Junior(9th to 10th)</option>
+                    <option value="Junior">Junior(8th to 10th)</option>
                     <option value="Senior">Senior(11th to 1st year degree)</option>
                   </select>
                 </div>
@@ -694,7 +694,7 @@ export function Indiregister() {
                     className="  mt-3 text-sm rounded-lg focus:ring-blue-500  block w-full p-2.5 bg-gray-700 border-gray-600 placeholder-gray-400 text-white md:mb-0 mb-5"
                     onChange={(e) => {e.target.value}}
                   >
-                    <option value="Junior">Junior(9th to 10th)</option>
+                    <option value="Junior">Junior(8th to 10th)</option>
                     <option value="Senior">Senior(11th to 1st year degree)</option>
                   </select>
                 </div>
