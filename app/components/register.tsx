@@ -190,11 +190,16 @@ export function Indiregister() {
   }, [event1, showCount1])
 
   useEffect(() => {
-    if(isChecked === true){
+    if((isChecked === false || isChecked === true) && event1 === "The_Movie_Business") {
+      setIsChecked(true)
+      setShow1(true);
+      setShow2(false);
+    }else if(isChecked === true && event1 !== "The_Movie_Business"){
       setShow1(true);
       setShow2(true);
       setDay2(false)
-    }else{
+    }else if(event1 !== "The_Movie_Business"){
+      setIsChecked(false)
       if(day2 === true){
         setShow1(false);
         setShow2(true);
@@ -205,7 +210,7 @@ export function Indiregister() {
         setMembers2(0)
       }
     }
-  }, [day2, isChecked])
+  }, [day2, isChecked, event1])
 
   useEffect(() => {
 
@@ -266,22 +271,6 @@ export function Indiregister() {
             Email address
           </label>
         </div>
-        <div className="relative z-0 w-full mb-6 group">
-          <input
-            type="tel"
-            name={`${props.member}_phone`}
-            id={`${props.member}_phone`}
-            className="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
-            placeholder=" "
-            required
-          />
-          <label
-            htmlFor={`${props.member}_phone`}
-            className="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transhtmlForm -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
-          >
-            Phone number
-          </label>
-        </div>
         <div  className="grid md:grid-cols-2 md:gap-6 ">
           <div className="relative z-0 w-full mb-6 group">
             <input
@@ -297,6 +286,22 @@ export function Indiregister() {
               className="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transhtmlForm -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
             >
               Date Of Birth
+            </label>
+          </div>
+          <div className="relative z-0 w-full mb-6 group">
+            <input
+              type="tel"
+              name={`${props.member}_phone`}
+              id={`${props.member}_phone`}
+              className="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+              placeholder=" "
+              required
+            />
+            <label
+              htmlFor={`${props.member}_phone`}
+              className="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transhtmlForm -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
+            >
+              Phone number
             </label>
           </div>
         </div>
@@ -528,24 +533,6 @@ export function Indiregister() {
                 Email address
               </label>
             </div>
-            <div className="grid  md:gap-6">
-              <div className="relative z-0 w-full mb-6 group">
-                <input
-                  type="tel"
-                  name="phone"
-                  id="phone"
-                  className="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
-                  placeholder=" "
-                  required
-                />
-                <label
-                  htmlFor="phone"
-                  className="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transhtmlForm -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
-                >
-                  Phone number
-                </label>
-              </div>
-            </div>
             <div  className="grid md:grid-cols-2 md:gap-6 ">
               <div className="relative z-0 w-full mb-6 group">
                 <input
@@ -563,6 +550,24 @@ export function Indiregister() {
                   Date Of Birth
                 </label>
               </div>
+              <div className="grid  md:gap-6">
+              <div className="relative z-0 w-full mb-6 group">
+                <input
+                  type="tel"
+                  name="phone"
+                  id="phone"
+                  className="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+                  placeholder=" "
+                  required
+                />
+                <label
+                  htmlFor="phone"
+                  className="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transhtmlForm -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
+                >
+                  Phone number
+                </label>
+              </div>
+            </div>
             </div>
             <div className="grid md:grid-cols-2 md:gap-6 items-center mb-5">
               <div className="relative z-0 w-full group flex flex-row items-center text-electricBlue gap-2">
@@ -608,20 +613,11 @@ export function Indiregister() {
                   >
                     <option value="Mr/Ms_Phenomenon">Mr/Ms Phenomenon (Personality)</option>
                     <option value="Mystry_Inc.">Mystry Inc.(Treasure Hunt)</option>
-                    <option value="Western_Vocal_Solo">Western Vocal Solo</option>
                     <option value="Western_Dance_Solo">Western Dance Solo</option>
-                    <option value="Western_Dance_Group">Western Dance Group</option>
-                    <option value="Trilogy">Trilogy (Potpourri)</option>
-                    <option value="Vend">Vend (Commerce)</option>
                     <option value="The_Movie_Business">The Movie Business (Film Making)</option>
                     <option value="Pensworthy">Pensworthy (Creative Writing)</option>
-                    <option value="Printmysoul">Printmysoul (Poster Making)</option>
-                    <option value="Smogasboard">Smogasboard (Food Tasting)</option>
                     <option value="Egnites">Egnites (STEM)</option>
                     <option value="Battle_Of_Bands">Battle Of Bands</option>
-                    <option value="Rampaeon">Rampaeon (Fashion Show)</option>
-                    <option value="Disc-O_Fever">Disc-O Fever (Disc Battle)</option>
-                    <option value="3-A-Side_Basketball">3-A-Side Basketball</option>
                     <option value="Box_Cricket">Box Cricket</option>
                   </select>
                 </div>
@@ -665,23 +661,15 @@ export function Indiregister() {
                     className="mt-3 text-sm rounded-lg focus:ring-blue-500  block w-full p-2.5 bg-gray-700 border-gray-600 placeholder-gray-400 text-white "
                     onChange={(e) => (setEvent2(e.target.value))}
                   >
-                    <option value="Mr/Ms_Phenomenon">Mr/Ms Phenomenon (Personality)</option>
-                    <option value="Mystry_Inc.">Mystry Inc.(Treasure Hunt)</option>
                     <option value="Western_Vocal_Solo">Western Vocal Solo</option>
-                    <option value="Western_Dance_Solo">Western Dance Solo</option>
                     <option value="Western_Dance_Group">Western Dance Group</option>
                     <option value="Trilogy">Trilogy (Potpourri)</option>
                     <option value="Vend">Vend (Commerce)</option>
-                    <option value="The_Movie_Business">The Movie Business (Film Making)</option>
-                    <option value="Pensworthy">Pensworthy (Creative Writing)</option>
                     <option value="Printmysoul">Printmysoul (Poster Making)</option>
                     <option value="Smogasboard">Smogasboard (Food Tasting)</option>
-                    <option value="Egnites">Egnites (STEM)</option>
-                    <option value="Battle_Of_Bands">Battle Of Bands</option>
                     <option value="Rampaeon">Rampaeon (Fashion Show)</option>
                     <option value="Disc-O_Fever">Disc-O Fever (Disc Battle)</option>
                     <option value="3-A-Side_Basketball">3-A-Side Basketball</option>
-                    <option value="Box_Cricket">Box Cricket</option>
                   </select>
                 </div>
                 <div className={`${showCount2 ? "block": "hidden"}`}>
