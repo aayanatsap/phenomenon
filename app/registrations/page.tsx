@@ -2,8 +2,10 @@
 import React from 'react'
 import { Individual } from "@/components/ui/individual";
 import { Institutional } from "@/components/ui/institutional";
+import Image from 'next/image';
+import Link from 'next/link';
+import logo from '../../media/logo.png'
 
-import Link from "next/link";
 export default function page() {
   return (
     <div className="mb-32">
@@ -23,7 +25,103 @@ export default function page() {
             <Institutional/>
             </div>
           </div>
-          <div className="block lg:hidden">
+          <div className=" lg:hidden grid grid-flow-row justify-items-center gap-24 mb-14">
+            <div className="inter-var text-center">
+              <div className="bg-purple-900 relative  dark:bg-black dark:border-white/[0.2] border-black/[0.1] w-auto sm:w-[30rem] h-auto rounded-xl px-6 py-12 border text-center flex flex-col items-center">
+                <div
+                  className="text-3xl font-bold text-neutral-600 dark:text-white mx-auto"
+                >
+                  INDIVIDUAL
+                </div>
+                <div
+                  className="text-neutral-500 text-sm max-w-sm mt-2 dark:text-neutral-300 text-center"
+                >
+                  <div>
+                    <div className="flex flex-col justify-center items-center my-4">
+                      <span className="text-5xl font-extrabold">₹300 per person</span>
+                    </div>
+
+                    <ul role="list" className="mb-10 space-y-2 text-center">
+                      <li className="text-center">
+                        <span>Some events require more than one participant</span>
+                      </li>
+                      <li className="text-center">
+                        <span>you can register for a maximum of 2 events</span>
+                      </li>
+                      <li className="text-center">
+                        <span>you can only register for one event per day</span>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+                <div className="w-full mt-0 bg-opacity-0">
+                  <Image
+                    src={logo}
+                    height="1000"
+                    width="1000"
+                    className="h-60 w-full object-contain rounded-xl "
+                    alt="thumbnail"
+                  />
+                </div>
+                <div  className="justify-center items-center mt-12 w-full inline-block">
+                <Link href={"/registrations/individual/"}>
+                <div
+                    className="px-4 py-2 rounded-xl bg-black dark:bg-white dark:text-black text-white text-xs font-bold w-[80%] mx-auto"
+                  >
+                    REGISTER NOW!
+                  </div>
+                  </Link>
+                </div>
+              </div>
+            </div>
+            <div className="inter-var text-center">
+              <div className="bg-purple-900 relative  dark:bg-black dark:border-white/[0.2] border-black/[0.1] w-auto sm:w-[30rem] h-auto rounded-xl px-6 py-12 border text-center flex flex-col items-center">
+                <div
+                  className="text-3xl font-bold text-neutral-600 dark:text-white mx-auto"
+                >
+                  Institutional
+                </div>
+                <div
+                  className="text-neutral-500 text-sm max-w-sm mt-2 dark:text-neutral-300 text-center"
+                >
+                  <div>
+                    <div className="flex flex-col justify-center items-center my-4">
+                      <span className="text-5xl font-extrabold">₹300 per person</span>
+                    </div>
+
+                    <ul role="list" className="mb-10 space-y-2 text-center">
+                      <li className="text-center">
+                        <span>You must register for a miminum of 6 events</span>
+                      </li>
+                      <li className="text-center">
+                        <span>10% discount will be given on the final pricing</span>
+                      </li>
+                      <li className="text-center">
+                        <span>You can register for a maximum of one event per day</span>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+                <div className="w-full mt-0 bg-opacity-0">
+                  <Image
+                    src={logo}
+                    height="1000"
+                    width="1000"
+                    className="h-60 w-full object-contain rounded-xl "
+                    alt="thumbnail"
+                  />
+                </div>
+                <div className="justify-center items-center mt-12 w-full inline-block">
+                <Link href={"/registrations/delegation/"}>
+                  <div
+                    className="px-4 py-2 rounded-xl bg-black dark:bg-white dark:text-black text-white text-xs font-bold w-[80%] mx-auto"
+                  >
+                    REGISTER NOW!
+                  </div>
+                  </Link>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
