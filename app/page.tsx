@@ -54,7 +54,7 @@ export default function Home() {
             <Image src={party} alt="party" className="absolute rounded-3xl w-full h-full -z-[1]"></Image>
             <div className="flex flex-col items-center w-full" >
               <span>DECEMBER</span>
-              <span>20th and 21st</span>
+              <span>20th AND 21st</span>
             </div>
           </div>
           <div className="grid lg:grid-flow-row md:grid-flow-col justify-items-center gap-5">
