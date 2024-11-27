@@ -204,9 +204,9 @@ export function Indiregister() {
   const Template = useCallback((props: { name: string | number | bigint | boolean | ReactElement<any, string | JSXElementConstructor<any>> | Iterable<ReactNode> | ReactPortal | Promise<AwaitedReactNode> | null | undefined; member: any; }) => {
     return (
       <div className="flex flex-col justify-center items-center mt-11 mx-14 px-5 shadow-lg my-10">
-        <h1 className="text-white text-5xl text-center">{props.name}</h1>;
+        <h1 className="text-white md:text-5xl text-3xl text-center">{props.name}</h1>
         {/* register htmlForm */}
-        <div className="grid md:grid-cols-2 md:gap-6 ">
+        <div className="grid md:grid-cols-2 md:gap-6 w-full">
           <div className="relative z-0 w-full mb-6 group">
             <input
               type="text"
@@ -256,23 +256,21 @@ export function Indiregister() {
             Email address
           </label>
         </div>
-        <div className="grid  md:gap-6">
-          <div className="relative z-0 w-full mb-6 group">
-            <input
-              type="tel"
-              name={`${props.member}_phone`}
-              id={`${props.member}_phone`}
-              className="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
-              placeholder=" "
-              required
-            />
-            <label
-              htmlFor={`${props.member}_phone`}
-              className="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transhtmlForm -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
-            >
-              Phone number
-            </label>
-          </div>
+        <div className="relative z-0 w-full mb-6 group">
+          <input
+            type="tel"
+            name={`${props.member}_phone`}
+            id={`${props.member}_phone`}
+            className="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+            placeholder=" "
+            required
+          />
+          <label
+            htmlFor={`${props.member}_phone`}
+            className="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transhtmlForm -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
+          >
+            Phone number
+          </label>
         </div>
         <div  className="grid md:grid-cols-2 md:gap-6 ">
           <div className="relative z-0 w-full mb-6 group">
@@ -598,7 +596,7 @@ export function Indiregister() {
                 </div>
                 <label htmlFor="switch-component" className={`${isChecked ? "text-blue-500" : "text-gray-500"} text-sm`}>Participate on both days</label>
               </div>
-              <div className={`${isChecked ? "hidden" : "flex"} flex-row md:gap-5 md:text-base text-sm items-center md:mt-0 mt-5`}>
+              <div className={`${isChecked ? "hidden" : "flex"} flex-row md:gap-5 md:text-base text-sm items-center md:mt-0 mt-5 justify-self-center`}>
                 <div
                   onClick={() => setDay2(false)}
                   className={`${
@@ -712,9 +710,9 @@ export function Indiregister() {
             </div>
           </div>
           {members1 > 1 ? (
-            <div className="w-[97vw] grid grid-cols-1 justify-items-center mt-10">
+            <div className="md:w-[97vw] w-[95vw] grid grid-cols-1 justify-items-center mt-10">
               <hr className="border-t border-gray-200 w-full z-10"/>
-              <span className="text-electricBlue font-semibold text-5xl mt-10">
+              <span className="text-electricBlue font-semibold md:text-5xl text-4xl mt-10">
                 DAY 1
               </span>
               <div className="w-[95%]">
@@ -768,9 +766,9 @@ export function Indiregister() {
             ""
           )}
           {members2 > 1 ? (
-            <div className="w-[97vw] grid grid-cols-1 justify-items-center mt-10">
+            <div className="md:w-[97vw] w-[95vw] grid grid-cols-1 justify-items-center mt-10">
               <hr className="border-t border-gray-200 w-full z-10"/>
-              <span className="text-electricBlue font-semibold text-5xl mt-10">
+              <span className="text-electricBlue font-semibold md:text-5xl text-4xl mt-10">
                 DAY 2
               </span>
               <div className="w-[95%]">
