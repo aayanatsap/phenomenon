@@ -35,6 +35,8 @@ export function Indiregister() {
   const [maxMem1, setMaxMem1] = useState(0)
   const [minMem2, setMinMem2] = useState(0)
   const [maxMem2, setMaxMem2] = useState(0)
+  const [showcat1, setShowcat1] = useState(false);
+  const [showcat2, setShowcat2] = useState(false)
 
   const eventsConst = [
     {
@@ -124,6 +126,11 @@ export function Indiregister() {
     let i = 0 
     let j = 0
     let flag = false
+    if(event2 === "Western_Vocal_Solo" || event2 === "Pensworthy"){
+      setShowcat2(true);
+    }else{
+      setShowcat2(false)
+    }
     for(i ; i<eventsConst.length; i++){
       if(event2 === eventsConst[i].title){
         setMembers2(eventsConst[i].members)
@@ -155,7 +162,11 @@ export function Indiregister() {
     let i = 0 
     let j = 0
     let flag = false
-    console.log(event1)
+    if(event1 === "Western_Vocal_Solo" || event1 === "Pensworthy"){
+      setShowcat1(true);
+    }else{
+      setShowcat1(false)
+    }
     for(i ; i<eventsConst.length; i++){
       if(event1 === eventsConst[i].title){
         setMembers1(eventsConst[i].members)
@@ -484,7 +495,6 @@ export function Indiregister() {
             ) : (
               ""
             )}
-
             <div className="grid md:grid-cols-2 md:gap-6 ">
               <div className="relative z-0 w-full mb-6 group">
                 <input
@@ -620,11 +630,12 @@ export function Indiregister() {
             <div className="grid md:grid-row-2 md:gap-6 mb-6">
               <div className={`grid grid-flow-col md:gap-3 ${show1 ? "block" : "hidden"}`}>
                 <div className={``}>
-                  <label htmlFor="committee" className="text-sm text-gray-400 ">
+                  <label htmlFor="events_day1" className="text-sm text-gray-400 ">
                     Event (Day 1)
                   </label>
                   <select
-                    id="committee"
+                    id="events_day1"
+                    name="events_day1"
                     className="  mt-3 text-sm rounded-lg focus:ring-blue-500  block w-full p-2.5 bg-gray-700 border-gray-600 placeholder-gray-400 text-white md:mb-0 mb-5"
                     onChange={(e) => (setEvent1(e.target.value))}
                   >
@@ -648,11 +659,11 @@ export function Indiregister() {
                   </select>
                 </div>
                 <div className={`${showCount1 ? "block": "hidden"}`}>
-                  <label htmlFor="members" className="text-sm text-gray-400">Number of Members</label>
+                  <label htmlFor="members_day1" className="text-sm text-gray-400">Number of Members</label>
                   <input 
                     type="number" 
-                    name="members" 
-                    id="members" 
+                    name="members_day1" 
+                    id="members_day1" 
                     max={maxMem1} 
                     min={minMem1} 
                     onChange={(e) => (setMembers1(parseInt(e.target.value)))} 
@@ -660,17 +671,30 @@ export function Indiregister() {
                     placeholder={`min: ${minMem1}, max: ${maxMem1}`}
                   />
                 </div>
+                <div className={`${showcat1 ? "block" : "hidden"}`}>
+                  <label htmlFor="category_day1" className="text-gray-400 text-sm">Category</label>
+                  <select
+                    id="category_day1"
+                    name="category_day1"
+                    className="  mt-3 text-sm rounded-lg focus:ring-blue-500  block w-full p-2.5 bg-gray-700 border-gray-600 placeholder-gray-400 text-white md:mb-0 mb-5"
+                    onChange={(e) => {e.target.value}}
+                  >
+                    <option value="Junior">Junior(9th to 10th)</option>
+                    <option value="Senior">Senior(11th to 1st year degree)</option>
+                  </select>
+                </div>
               </div>
               <div className={`grid grid-flow-col md:gap-3 ${show2 ? "block" : "hidden"}`}>
                 <div className={``}>
                   <label
-                    htmlFor="backupCommittee"
+                    htmlFor="events_day2"
                     className="text-sm text-gray-400 "
                   >
                     Event (Day 2)
                   </label>
                   <select
-                    id="backupCommittee"
+                    id="events_day2"
+                    name="events_day2"
                     className="mt-3 text-sm rounded-lg focus:ring-blue-500  block w-full p-2.5 bg-gray-700 border-gray-600 placeholder-gray-400 text-white "
                     onChange={(e) => (setEvent2(e.target.value))}
                   >
@@ -694,17 +718,29 @@ export function Indiregister() {
                   </select>
                 </div>
                 <div className={`${showCount2 ? "block": "hidden"}`}>
-                  <label htmlFor="members" className="text-sm text-gray-400">Number of Members</label>
+                  <label htmlFor="members_day1" className="text-sm text-gray-400">Number of Members</label>
                   <input 
                     type="number" 
-                    name="members" 
-                    id="members" 
+                    name="members_day2" 
+                    id="members_day2" 
                     max={maxMem2} 
                     min={minMem2} 
                     onChange={(e) => (setMembers2(parseInt(e.target.value)))} 
                     className="  mt-3 text-sm rounded-lg focus:ring-blue-500  block w-full p-2.5 bg-gray-700 border-gray-600 placeholder-gray-400 text-white "
                     placeholder={`min: ${minMem2}, max: ${maxMem2}`}
                   />
+                </div>
+                <div className={`${showcat2 ? "block" : "hidden"}`}>
+                  <label htmlFor="category_day2" className="text-gray-400 text-sm">Category</label>
+                  <select
+                    id="category_day2"
+                    name="category_day2"
+                    className="  mt-3 text-sm rounded-lg focus:ring-blue-500  block w-full p-2.5 bg-gray-700 border-gray-600 placeholder-gray-400 text-white md:mb-0 mb-5"
+                    onChange={(e) => {e.target.value}}
+                  >
+                    <option value="Junior">Junior(9th to 10th)</option>
+                    <option value="Senior">Senior(11th to 1st year degree)</option>
+                  </select>
                 </div>
               </div>
             </div>
