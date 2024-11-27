@@ -49,7 +49,7 @@ export default function Home() {
           </div>
         </div>
         <Swipcards/>
-        <div className="grid lg:grid-flow-col grid-flow-row justify-items-center items-center mt-20 lg:mt-44">
+        <div className="grid lg:grid-flow-col grid-flow-row justify-items-center items-center mt-20 lg:mt-40">
           <div className="relative lg:h-[420px] lg:w-[570px] md:w-[550px] md:h-[300px] w-[320px] h-[180px] text-galaxyBlue font-bold md:text-5xl text-3xl flex items-center">
             <Image src={party} alt="party" className="absolute rounded-3xl w-full h-full -z-[1]"></Image>
             <div className="flex flex-col items-center w-full" >
