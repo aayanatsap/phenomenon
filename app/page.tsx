@@ -6,25 +6,32 @@ import JumpLogo from "@/components/ui/Logo";
 import Swipcards from "@/components/ui/swipcards";
 import Link from "next/link";
 import party from "../media/party.png"
+import { PinContainer } from "@/components/ui/3d-pin";
 
 export default function Home() {
   return (
       <div className=" w-screen -translate-y-10 mb-60 overflow-x-hidden">
         <div className="relative grid grid-flow-row w-screen justify-center justify-items-center lg:px-40 md:gap-10">
-          <div className="grid grid-flow-row w-screen justify-center justify-items-center lg:px-40 md:gap-10 mb-40">
+          <div className="grid grid-flow-row w-screen justify-center justify-items-center lg:px-40 md:gap-10 mb-10">
             <JumpLogo/>
             <Timer/>
           </div>
         </div>
         <div className="relative text-electricBlue grid lg:grid-flow-col grid-flow-row lg:justify-items-auto items-center justify-items-center mb-32 lg:px-20">
           <div className="text-electricBlue w-full grid lg:grid-flow-col grid-flow-row lg:justify-items-auto items-center justify-items-center ">
-            <div className="grid lg:grid-flow-row md:grid-flow-col justify-items-center items-center gap-5 lg:mb-0 mb-14">
-              <Link href={"/events"} className="grid justify-items-center items-center h-full w-full">
-                <div className="lg:size-[300px] md:size-[250px] size-[200px] rounded-full md:text-5xl text-4xl font-bold text-electricBlue md:border-8 border-[6px] border-electricBlue flex items-center justify-center lg:mt-0  hover:scale-105 duration-500 hover:cursor-pointer ">
-                  <span>17 Events</span>
+            <div className="grid lg:grid-flow-row md:grid-flow-col justify-items-center items-center lg:gap-5 lg:mb-0 mb-14">
+              <PinContainer
+                title="Events"
+                href={"/events"}
+                className="!bg-transparent"
+              >
+                <div className="grid justify-items-center items-center h-full w-full bg-transparent">
+                  <div className="lg:size-[300px] md:size-[250px] size-[200px] rounded-full md:text-5xl text-4xl font-bold text-electricBlue md:border-8 border-[6px] border-electricBlue flex items-center justify-center lg:mt-0 hover:cursor-pointer ">
+                    <span>17 Events</span>
+                  </div>
                 </div>
-              </Link>
-              <div className="lg:grid lg:grid-flow-row flex md:flex-col flex-col self-center gap-3 w-full ">
+              </PinContainer>
+              <div className="lg:grid lg:grid-flow-row flex md:flex-col flex-col self-center gap-3 lg:w-full w-[200px]">
                 <Link href={"https://drive.google.com/file/d/1_JpW59UTqZ_N2i-3rJyqW24L4kFTlqlk/view?usp=sharing"} target="_blank" className="flex justify-center items-center lg:text-lg md:text-base text-sm text-electricBlue bg-transparent border-2 hover:border-opacity-0 border-electricBlue font-semibold hover:text-crimsonRed hover:bg-galaxyBlue hover:scale-105 duration-500 px-5 py-1 rounded-xl h-[40px]">
                   View Brochure
                 </Link>
