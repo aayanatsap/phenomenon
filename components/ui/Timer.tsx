@@ -14,7 +14,7 @@ const CountdownTimer: React.FC = () => {
     useEffect(() => {
         const timerId = setInterval(() => {
         const today = new Date().getTime(); // Get the current time in milliseconds
-        const finalDay = new Date("24 dec 2024 00:00:00").getTime(); // Target date in milliseconds
+        const finalDay = new Date("20 dec 2024 00:00:00").getTime(); // Target date in milliseconds
 
         const seconds = 1000;
         const minutes = seconds * 60;

@@ -37,6 +37,7 @@ export function Indiregister() {
   const [maxMem2, setMaxMem2] = useState(0)
   const [showcat1, setShowcat1] = useState(false);
   const [showcat2, setShowcat2] = useState(false)
+  const [basket, setbasket] = useState(false);
 
   const eventsConst = [
     {
@@ -129,6 +130,13 @@ export function Indiregister() {
     if(event2 === "Western_Vocal_Solo" || event2 === "Pensworthy"){
       setShowcat2(true);
     }else{
+      setShowcat2(false)
+    }
+    if(event2 === "3-A-Side_Basketball"){
+      setbasket(true)
+      setShowcat2(true)
+    }else{
+      setbasket(false)
       setShowcat2(false)
     }
     for(i ; i<eventsConst.length; i++){
@@ -688,15 +696,27 @@ export function Indiregister() {
                 </div>
                 <div className={`${showcat2 ? "block" : "hidden"}`}>
                   <label htmlFor="category_day2" className="text-gray-400 text-sm">Category</label>
-                  <select
-                    id="category_day2"
-                    name="category_day2"
-                    className="  mt-3 text-sm rounded-lg focus:ring-blue-500  block w-full p-2.5 bg-gray-700 border-gray-600 placeholder-gray-400 text-white md:mb-0 mb-5"
-                    onChange={(e) => {e.target.value}}
-                  >
-                    <option value="Junior">Junior(8th to 10th)</option>
-                    <option value="Senior">Senior(11th to 1st year degree)</option>
-                  </select>
+                  {basket ? (
+                    <select
+                      id="category_day2"
+                      name="category_day2"
+                      className="  mt-3 text-sm rounded-lg focus:ring-blue-500  block w-full p-2.5 bg-gray-700 border-gray-600 placeholder-gray-400 text-white md:mb-0 mb-5"
+                      onChange={(e) => {e.target.value}}
+                    >
+                      <option value="Female">Female</option>
+                      <option value="Male">Male</option>
+                    </select>
+                  ) : (
+                    <select
+                      id="category_day2"
+                      name="category_day2"
+                      className="  mt-3 text-sm rounded-lg focus:ring-blue-500  block w-full p-2.5 bg-gray-700 border-gray-600 placeholder-gray-400 text-white md:mb-0 mb-5"
+                      onChange={(e) => {e.target.value}}
+                    >
+                      <option value="Junior">Junior(8th to 10th)</option>
+                      <option value="Senior">Senior(11th to 1st year degree)</option>
+                    </select>
+                  )}
                 </div>
               </div>
             </div>
