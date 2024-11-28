@@ -1,6 +1,7 @@
 "use client";
 import { EventsCard } from "@/components/ui/EventsCard";
 import React from "react";
+import Link from "next/link";
 import personality from "../../media/pictures/Ms-Mr Phenomenon.png";
 import vocal_solo from "../../media/pictures/Western Vocal Solo.png";
 import dance_solo from "../../media/pictures/Western Dance Solo.png";
@@ -265,7 +266,14 @@ function Events() {
     <div className="flex flex-col items-center">
       <div className="lg:mb-24 md:mb-44 mb-52 px-3">
         <div className="flex justify-center">
-          <span className="text-6xl text-electricBlue text-center font-bold mb-24">Our Events</span>
+          <span className="text-6xl text-electricBlue text-center font-bold mb-10">Our Events</span>
+        </div>
+        <div className="flex w-full justify-center"> 
+          <div className="grid lg:w-1/4 w-[70%] md:w-3/5 self-center gap-3 mb-24">
+            <Link href={"/"} target="_blank" className="flex items-center justify-center lg:text-lg md:text-base text-sm text-electricBlue bg-transparent border-2 hover:border-opacity-0 border-electricBlue font-semibold hover:text-crimsonRed hover:bg-galaxyBlue hover:scale-105 duration-500 px-5 py-1 rounded-xl h-[40px]">
+              View Schedule
+            </Link>
+          </div>
         </div>
         {cardsData.map((card, idx) => (
           <EventsCard

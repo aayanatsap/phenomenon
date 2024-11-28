@@ -3,12 +3,20 @@
 @tailwind utilities;
 
 .body-bg-image {
-    background-image: url('../media/bg.png');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    /* Add additional styling as needed */
-  }
+  background-image: url('../media/bg.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  /* Add additional styling as needed */
+}
+
+.bg-party {
+  background-image: url('../media/party.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  /* Add additional styling as needed */
+}
 
 .nav-underline {
     background-image: url('../media/underline.jpeg');
