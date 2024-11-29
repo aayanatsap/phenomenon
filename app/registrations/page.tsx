@@ -7,17 +7,37 @@ import Link from 'next/link';
 import logo from '../../media/logo.png'
 
 export default function page() {
+  const rules = [
+    "All prices are inclusive of GST (if applicable).",  
+    "Institutional delegation: An institution does not need to send a team to every event. Participation in at least 10 events is required for institution registration.",  
+    "A clear list of all members of an institutional delegation is required for registration (irrespective of the number of delegations).",  
+    "‘Individual’ participants need not be from the same institution.",  
+    "Registrations open on December 5, 2024.",  
+    "There will be no Best Institution Award.",  
+    "General Passes for each day will be available for purchase on that day on campus.",  
+    "Registration for an event includes entry to the campus, concert/artist performance access and event participation on the day of the event only. All events except Movie Business are one-day events only. For entry into the campus on the other day, a general pass will have to be purchased.",  
+    "No refunds will be processed.",  
+    "Registration for multiple events is permitted. Please check the schedule to ensure that there are no clashes.",  
+  ]
+
   return (
     <div className="mb-32">
       <section className="">
         <div className="py-8 px-4 mx-auto my-1 lg:py-16 lg:px-6">
           <div className="mx-auto lg:px-0 md:px-10 px-1 lg:max-w-screen-md text-center mb-8 lg:mb-12">
-            <h2 className="mb-4 md:text-4xl text-2xl tracking-tight font-extrabold text-purple-600 dark:text-white mun-gradient">
+            <h2 className="lg:mb-12 mb-7 md:text-4xl text-2xl tracking-tight font-extrabold text-purple-600 dark:text-white mun-gradient">
               REGISTRATIONS ARE OPEN!
             </h2>
-            <p className="mb-5 font-light text-gray-500 sm:text-xl dark:text-gray-400">
-              {`Have questions or need assistance? Contact our team at mun@sjbhs.edu.in or send a message to +91 80886 70274. We're here to help! Check the Policy page before registering. `}
-            </p>
+            <ul className='text-electricBlue text-left px-3 md:px-5 lg:px-0'>
+              {rules.map((rule, idx) => (
+                <li key={idx} className='list-disc list-outside md:text-lg text-sm font-semibold'>{rule}</li>
+              ))}
+            </ul>
+            <div className='md:text-xl text-base font-semibold text-neonPurple flex flex-col items-center px-2 mt-3'>
+              <span className='md:text-2xl text-gl font-bold'>PRIZES</span>
+              <span>1st Place: <span className='font-bold'>₹2000</span> voucher per participant</span>
+              <span>2nd Place: <span className='font-bold'>₹1000</span> voucher per participant</span>
+            </div>
           </div>
           <div className="hidden lg:block">
             <div className=" lg:grid lg:grid-cols-2 lg:space-y-0  -space-y-28 -mt-16 -mb-20">

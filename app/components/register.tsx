@@ -1245,7 +1245,7 @@ export const DelegationRegistration = () => {
   return (
     
     <div className="mt-10 mb-44">
-      {members < 6 ? (
+      {members < 10 ? (
         <>
           <h1 className="md:text-6xl text-4xl text-white text-center font-bold mun-gradient">
             INSTITUTIONAL INFORMATION
@@ -1293,7 +1293,7 @@ export const DelegationRegistration = () => {
                       id="total_members"
                       className="bg-gray-50 border border-gray-300 text-gray-500 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
                       placeholder="0"
-                      min="6"
+                      min="10"
                       required
                       onChange={(e) => {
                         setEventno(parseInt(e.target.value))
