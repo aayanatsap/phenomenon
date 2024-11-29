@@ -876,19 +876,9 @@ export function Indiregister() {
 }
 
 export const DelegationRegistration = () => {
-  const isInitialRender = useRef(true);
   const [members, changeMembers] = useState(0);
   const [ids, putIds] = useState([]);
   const [day, setDay] = useState("bothdays");
-  const [showcat, setShowcat] = useState<number | null>(null);
-  const [basket, setbasket] = useState(false);
-  const [day1, setDay1] = useState(true);
-  const [day2, setDay2] = useState(false);
-  const [both, setBoth] = useState(false);
-  const [showCount, setShowCount] = useState<number | null>(null);
-  const [event, setEvent] = useState("");
-  const [max, setMax] = useState(0);
-  const [min, setMin] = useState(0);
   const [eventno, setEventno] = useState(0);
   const [eventSelections, setEventSelections] = useState<string[]>([]);
   const [memberCounts, setMemberCounts] = useState<number[]>([]);
@@ -1465,8 +1455,6 @@ export const DelegationRegistration = () => {
                             type="number" 
                             name={`members_event${index}`} 
                             id={`members_event${index}`} 
-                            max={max} 
-                            min={min} 
                             className="  mt-3 text-sm rounded-lg focus:ring-blue-500  block w-full p-2.5 bg-gray-700 border-gray-600 placeholder-gray-400 text-white "
                             placeholder={`Min: ${eventsVar.find(
                               (e) => e.title === eventSelections[index]
