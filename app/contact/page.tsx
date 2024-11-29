@@ -99,7 +99,7 @@ export default function Contact() {
                 Official Email
               </h4>
               <p className="text-base text-body-color text-center">
-                <a href="mailto:mun@sjbhs.edu.in" className="text-lg hover:text-galaxyBlue duration-500">mun@sjbhs.edu.in</a> <br></br>
+                <a href="mailto:phenomenon@sjbhs.edu.in" className="text-lg hover:text-galaxyBlue duration-500">phenomenon@sjbhs.edu.in</a> <br></br>
               </p>
             </div></>} icon={""}>
           <CanvasRevealEffect
