@@ -952,23 +952,6 @@ export const DelegationRegistration = () => {
     setMemberCounts(updatedCounts);
   };
 
-
-  useEffect(() => {
-    if(day === "day1"){
-      setDay1(true);
-      setDay2(false);
-      setBoth(false);
-    }else if(day === "day2"){
-      setDay1(false);
-      setDay2(true);
-      setBoth(false);
-    }else if(day === "bothdays"){
-      setDay1(false);
-      setDay2(false);
-      setBoth(true);
-    }
-  }, [day])
-
   useEffect(() => {  
     if (isInitialRender.current) {
       // Skip the effect logic on initial render
@@ -1476,71 +1459,53 @@ export const DelegationRegistration = () => {
                           </select>
                         </div>
                       ) : (
-                        ""
-                      )}
-                      {day === "day1" ? (
                         <div className={``}>
                           <label
-                            htmlFor="event_day1"
+                            htmlFor="event"
                             className="text-sm text-gray-400 "
                           >
-                            Event (Day 1)
+                            Event
                           </label>
                           <select
-                            id="event_day1"
-                            name="event_day1"
+                            id="event"
+                            name="event"
                             className="mt-3 text-sm rounded-lg focus:ring-blue-500  block w-full p-2.5 bg-gray-700 border-gray-600 placeholder-gray-400 text-white "
                             onChange={(e) => handleEventChange(index, e.target.value)}
                           >
-                            <option value="Mr/Ms_Phenomenon">Mr/Ms Phenomenon (Personality)</option>
-                            <option value="Mystry_Inc.">Mystry Inc.(Treasure Hunt)</option>
-                            <option value="Western_Dance_Solo">Western Dance Solo</option>
-                            <option value="The_Movie_Business">The Movie Business (Film Making)</option>
-                            <option value="Pensworthy">Pensworthy (Creative Writing)</option>
-                            <option value="Egnites">Egnites (STEM)</option>
-                            <option value="Battle_Of_Bands">Battle Of Bands</option>
-                            <option value="Box_Cricket">Box Cricket</option>
+                            {day === "day1" ? (
+                              <>
+                                <option value="Mr/Ms_Phenomenon">Mr/Ms Phenomenon (Personality)</option>
+                                <option value="Mystry_Inc.">Mystry Inc.(Treasure Hunt)</option>
+                                <option value="Western_Dance_Solo">Western Dance Solo</option>
+                                <option value="The_Movie_Business">The Movie Business (Film Making)</option>
+                                <option value="Pensworthy">Pensworthy (Creative Writing)</option>
+                                <option value="Egnites">Egnites (STEM)</option>
+                                <option value="Battle_Of_Bands">Battle Of Bands</option>
+                                <option value="Box_Cricket">Box Cricket</option>
+                              </>
+                            ) : (
+                              <>
+                                <option value="Trilogy">Trilogy (Potpourri)</option>
+                                <option value="Western_Dance_Group">Western Dance Group</option>
+                                <option value="Western_Vocal_Solo">Western Vocal Solo</option>
+                                <option value="Vend">Vend (Commerce)</option>
+                                <option value="Printmysoul">Printmysoul (Poster Making)</option>
+                                <option value="Smogasboard">Smogasboard (Food Tasting)</option>
+                                <option value="Rampaeon">Rampaeon (Fashion Show)</option>
+                                <option value="Disc-O_Fever">Disc-O Fever (Disc Battle)</option>
+                                <option value="3-A-Side_Basketball">3-A-Side Basketball</option>
+                              </>
+                            )}
                           </select>
                         </div>
-                      ) : (
-                        ""
-                      )}
-                      {day === "day2" ? (
-                        <div className={``}>
-                          <label
-                            htmlFor="event_day2"
-                            className="text-sm text-gray-400 "
-                          >
-                            Event (Day 2)
-                          </label>
-                          <select
-                            id="event_day2"
-                            name="event_day2"
-                            className="mt-3 text-sm rounded-lg focus:ring-blue-500  block w-full p-2.5 bg-gray-700 border-gray-600 placeholder-gray-400 text-white "
-                            onChange={(e) => handleEventChange(index, e.target.value)}
-                          >
-                            <option value="Western_Dance_Group">Western Dance Group</option>
-                            <option value="Western_Vocal_Solo">Western Vocal Solo</option>
-                            <option value="Trilogy">Trilogy (Potpourri)</option>
-                            <option value="Vend">Vend (Commerce)</option>
-                            <option value="Printmysoul">Printmysoul (Poster Making)</option>
-                            <option value="Smogasboard">Smogasboard (Food Tasting)</option>
-                            <option value="Rampaeon">Rampaeon (Fashion Show)</option>
-                            <option value="Disc-O_Fever">Disc-O Fever (Disc Battle)</option>
-                            <option value="3-A-Side_Basketball">3-A-Side Basketball</option>
-                          </select>
-                        </div>
-                      ) : (
-                        ""
                       )}
                       { eventsVar.some((e) => e.title === eventSelections[index]) ? (
                         <div className={``}>
-                          {/* ${showCount2 ? "block": "hidden"} */}
-                          <label htmlFor="members_day1" className="text-sm text-gray-400">Number of Members</label>
+                          <label htmlFor={`members_event${index}`} className="text-sm text-gray-400">Number of Members</label>
                           <input 
                             type="number" 
-                            name="members" 
-                            id="members" 
+                            name={`members_event${index}`} 
+                            id={`members_event${index}`} 
                             max={max} 
                             min={min} 
                             className="  mt-3 text-sm rounded-lg focus:ring-blue-500  block w-full p-2.5 bg-gray-700 border-gray-600 placeholder-gray-400 text-white "
@@ -1564,10 +1529,10 @@ export const DelegationRegistration = () => {
                       )}
                       {eventsWithCategories.includes(eventSelections[index]) && (
                         <div className={``}>
-                          <label htmlFor="category" className="text-gray-400 text-sm">Category</label>
+                          <label htmlFor={`category_event${index}`} className="text-gray-400 text-sm">Category</label>
                           <select
-                            id="category"
-                            name="category"
+                            id={`category_event${index}`}
+                            name={`category_event${index}`}
                             className="  mt-3 text-sm rounded-lg focus:ring-blue-500  block w-full p-2.5 bg-gray-700 border-gray-600 placeholder-gray-400 text-white md:mb-0 mb-5"
                             onChange={(e) => {e.target.value}}
                           >
