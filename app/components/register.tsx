@@ -882,6 +882,8 @@ export const DelegationRegistration = () => {
   const [eventno, setEventno] = useState(0);
   const [eventSelections, setEventSelections] = useState<string[]>([]);
   const [memberCounts, setMemberCounts] = useState<number[]>([]);
+  const [categorySelections, setCategorySelections] = useState<string[]>([]);
+
 
   const eventsWithCategories = [
     "3-A-Side_Basketball",
@@ -912,35 +914,104 @@ export const DelegationRegistration = () => {
     { title: "Western_Dance_Group", min: 4, max: 8 },
   ];
 
+  // Initialize `memberCounts` and `categorySelections` when the component mounts
+  useEffect(() => {
+    // Initialize member counts and categories based on eventSelections
+    const updatedCounts = [...memberCounts];
+    const updatedCategories = [...categorySelections];
+
+    eventSelections.forEach((eventTitle, index) => {
+      // Check for constant member events
+      if (updatedCounts[index] === undefined) {
+        const constEvent = eventsConst.find((e) => e.title === eventTitle);
+        if (constEvent) {
+          updatedCounts[index] = constEvent.members;
+        } else {
+          const varEvent = eventsVar.find((e) => e.title === eventTitle);
+          if (varEvent) {
+            updatedCounts[index] = varEvent.min; // Default to min members
+          } else {
+            updatedCounts[index] = 0; // Default for undefined events
+          }
+        }
+      }
+
+      // Initialize category if it's not yet set
+      if (updatedCategories[index] === undefined) {
+        if (eventsWithCategories.includes(eventTitle)) {
+          // Set default categories based on event
+          if (eventTitle === "3-A-Side_Basketball") {
+            updatedCategories[index] = "Male"; // Default for this event
+          } else if (eventTitle === "Pensworthy" || eventTitle === "Western_Vocal_Solo") {
+            updatedCategories[index] = "Junior"; // Default for these events
+          } else {
+            updatedCategories[index] = ""; // Default empty for others
+          }
+        }
+      }
+    });
+
+    // Update the states with initialized values
+    setMemberCounts(updatedCounts);
+    setCategorySelections(updatedCategories);
+
+  }, [eventSelections]); // Run when eventSelections changes or initially mounts
+
   const handleEventChange = (index: number, value: string) => {
     const updatedSelections = [...eventSelections];
     updatedSelections[index] = value;
     setEventSelections(updatedSelections);
-
+    
+    // Update member count based on event selection
     const updatedCounts = [...memberCounts];
-
-    // Handle constant member events
     const constEvent = eventsConst.find((e) => e.title === value);
     if (constEvent) {
       updatedCounts[index] = constEvent.members;
     } else {
-      // Handle variable member events
       const varEvent = eventsVar.find((e) => e.title === value);
       if (varEvent) {
-        updatedCounts[index] = varEvent.min; // Set to minimum members by default
+        updatedCounts[index] = varEvent.min;
       } else {
-        updatedCounts[index] = 0; // Clear for undefined events
+        updatedCounts[index] = 0;
       }
     }
-
     setMemberCounts(updatedCounts);
+  
+    // Update category based on event selection
+    const updatedCategories = [...categorySelections];
+    if (!updatedCategories[index]) {
+      if (value === "3-A-Side_Basketball") {
+        updatedCategories[index] = "Male"; // Default category for 3-A-Side Basketball
+      } else if (value === "Pensworthy" || value === "Western_Vocal_Solo") {
+        updatedCategories[index] = "Junior"; // Default category for these events
+      } else {
+        updatedCategories[index] = ""; // No category for others
+      }
+    }
+    setCategorySelections(updatedCategories);
   };
-
+    
   const handleMemberCountChange = (index: number, value: number) => {
     const updatedCounts = [...memberCounts];
     updatedCounts[index] = value;
     setMemberCounts(updatedCounts);
   };
+
+  // Function to get event data, reflecting current state
+  const getEventData = () => {
+    return eventSelections.map((eventTitle, index) => {
+      const eventData: any = {
+        name: eventTitle,
+        members: memberCounts[index] || 0, // Ensure member count exists
+        category: categorySelections[index] || "", // Ensure category exists
+      };
+      
+      return eventData;
+    });
+  };
+
+  const selectedEventData = getEventData();
+  console.log(selectedEventData);
 
   const Template = useCallback((props: { name: string | number | bigint | boolean | ReactElement<any, string | JSXElementConstructor<any>> | Iterable<ReactNode> | ReactPortal | Promise<AwaitedReactNode> | null | undefined; committee: any; }) => {
     return (
@@ -1388,6 +1459,7 @@ export const DelegationRegistration = () => {
                             className="mt-3 text-sm rounded-lg focus:ring-blue-500  block w-full p-2.5 bg-gray-700 border-gray-600 placeholder-gray-400 text-white "
                             onChange={(e) => handleEventChange(index, e.target.value)}
                           >
+                            <option value="empty">---------</option>
                             <option value="Mr/Ms_Phenomenon">Mr/Ms Phenomenon (Personality)</option>
                             <option value="Mystry_Inc.">Mystry Inc.(Treasure Hunt)</option>
                             <option value="Western_Dance_Solo">Western Dance Solo</option>
@@ -1423,6 +1495,7 @@ export const DelegationRegistration = () => {
                           >
                             {day === "day1" ? (
                               <>
+                                <option value="empty">---------</option>
                                 <option value="Mr/Ms_Phenomenon">Mr/Ms Phenomenon (Personality)</option>
                                 <option value="Mystry_Inc.">Mystry Inc.(Treasure Hunt)</option>
                                 <option value="Western_Dance_Solo">Western Dance Solo</option>
@@ -1434,6 +1507,7 @@ export const DelegationRegistration = () => {
                               </>
                             ) : (
                               <>
+                                <option value="empty">---------</option>
                                 <option value="Trilogy">Trilogy (Potpourri)</option>
                                 <option value="Western_Dance_Group">Western Dance Group</option>
                                 <option value="Western_Vocal_Solo">Western Vocal Solo</option>
@@ -1481,7 +1555,12 @@ export const DelegationRegistration = () => {
                             id={`category_event${index}`}
                             name={`category_event${index}`}
                             className="  mt-3 text-sm rounded-lg focus:ring-blue-500  block w-full p-2.5 bg-gray-700 border-gray-600 placeholder-gray-400 text-white md:mb-0 mb-5"
-                            onChange={(e) => {e.target.value}}
+                            value={categorySelections[index] || ""}
+                            onChange={(e) => {
+                              const updatedCategories = [...categorySelections];
+                              updatedCategories[index] = e.target.value;
+                              setCategorySelections(updatedCategories);
+                            }}
                           >
                             {eventSelections[index] === "3-A-Side_Basketball" ? (
                               <>
