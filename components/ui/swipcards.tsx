@@ -120,8 +120,13 @@ function swipcards() {
   
   return (
     <div className='w-screen mt-10 '>
-      <div className='flex justify-center lg:mb-14 mb-6 md:mb-12'>
+      <div className='flex flex-col items-center justify-center lg:mb-14 mb-6 md:mb-12 gap-5'>
         <span className='md:text-5xl text-4xl font-semibold text-electricBlue'>Our Events</span>
+        <div className='md:text-xl text-base font-semibold text-neonPurple flex flex-col items-center px-2'>
+          <span className='md:text-2xl text-gl font-bold'>PRIZES</span>
+          <span>1st Place: <span className='font-bold'>₹2000</span> voucher per participant</span>
+          <span>2nd Place: <span className='font-bold'>₹1000</span> voucher per participant</span>
+        </div>
       </div>
       <Swiper
         effect="coverflow"

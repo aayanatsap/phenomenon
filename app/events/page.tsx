@@ -266,7 +266,12 @@ function Events() {
     <div className="flex flex-col items-center">
       <div className="lg:mb-24 md:mb-44 mb-52 px-3">
         <div className="flex justify-center">
-          <span className="text-6xl text-electricBlue text-center font-bold mb-10">Our Events</span>
+          <span className="text-6xl text-electricBlue text-center font-bold mb-5">Our Events</span>
+        </div>
+        <div className='md:text-xl text-base font-semibold text-neonPurple flex flex-col items-center px-2 mb-8'>
+          <span className='md:text-2xl text-gl font-bold'>PRIZES</span>
+          <span>1st Place: <span className='font-bold'>₹2000</span> voucher per participant</span>
+          <span>2nd Place: <span className='font-bold'>₹1000</span> voucher per participant</span>
         </div>
         <div className="flex w-full justify-center"> 
           <div className="grid lg:w-1/4 w-[70%] md:w-3/5 self-center gap-3 mb-24">

@@ -32,7 +32,7 @@ export default function Contact() {
           </div></>} icon={""}>
           <CanvasRevealEffect
             animationSpeed={3}
-            containerClassName="bg-black"
+            containerClassName="bg-gray-800"
             colors={[
               [236, 72, 153],
               [232, 121, 249],
@@ -148,11 +148,11 @@ const Card = ({
           )}
         </AnimatePresence>
 
-        <div className="relative z-20">
+        <div className="relative z-20 grid items-center justify-items-center">
           <div className="text-center group-hover/canvas-card:-translate-y-4 group-hover/canvas-card:opacity-0 transition duration-200 w-full  mx-auto flex items-center justify-center">
             {icon}
           </div>
-          <h2 className="dark:text-white text-xl opacity-0 group-hover/canvas-card:opacity-100 relative z-10 text-black mt-4  font-bold group-hover/canvas-card:text-white group-hover/canvas-card:-translate-y-2 transition duration-200">
+          <h2 className="dark:text-white text-xl opacity-100 relative z-10 text-white mt-4  font-bold  group-hover/canvas-card:scale-105 scale-95 transition duration-200">
             {title}
           </h2>
         </div>

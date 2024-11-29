@@ -608,8 +608,8 @@ export function Indiregister() {
                 </div>
               </div>
             </div>
-            <div className="grid md:grid-row-2 md:gap-6 mb-6">
-              <div className={`grid grid-flow-col md:gap-3 ${show1 ? "block" : "hidden"}`}>
+            <div className="grid md:grid-row-2 lg:gap-6 gap-8 md:gap-12 mb-6 lg:mt-0 mt-12">
+              <div className={`grid lg:grid-flow-col grid-flow-row gap-3 ${show1 ? "block" : "hidden"}`}>
                 <div className={``}>
                   <label htmlFor="events_day1" className="text-sm text-gray-400 ">
                     Event (Day 1)
@@ -617,7 +617,7 @@ export function Indiregister() {
                   <select
                     id="events_day1"
                     name="events_day1"
-                    className="  mt-3 text-sm rounded-lg focus:ring-blue-500  block w-full p-2.5 bg-gray-700 border-gray-600 placeholder-gray-400 text-white md:mb-0 mb-5"
+                    className="mt-3 text-sm rounded-lg focus:ring-blue-500  block w-full p-2.5 bg-gray-700 border-gray-600 placeholder-gray-400 text-white md:mb-0 "
                     onChange={(e) => (setEvent1(e.target.value))}
                   >
                     <option value="Mr/Ms_Phenomenon">Mr/Ms Phenomenon (Personality)</option>
@@ -656,7 +656,7 @@ export function Indiregister() {
                   </select>
                 </div>
               </div>
-              <div className={`grid grid-flow-col md:gap-3 ${show2 ? "block" : "hidden"}`}>
+              <div className={`grid lg:grid-flow-col grid-flow-row gap-3 ${show2 ? "block" : "hidden"}`}>
                 <div className={``}>
                   <label
                     htmlFor="events_day2"
@@ -876,8 +876,139 @@ export function Indiregister() {
 }
 
 export const DelegationRegistration = () => {
+  const isInitialRender = useRef(true);
   const [members, changeMembers] = useState(0);
   const [ids, putIds] = useState([]);
+  const [day, setDay] = useState("bothdays");
+  const [showcat, setShowcat] = useState<number | null>(null);
+  const [basket, setbasket] = useState(false);
+  const [day1, setDay1] = useState(true);
+  const [day2, setDay2] = useState(false);
+  const [both, setBoth] = useState(false);
+  const [showCount, setShowCount] = useState<number | null>(null);
+  const [event, setEvent] = useState("");
+  const [max, setMax] = useState(0);
+  const [min, setMin] = useState(0);
+  const [eventno, setEventno] = useState(0);
+  const [eventSelections, setEventSelections] = useState<string[]>([]);
+  const [memberCounts, setMemberCounts] = useState<number[]>([]);
+
+  const eventsWithCategories = [
+    "3-A-Side_Basketball",
+    "Western_Vocal_Solo",
+    "Pensworthy",
+  ];
+
+  const eventsConst = [
+    { title: "Mr/Ms_Phenomenon", members: 1 },
+    { title: "Western_Vocal_Solo", members: 1 },
+    { title: "Western_Dance_Solo", members: 1 },
+    { title: "Pensworthy", members: 1 },
+    { title: "Printmysoul", members: 1 },
+    { title: "Smogasboard", members: 1 },
+    { title: "Disc-O_Fever", members: 1 },
+    { title: "Egnites", members: 2 },
+    { title: "The_Movie_Business", members: 3 },
+    { title: "Vend", members: 3 },
+    { title: "Trilogy", members: 3 },
+    { title: "Mystry_Inc.", members: 3 },
+  ];
+
+  const eventsVar = [
+    { title: "Box_Cricket", min: 4, max: 5 },
+    { title: "3-A-Side_Basketball", min: 3, max: 4 },
+    { title: "Rampaeon", min: 10, max: 12 },
+    { title: "Battle_Of_Bands", min: 5, max: 7 },
+    { title: "Western_Dance_Group", min: 4, max: 8 },
+  ];
+
+  const handleEventChange = (index: number, value: string) => {
+    const updatedSelections = [...eventSelections];
+    updatedSelections[index] = value;
+    setEventSelections(updatedSelections);
+
+    const updatedCounts = [...memberCounts];
+
+    // Handle constant member events
+    const constEvent = eventsConst.find((e) => e.title === value);
+    if (constEvent) {
+      updatedCounts[index] = constEvent.members;
+    } else {
+      // Handle variable member events
+      const varEvent = eventsVar.find((e) => e.title === value);
+      if (varEvent) {
+        updatedCounts[index] = varEvent.min; // Set to minimum members by default
+      } else {
+        updatedCounts[index] = 0; // Clear for undefined events
+      }
+    }
+
+    setMemberCounts(updatedCounts);
+  };
+
+  const handleMemberCountChange = (index: number, value: number) => {
+    const updatedCounts = [...memberCounts];
+    updatedCounts[index] = value;
+    setMemberCounts(updatedCounts);
+  };
+
+
+  useEffect(() => {
+    if(day === "day1"){
+      setDay1(true);
+      setDay2(false);
+      setBoth(false);
+    }else if(day === "day2"){
+      setDay1(false);
+      setDay2(true);
+      setBoth(false);
+    }else if(day === "bothdays"){
+      setDay1(false);
+      setDay2(false);
+      setBoth(true);
+    }
+  }, [day])
+
+  useEffect(() => {  
+    if (isInitialRender.current) {
+      // Skip the effect logic on initial render
+      isInitialRender.current = false;
+      return;
+    }  
+    let i = 0 
+    let j = 0
+    let flag = false
+    // if(event === "Western_Vocal_Solo" || event === "Pensworthy"){
+    //   setShowcat(true);
+    // }else{
+    //   setShowcat(false)
+    // }
+    if(event === "3-A-Side_Basketball"){
+      setbasket(true)
+    }else{
+      setbasket(false)
+    }
+    for(i ; i<eventsConst.length; i++){
+      if(event === eventsConst[i].title){
+        // setMembers(eventsConst[i].members)
+        flag = true
+        break
+      }
+    }
+    if(flag === true){
+      setShowCount(false)
+    }else{
+      setShowCount(true)
+      for(j ; j<eventsVar.length; j++){
+        if(event === eventsVar[j].title){
+          setMax(eventsVar[j].max)
+          setMin(eventsVar[j].min)
+          break
+        }
+      }
+      if (!showCount) setShowCount(true);
+    }
+  }, [event, showCount])
 
   const Template = useCallback((props: { name: string | number | bigint | boolean | ReactElement<any, string | JSXElementConstructor<any>> | Iterable<ReactNode> | ReactPortal | Promise<AwaitedReactNode> | null | undefined; committee: any; }) => {
     return (
@@ -1223,11 +1354,11 @@ export const DelegationRegistration = () => {
   const [delegationDetails, changeDetails] = useState(["", "test"]);
   return (
     
-    <div className="my-28 md:translate-y-0 -translate-y-7">
-      {members < 3 || members > 40 ? (
+    <div className="mt-10">
+      {members < 6 ? (
         <>
           <h1 className="md:text-6xl text-4xl text-white text-center font-bold mun-gradient">
-            DELEGATION INFORMATION
+            INSTITUTIONAL INFORMATION
           </h1>
           <section className="">
             <div className="py-8 px-4 mx-auto max-w-2xl lg:py-16">
@@ -1236,7 +1367,7 @@ export const DelegationRegistration = () => {
                   e.preventDefault();
                   console.log("Name: "+ (e.target as HTMLInputElement).name.value)
                  
-                  changeDetails([(e.target as HTMLInputElement).name.value, (e.target as HTMLInputElement).type.value]);
+                  changeDetails([(e.target as HTMLInputElement).name.value, (e.target as HTMLInputElement).days.value]);
                   
                   changeMembers((e.target as HTMLFormElement).total_members.value);
                   
@@ -1246,15 +1377,15 @@ export const DelegationRegistration = () => {
                   <div className="sm:col-span-2">
                     <label
                       htmlFor="name"
-                      className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                      className="block mb-2 text-sm font-medium text-gray-500 dark:text-white"
                     >
-                      DELEGATION NAME
+                      SCHOOL NAME
                     </label>
                     <input
                       type="text"
                       name="name"
                       id="name"
-                      className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
+                      className="bg-gray-50 border border-gray-300 text-gray-500 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
                       placeholder="Name"
                       required
                     />
@@ -1263,36 +1394,199 @@ export const DelegationRegistration = () => {
                   <div>
                     <label
                       htmlFor="item-weight"
-                      className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                      className="block mb-2 text-sm font-medium text-gray-500 dark:text-white"
                     >
-                      TOTAL DELEGATES
+                      TOTAL DELEGATIONS
                     </label>
                     <input
                       type="number"
                       name="item-weight"
                       id="total_members"
-                      className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
+                      className="bg-gray-50 border border-gray-300 text-gray-500 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
                       placeholder="0"
-                      min="2"
-                      max="40"
+                      min="6"
                       required
+                      onChange={(e) => {
+                        setEventno(parseInt(e.target.value))
+                      }}
                     />
                   </div>
                   <div>
                     <label
-                      htmlFor="category"
-                      className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                      htmlFor="days"
+                      className="block mb-2 text-sm font-medium text-gray-500 dark:text-white"
                     >
-                      TYPE OF DELEGATION
+                      DAYS OF EVENTS
                     </label>
                     <select
-                      id="type"
-                      className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
+                      id="days"
+                      name="days"
+                      className="bg-gray-50 border border-gray-300 text-gray-500 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
+                      onChange={(e) => {
+                        const x = e.target.value; 
+                        if(x === "day_1"){
+                          setDay("day1")
+                        }else if(x === "day_2"){
+                          setDay("day2")
+                        }else if(x === "both_days"){
+                          setDay("bothdays")
+                        }
+                      }}
                     >
-                      <option value="Institution">Institution</option>
-                      <option value="Private">Private</option>
+                      <option value="both_days">Both Days</option>
+                      <option value="day_1">Day 1</option>
+                      <option value="day_2">Day 2</option>
                     </select>
                   </div>
+                </div>
+                <div className="mt-5">
+                  {Array.from({ length:eventno }).map((_ , index) => (
+                    <div className={`grid lg:grid-flow-col grid-flow-row gap-3 `} key={index}>
+                      {day === "bothdays" ? (
+                        <div className={``}>
+                          <label
+                            htmlFor="event"
+                            className="text-sm text-gray-400 "
+                          >
+                            Event
+                          </label>
+                          <select
+                            id="event"
+                            name="event"
+                            className="mt-3 text-sm rounded-lg focus:ring-blue-500  block w-full p-2.5 bg-gray-700 border-gray-600 placeholder-gray-400 text-white "
+                            onChange={(e) => handleEventChange(index, e.target.value)}
+                          >
+                            <option value="Mr/Ms_Phenomenon">Mr/Ms Phenomenon (Personality)</option>
+                            <option value="Mystry_Inc.">Mystry Inc.(Treasure Hunt)</option>
+                            <option value="Western_Dance_Solo">Western Dance Solo</option>
+                            <option value="The_Movie_Business">The Movie Business (Film Making)</option>
+                            <option value="Pensworthy">Pensworthy (Creative Writing)</option>
+                            <option value="Egnites">Egnites (STEM)</option>
+                            <option value="Battle_Of_Bands">Battle Of Bands</option>
+                            <option value="Box_Cricket">Box Cricket</option>
+                            <option value="Western_Dance_Group">Western Dance Group</option>
+                            <option value="Western_Vocal_Solo">Western Vocal Solo</option>
+                            <option value="Trilogy">Trilogy (Potpourri)</option>
+                            <option value="Vend">Vend (Commerce)</option>
+                            <option value="Printmysoul">Printmysoul (Poster Making)</option>
+                            <option value="Smogasboard">Smogasboard (Food Tasting)</option>
+                            <option value="Rampaeon">Rampaeon (Fashion Show)</option>
+                            <option value="Disc-O_Fever">Disc-O Fever (Disc Battle)</option>
+                            <option value="3-A-Side_Basketball">3-A-Side Basketball</option>
+                          </select>
+                        </div>
+                      ) : (
+                        ""
+                      )}
+                      {day === "day1" ? (
+                        <div className={``}>
+                          <label
+                            htmlFor="event_day1"
+                            className="text-sm text-gray-400 "
+                          >
+                            Event (Day 1)
+                          </label>
+                          <select
+                            id="event_day1"
+                            name="event_day1"
+                            className="mt-3 text-sm rounded-lg focus:ring-blue-500  block w-full p-2.5 bg-gray-700 border-gray-600 placeholder-gray-400 text-white "
+                            onChange={(e) => handleEventChange(index, e.target.value)}
+                          >
+                            <option value="Mr/Ms_Phenomenon">Mr/Ms Phenomenon (Personality)</option>
+                            <option value="Mystry_Inc.">Mystry Inc.(Treasure Hunt)</option>
+                            <option value="Western_Dance_Solo">Western Dance Solo</option>
+                            <option value="The_Movie_Business">The Movie Business (Film Making)</option>
+                            <option value="Pensworthy">Pensworthy (Creative Writing)</option>
+                            <option value="Egnites">Egnites (STEM)</option>
+                            <option value="Battle_Of_Bands">Battle Of Bands</option>
+                            <option value="Box_Cricket">Box Cricket</option>
+                          </select>
+                        </div>
+                      ) : (
+                        ""
+                      )}
+                      {day === "day2" ? (
+                        <div className={``}>
+                          <label
+                            htmlFor="event_day2"
+                            className="text-sm text-gray-400 "
+                          >
+                            Event (Day 2)
+                          </label>
+                          <select
+                            id="event_day2"
+                            name="event_day2"
+                            className="mt-3 text-sm rounded-lg focus:ring-blue-500  block w-full p-2.5 bg-gray-700 border-gray-600 placeholder-gray-400 text-white "
+                            onChange={(e) => handleEventChange(index, e.target.value)}
+                          >
+                            <option value="Western_Dance_Group">Western Dance Group</option>
+                            <option value="Western_Vocal_Solo">Western Vocal Solo</option>
+                            <option value="Trilogy">Trilogy (Potpourri)</option>
+                            <option value="Vend">Vend (Commerce)</option>
+                            <option value="Printmysoul">Printmysoul (Poster Making)</option>
+                            <option value="Smogasboard">Smogasboard (Food Tasting)</option>
+                            <option value="Rampaeon">Rampaeon (Fashion Show)</option>
+                            <option value="Disc-O_Fever">Disc-O Fever (Disc Battle)</option>
+                            <option value="3-A-Side_Basketball">3-A-Side Basketball</option>
+                          </select>
+                        </div>
+                      ) : (
+                        ""
+                      )}
+                      { eventsVar.some((e) => e.title === eventSelections[index]) ? (
+                        <div className={``}>
+                          {/* ${showCount2 ? "block": "hidden"} */}
+                          <label htmlFor="members_day1" className="text-sm text-gray-400">Number of Members</label>
+                          <input 
+                            type="number" 
+                            name="members" 
+                            id="members" 
+                            max={max} 
+                            min={min} 
+                            className="  mt-3 text-sm rounded-lg focus:ring-blue-500  block w-full p-2.5 bg-gray-700 border-gray-600 placeholder-gray-400 text-white "
+                            placeholder={`Min: ${eventsVar.find(
+                              (e) => e.title === eventSelections[index]
+                            )?.min}, Max: ${eventsVar.find(
+                              (e) => e.title === eventSelections[index]
+                            )?.max}`}
+                            min={eventsVar.find((e) => e.title === eventSelections[index])
+                              ?.min}
+                            max={eventsVar.find((e) => e.title === eventSelections[index])
+                              ?.max}
+                            value={memberCounts[index] || ""}
+                            onChange={(e) =>
+                              handleMemberCountChange(index, parseInt(e.target.value, 10))
+                            }
+                          />
+                        </div>
+                      ) : (
+                        ""
+                      )}
+                      {eventsWithCategories.includes(eventSelections[index]) && (
+                        <div className={``}>
+                          <label htmlFor="category" className="text-gray-400 text-sm">Category</label>
+                          <select
+                            id="category"
+                            name="category"
+                            className="  mt-3 text-sm rounded-lg focus:ring-blue-500  block w-full p-2.5 bg-gray-700 border-gray-600 placeholder-gray-400 text-white md:mb-0 mb-5"
+                            onChange={(e) => {e.target.value}}
+                          >
+                            {eventSelections[index] === "3-A-Side_Basketball" ? (
+                              <>
+                                <option value="Female">Female</option>
+                                <option value="Male">Male</option>
+                              </>
+                            ) : (
+                              <>
+                                <option value="Junior">Junior(8th to 10th)</option>
+                                <option value="Senior">Senior(11th to 1st year degree)</option>
+                              </>
+                            )}
+                          </select>
+                        </div>
+                      )}
+                    </div>
+                  ))}
                 </div>
                 <button
                   type="submit"
