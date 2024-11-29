@@ -952,47 +952,6 @@ export const DelegationRegistration = () => {
     setMemberCounts(updatedCounts);
   };
 
-  useEffect(() => {  
-    if (isInitialRender.current) {
-      // Skip the effect logic on initial render
-      isInitialRender.current = false;
-      return;
-    }  
-    let i = 0 
-    let j = 0
-    let flag = false
-    // if(event === "Western_Vocal_Solo" || event === "Pensworthy"){
-    //   setShowcat(true);
-    // }else{
-    //   setShowcat(false)
-    // }
-    if(event === "3-A-Side_Basketball"){
-      setbasket(true)
-    }else{
-      setbasket(false)
-    }
-    for(i ; i<eventsConst.length; i++){
-      if(event === eventsConst[i].title){
-        // setMembers(eventsConst[i].members)
-        flag = true
-        break
-      }
-    }
-    if(flag === true){
-      setShowCount(false)
-    }else{
-      setShowCount(true)
-      for(j ; j<eventsVar.length; j++){
-        if(event === eventsVar[j].title){
-          setMax(eventsVar[j].max)
-          setMin(eventsVar[j].min)
-          break
-        }
-      }
-      if (!showCount) setShowCount(true);
-    }
-  }, [event, showCount])
-
   const Template = useCallback((props: { name: string | number | bigint | boolean | ReactElement<any, string | JSXElementConstructor<any>> | Iterable<ReactNode> | ReactPortal | Promise<AwaitedReactNode> | null | undefined; committee: any; }) => {
     return (
       <div className="flex flex-col justify-center items-center mt-11 mx-14 px-5 shadow-lg my-10">
