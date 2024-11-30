@@ -59,7 +59,8 @@ const config = {
         galaxyBlue: '#0A0A1A',
         crimsonRed: "#DC143C",
         neonPurple: "#B287F0",
-        orangeYellow: "#ff8f00"
+        orangeYellow: "#ff8f00",
+        darkGalaxy: "#01010F",
       },
     },
   },
