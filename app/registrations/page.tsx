@@ -25,18 +25,18 @@ export default function page() {
       <section className="">
         <div className="py-8 px-4 mx-auto my-1 lg:py-16 lg:px-6">
           <div className="mx-auto lg:px-0 md:px-10 px-1 lg:max-w-screen-md text-center mb-8 lg:mb-12">
-            <h2 className="lg:mb-12 mb-7 md:text-4xl text-2xl tracking-tight font-extrabold text-purple-600 dark:text-white mun-gradient">
+            <h2 className="lg:mb-12 mb-7 md:text-4xl text-2xl font-aquireBold tracking-tight font-extrabold text-purple-600 dark:text-white mun-gradient">
               REGISTRATIONS ARE OPEN!
             </h2>
             <ul className='text-electricBlue text-left px-3 md:px-5 lg:px-0'>
               {rules.map((rule, idx) => (
-                <li key={idx} className='list-disc list-outside md:text-lg text-sm font-semibold'>{rule}</li>
+                <li key={idx} className='list-disc list-outside md:text-xl text-lg font-bold font-trench'>{rule}</li>
               ))}
             </ul>
-            <div className='md:text-xl text-base font-semibold text-neonPurple flex flex-col items-center px-2 mt-3'>
-              <span className='md:text-2xl text-gl font-bold'>PRIZES</span>
-              <span>1st Place: <span className='font-bold'>₹2000</span> voucher per participant</span>
-              <span>2nd Place: <span className='font-bold'>₹1000</span> voucher per participant</span>
+            <div className='md:text-xl text-base text-neonPurple flex flex-col items-center px-2 mt-3 font-aquire'>
+              <span className='md:text-2xl text-gl font-aquireBold'>PRIZES</span>
+              <span>1st Place: <span className='font-aquireBold'>₹2000</span> voucher per participant</span>
+              <span>2nd Place: <span className='font-aquireBold'>₹1000</span> voucher per participant</span>
             </div>
           </div>
           <div className="hidden lg:block">

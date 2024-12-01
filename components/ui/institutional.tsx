@@ -12,9 +12,9 @@ export function Institutional() {
       <CardBody className="bg-purple-900 relative  dark:bg-black dark:border-white/[0.2] border-black/[0.1] w-auto sm:w-[30rem] h-auto rounded-xl px-6 py-12 border text-center flex flex-col items-center">
         <CardItem
           translateZ="50"
-          className="text-3xl font-bold text-neutral-600 dark:text-white mx-auto"
+          className="text-3xl font-bold text-neutral-600 dark:text-white mx-auto font-aquireBold"
         >
-          Institutional
+          INSTITUTIONAL
         </CardItem>
         <CardItem
           translateZ="60"
@@ -22,10 +22,10 @@ export function Institutional() {
         >
           <>
             <div className="flex flex-col justify-center items-center my-4">
-              <span className="text-5xl font-extrabold">₹300 per person</span>
+              <span className="text-4xl font-aquire">Rs.300 per person</span>
             </div>
 
-            <ul role="list" className="mb-10 space-y-2 text-center">
+            <ul role="list" className="mb-10 space-y-2 text-center font-trench text-xl font-extrabold">
               <li className="text-center">
                 <span>You must register for a miminum of 6 events</span>
               </li>
@@ -51,7 +51,7 @@ export function Institutional() {
         <Link href={"/registrations/delegation/"}><CardItem
             translateZ={20}
             as="button"
-            className="px-4 py-2 rounded-xl bg-black dark:bg-white dark:text-black text-white text-xs font-bold w-[80%] mx-auto"
+            className="font-aquireBold px-4 py-2 rounded-xl bg-black dark:bg-white dark:text-black text-white text-sm font-bold w-[80%] mx-auto"
           >
             REGISTER NOW!
           </CardItem>

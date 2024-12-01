@@ -40,32 +40,32 @@ const CountdownTimer: React.FC = () => {
 
   return (
     <div className="flex mt-8 md:mt-0">
-      <div className="flex flex-col items-center justify-center w-[90vw] lg:w-full md:h-[300px] h-[250px] md:pb-0 pb-2 md:px-36 px-5 text-electricBlue border-opacity-30 bg-transparent border border-electricBlue rounded-[50px]">
-        <span className="md:text-xl text-lg font-bold">JOIN US ON</span>
+      <div className="flex flex-col items-center justify-center w-[90vw] lg:w-full md:h-[300px] h-[250px] md:pb-0 pb-2 md:px-36 px-5 text-electricBlue border-opacity-30 bg-transparent border border-electricBlue rounded-[50px] font-aquireBold">
+        <span className="md:text-xl text-lg font-aquire">JOIN US ON</span>
         <h2 className="md:text-5xl text-4xl font-semibold text-orangeYellow">DECEMBER</h2>
-        <div className="grid grid-flow-col gap-10 font-bold md:text-xl text-base text-orangeYellow">
+        <div className="grid grid-flow-col gap-10 md:text-xl text-base text-orangeYellow font-aquire">
           <div>20th</div>
           <div>21st</div>
         </div>
-        <div className="grid grid-flow-col md:gap-5 gap-3 md:mt-5 mt-3">
+        <div className="grid grid-flow-col gap-3 md:mt-5 mt-3 font-clockMono">
           <div className="grid grid-flow-row justify-items-center gap-1">
             <span className="md:text-5xl text-3xl">{timeLeft.days}</span>
-            <span className="text-orangeYellow md:text-base text-xs">Days</span>
+            <span className="text-orangeYellow md:text-base text-xs font-aquire">Days</span>
           </div>
           <span className="md:text-5xl text-3xl font-bold">:</span>
           <div className="grid grid-flow-row justify-items-center gap-1">
             <span className="md:text-5xl text-3xl">{timeLeft.hours}</span>
-            <span className="text-orangeYellow  md:text-base text-xs">Hours</span>
+            <span className="text-orangeYellow  md:text-base text-xs font-aquire">Hours</span>
           </div>
           <span className="md:text-5xl text-3xl font-bold ">:</span>
           <div className="grid grid-flow-row justify-items-center gap-1">
             <span className="md:text-5xl text-3xl">{timeLeft.minutes}</span>
-            <span className="text-orangeYellow md:text-base text-xs">Minutes</span>
+            <span className="text-orangeYellow md:text-base text-xs font-aquire">Minutes</span>
           </div>
           <span className="md:text-5xl text-3xl font-bold">:</span>
           <div className="grid grid-flow-row justify-items-center gap-1">
             <span className="md:text-5xl text-3xl">{timeLeft.seconds}</span>
-            <span className="text-orangeYellow md:text-base text-xs">Seconds</span>
+            <span className="text-orangeYellow md:text-base text-xs font-aquire">Seconds</span>
           </div>
         </div>
       </div>

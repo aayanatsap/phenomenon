@@ -62,6 +62,15 @@ const config = {
         orangeYellow: "#ff8f00",
         darkGalaxy: "#01010F",
       },
+      fontFamily: {
+        salvar: ['Salvar', 'sans-serif'],
+        aquire: ['Aquire', 'sans-serif'],
+        aquireBold: ['AquireBold', 'sans-serif'],
+        leblanc: ['Leblanc', 'sans-serif'],
+        trench: ['Trench', 'sans-serif'],
+        clock : ['Digital7', 'sans-serif'],
+        clockMono : ['Digital7Mono', 'sans-serif']
+      },
     },
   },
   plugins: [
