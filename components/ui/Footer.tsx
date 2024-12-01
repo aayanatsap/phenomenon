@@ -33,23 +33,24 @@ export function Footer() {
         <div className='justify-self-end'>
             <div className='flex flex-col md:text-base text-sm'>
                 <span className='font-bold mb-1 text-aquaBlue'>CHECK OUT</span>
-                <Link href={"/"} className='text-electricBlue hover:text-hili duration-500 font-semibold'>Home</Link>
-                <Link href={"/about"} className='text-electricBlue hover:text-hili duration-500 font-semibold'>About</Link>
-                <Link href={"/artist"} className='text-electricBlue hover:text-hili duration-500 font-semibold'>Artist</Link>
-                <Link href={"/events"} className='text-electricBlue hover:text-hili duration-500 font-semibold'>Events</Link>
-                <Link href={"/rules"} className='text-electricBlue hover:text-hili duration-500 font-semibold'>Rules</Link>
-                <Link href={"/contact"} className='text-electricBlue hover:text-hili duration-500 font-semibold'>Contact</Link>
+                <Link href={"/"} className='text-lightblue hover:text-hili duration-500 font-semibold'>Home</Link>
+                <Link href={"/about"} className='text-lightblue hover:text-hili duration-500 font-semibold'>About</Link>
+                <Link href={"/artist"} className='text-lightblue hover:text-hili duration-500 font-semibold'>Artist</Link>
+                <Link href={"/events"} className='text-lightblue hover:text-hili duration-500 font-semibold'>Events</Link>
+                <Link href={"/rules"} className='text-lightblue hover:text-hili duration-500 font-semibold'>Rules</Link>
+                <Link href={"/contact"} className='text-lightblue hover:text-hili duration-500 font-semibold'>Contact</Link>
             </div>
         </div>
       </div>
       <hr className='w-full border-t border-aquaBlue'/>
       <div className='flex justify-center md:text-sm my-3 text-xs'>
-        <span className="text-aquaBlue">© 2024 <a href="https://sjbhs.edu.in" target='__blank' className='hover:underline'>St Joseph's Boys' High School</a>. All Rights Reserved.</span>
+        <span className="text-lightblue">© 2024 <a href="https://sjbhs.edu.in" target='__blank' className='hover:underline'>St Joseph's Boys' High School</a>. All Rights Reserved.</span>
       </div>
       <hr className='w-full border-t border-aquaBlue'/>
       <div className="flex flex-col w-full md:text-base text-sm">
-        <span className="text-center text-electricBlue font-semibold">Website developed by</span>
-        <span className='text-center text-superNovaYellow font-semibold'><a href=" https://www.linkedin.com/in/roshan-pramod-0b7806322/" target="__blank" className=""><span className="hover:text-crimsonRed duration-500 font-bold">T Roshan Pramod</span></a></span>
+        <span className="text-center text-lightblue font-semibold">Website developed by</span>
+        <span className='text-center text-whitepink font-semibold'><a href=" https://www.linkedin.com/in/roshan-pramod-0b7806322/" target="__blank" className=""><span className="hover:text-midgray duration-500 font-bold">T Roshan Pramod</span></a></span>
+        <span className='text-center text-whitepink font-semibold'><a href=" https://www.linkedin.com/in/roshan-pramod-0b7806322/" target="__blank" className=""><span className="hover:text-midgray duration-500 font-bold">Editors x Clients LLC</span></a></span>
       </div>
     </footer>
   );
