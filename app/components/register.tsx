@@ -448,20 +448,6 @@ export function Indiregister() {
       food: event.target.food.value,
       total: 0
     };
-    if (members === 2) {
-      data.person_two_name =
-        event.target.person_two_first_name.value +
-        "  " +
-        event.target.person_two_last_name.value;
-      data.person_two_institution = event.target.person_two_institution.value;
-      data.person_two_experience = event.target.person_two_experience.value;
-      data.person_two_placements = event.target.person_two_placements.value;
-      data.person_two_email = event.target.person_two_email.value;
-      data.person_two_phone = event.target.person_two_phone.value;
-      data.person_two_backupCommittee =
-        event.target.person_two_backupCommittee.value;
-      data.person_two_food = event.target.person_two_food.value;
-    }
     data.total = members;
     makePayment(data);
     console.log(data);
@@ -1285,7 +1271,7 @@ export const DelegationRegistration = () => {
                       htmlFor="item-weight"
                       className="block mb-2 text-sm font-medium text-gray-500 dark:text-white"
                     >
-                      TOTAL DELEGATIONS
+                      TOTAL DELEGATES
                     </label>
                     <input
                       type="number"
