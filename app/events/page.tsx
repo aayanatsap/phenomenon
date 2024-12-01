@@ -266,16 +266,16 @@ function Events() {
     <div className="flex flex-col items-center">
       <div className="lg:mb-24 md:mb-44 mb-52 px-3">
         <div className="flex justify-center">
-          <span className="text-6xl text-electricBlue text-center font-bold mb-5 font-aquireBold">OUR EVENTS</span>
+          <span className="text-6xl text-babyblue text-center font-bold mb-5 font-aquireBold">OUR EVENTS</span>
         </div>
         <div className='md:text-xl text-base text-neonPurple flex flex-col items-center px-2 mb-8 font-aquire'>
-          <span className='md:text-2xl text-gl font-aquireBold'>PRIZES</span>
-          <span>1st Place: <span className='font-aquireBold'>₹2000</span> voucher per participant</span>
-          <span>2nd Place: <span className='font-aquireBold'>₹1000</span> voucher per participant</span>
+          <span className='md:text-2xl text-gl font-aquireBold text-lightblue'>PRIZES</span>
+          <span className='font-aquireBold text-babyblue'>1st Place: <span className='font-aquireBold text-lightgray'>₹2000</span> voucher per participant</span>
+          <span className='font-aquireBold text-babyblue'>2nd Place: <span className='font-aquireBold text-lightgray'>₹1000</span> voucher per participant</span>
         </div>
         <div className="flex w-full justify-center font-aquire"> 
           <div className="grid lg:w-1/4 w-[70%] md:w-3/5 self-center gap-3 mb-24">
-            <Link href={"/"} target="_blank" className="flex items-center justify-center lg:text-lg md:text-base text-sm text-electricBlue bg-transparent border-2 hover:border-opacity-0 border-electricBlue font-semibold hover:text-crimsonRed hover:bg-galaxyBlue hover:scale-105 duration-500 px-5 py-1 rounded-xl h-[40px]">
+            <Link href={"/"} target="_blank" className="flex items-center justify-center lg:text-lg md:text-base text-sm text-lightblue bg-transparent border-2 hover:border-opacity-0 border-midgray font-semibold hover:text-whitepink hover:bg-galaxyBlue hover:scale-105 duration-500 px-5 py-1 rounded-xl h-[40px]">
               View Schedule
             </Link>
           </div>

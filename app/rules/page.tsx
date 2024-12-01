@@ -54,8 +54,8 @@ function Rules() {
   return (
     <div className='flex flex-col w-screen items-center gap-16 mb-52 md:px-10 px-2 font-semibold'>
       <div className='flex flex-col items-center md:gap-10  gap-7'>
-        <span className='text-electricBlue font-bold text-4xl md:text-5xl font-aquireBold'>General Rules</span>
-        <ul className='text-electricBlue md:w-4/5 w-5/6 list-inside font-trench font-bold md:text-xl text-[17px] '>
+        <span className='text-babyblue font-bold text-4xl md:text-5xl font-aquireBold'>General Rules</span>
+        <ul className='text-whitepink md:w-4/5 w-5/6 list-inside font-trench font-bold md:text-xl text-[17px] '>
           {generalRules.map((rule, idx) => (
             <li key={idx} className='list-disc list-outside'>{rule}</li>
           ))}
@@ -72,8 +72,8 @@ function Rules() {
         </ul>
       </div>
       <div className='flex flex-col items-center md:gap-10  gap-7'>
-        <span className='text-electricBlue font-bold text-4xl md:text-5xl font-aquireBold'>Event Rules</span>
-        <ul className='text-electricBlue md:w-4/5 w-5/6 list-inside md:text-xl text-[17px] font-trench font-bold'>
+        <span className='text-babyblue font-bold text-4xl md:text-5xl font-aquireBold'>Event Rules</span>
+        <ul className='text-whitepink md:w-4/5 w-5/6 list-inside md:text-xl text-[17px] font-trench font-bold'>
           {eventRulespart1.map((rule, idx) => (
             <li key={idx} className='list-disc list-outside'>{rule}</li>
           ))}
@@ -89,16 +89,16 @@ function Rules() {
         </ul>
       </div>
       <div className='flex flex-col items-center md:gap-10  gap-7'>
-        <span className='text-electricBlue font-bold text-4xl md:text-5xl text-center font-aquireBold'>Non-Harassment Policy</span>
+        <span className='text-babyblue font-bold text-4xl md:text-5xl text-center font-aquireBold'>Non-Harassment Policy</span>
         <div className='w-screen lg:px-36 px-10 text-center md:px-24'>
-          <p className='text-neonPurple text-base md:text-lg font-bold font-aquire'>Please note that those who fail to follow these guidelines will be escorted out of the campus. If necessary, legal actions will be taken against those who misbehave. The confiscated items will not be returned.</p>
+          <p className='text-midgray text-base md:text-lg font-bold font-aquire'>Please note that those who fail to follow these guidelines will be escorted out of the campus. If necessary, legal actions will be taken against those who misbehave. The confiscated items will not be returned.</p>
         </div>
-        <ul className='text-electricBlue md:w-4/5 w-5/6 list-inside font-trench font-bold'>
+        <ul className='text-whitepink md:w-4/5 w-5/6 list-inside font-trench font-bold'>
           {nhpolicy.map((rule, idx) => (
             <li key={idx} className='list-disc md:text-xl text-lg list-outside'>{rule}</li>
           ))}
         </ul>
-        <span className='font-bold text-neonPurple md:text-lg text-base font-aquire text-center'>The confiscated items will not be returned.</span>
+        <span className='font-bold text-lightblue md:text-lg text-base font-aquire text-center'>The confiscated items will not be returned.</span>
       </div>
     </div>
   )

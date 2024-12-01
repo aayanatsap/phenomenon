@@ -8,7 +8,7 @@ export default function Contact() {
   return (
     <>
       <div className="w-full flex justify-center mb-14 px-5">
-        <span className="text-electricBlue md:text-5xl text-4xl font-semibold text-center font-aquireBold">Get in touch with us</span>
+        <span className="text-babyblue md:text-5xl text-4xl font-semibold text-center font-aquireBold">Get in touch with us</span>
       </div>
       <div className="py-0 flex flex-wrap gap-20 items-center justify-center bg-transparent dark:bg-transparent w-full mx-auto px-8 mb-60">
         <Card title={<>
