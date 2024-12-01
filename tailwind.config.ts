@@ -52,15 +52,13 @@ const config = {
         'zoom': 'zoom 3s ease-in-out',
       },
       colors: {
-        lightGray: '#E5E5E5', 
-        aquaBlue: '#0BB3BA',    
-        superNovaYellow: '#FFC700',  
-        electricBlue: '#7DF9FF', 
         galaxyBlue: '#0A0A1A',
-        crimsonRed: "#DC143C",
-        neonPurple: "#B287F0",
-        orangeYellow: "#ff8f00",
         darkGalaxy: "#01010F",
+        babyblue: "#3D52A0",
+        lightblue: "#7091E6",
+        midgray: "#8697C4",
+        lightgray: "#ADBBDA",
+        whitepink : "#EDE8F5"
       },
       fontFamily: {
         salvar: ['Salvar', 'sans-serif'],

@@ -149,7 +149,7 @@ export const FloatingNav = ({
                     onMouseEnter={() => setHoveredIndex(idx)}
                     onMouseLeave={() => setHoveredIndex(null)}
                     className={cn(
-                      "relative items-center flex text-neonPurple hover:text-electricBlue hover:scale-105 duration-500"
+                      "relative items-center flex text-lightblue hover:text-whitepink hover:scale-105 duration-500"
                     )}
                   >
                     <span className="text-base px-0.5 text-center font-aquireBold">
@@ -185,7 +185,7 @@ export const FloatingNav = ({
               duration: 0.2,
           }} className="justify-self-end hidden lg:block font-aquireBold">
           <Link href={"/registrations"}
-              className="flex items-center text-galaxyBlue border-2 bg-electricBlue border-electricBlue hover:scale-105 duration-500 hover:bg-neonPurple hover:border-aquaBlue justify-self-end relative hover:text-white px-4 py-1.5 rounded-full"
+              className="flex items-center text-whitepink border-2 bg-babyblue border-lightblue hover:scale-105 duration-500 hover:bg-lightblue hover:border-whitepink justify-self-end relative hover:text-white px-4 py-1.5 rounded-full"
           >
             <span>Register</span>
           </Link>

@@ -21,15 +21,15 @@ export default function Home() {
           <div className="text-electricBlue w-full grid lg:grid-flow-col grid-flow-row lg:justify-items-auto items-center justify-items-center ">
             <div className="grid lg:grid-flow-row md:grid-flow-col justify-items-center items-center lg:gap-5 lg:mb-0 mb-14">
               <div className="grid justify-items-center items-center h-full w-full bg-transparent mb-5 lg:mb-0">
-                <div className="lg:size-[300px] md:size-[250px] size-[200px] rounded-full lg:text-[44px] md:text-[36px] text-[30px] font-bold text-electricBlue md:border-8 border-[6px] border-electricBlue flex items-center justify-center lg:mt-0 hover:cursor-pointer hover:scale-105 duration-500">
+                <div className="lg:size-[300px] md:size-[250px] size-[200px] rounded-full lg:text-[44px] md:text-[36px] text-[30px] font-bold text-orangeYellow md:border-8 border-[6px] border-crimsonRed flex items-center justify-center lg:mt-0 hover:cursor-pointer hover:scale-105 duration-500">
                   <span className="font-aquireBold">20 Events</span>
                 </div>
               </div>
               <div className="lg:grid lg:grid-flow-row flex md:flex-col flex-col self-center gap-3 lg:w-full w-[200px] font-aquireBold">
-                <Link href={"https://drive.google.com/file/d/1_JpW59UTqZ_N2i-3rJyqW24L4kFTlqlk/view?usp=sharing"} target="_blank" className="flex justify-center items-center lg:text-lg md:text-base text-sm text-electricBlue bg-transparent border-2 hover:border-opacity-0 border-electricBlue font-semibold hover:text-crimsonRed hover:bg-galaxyBlue hover:scale-105 duration-500 px-5 py-1 rounded-xl h-[40px]">
+                <Link href={"https://drive.google.com/file/d/1_JpW59UTqZ_N2i-3rJyqW24L4kFTlqlk/view?usp=sharing"} target="_blank" className="flex justify-center items-center lg:text-lg md:text-base text-sm text-orangeYellow bg-transparent border-2 hover:border-opacity-0 border-green-600 font-semibold hover:text-crimsonRed hover:bg-galaxyBlue hover:scale-105 duration-500 px-5 py-1 rounded-xl h-[40px]">
                   View Brochure
                 </Link>
-                <Link href={"/"} target="_blank" className="flex items-center justify-center lg:text-lg md:text-base text-sm text-electricBlue bg-transparent border-2 hover:border-opacity-0 border-electricBlue font-semibold hover:text-crimsonRed hover:bg-galaxyBlue hover:scale-105 duration-500 px-5 py-1 rounded-xl h-[40px]">
+                <Link href={"/"} target="_blank" className="flex items-center justify-center lg:text-lg md:text-base text-sm text-orangeYellow bg-transparent border-2 hover:border-opacity-0 border-electricBlue font-semibold hover:text-crimsonRed hover:bg-galaxyBlue hover:scale-105 duration-500 px-5 py-1 rounded-xl h-[40px]">
                   View Schedule
                 </Link>
               </div>
@@ -37,8 +37,9 @@ export default function Home() {
             <div className="lg:w-[45vw] grid justify-items-end justify-self-end">
               <div className=" text-center font-semibold md:text-xl px-5 md:px-24 lg:px-0 grid grid-flow-row lg:gap-4  gap-3 font-trench">
                 <div className="lg:mb-5 mb-5">
-                  <span className="text-bold text-3xl lg:text-4xl font-aquireBold">ABOUT US</span>
+                  <span className="text-bold text-3xl lg:text-4xl font-aquireBold text-orangeYellow">ABOUT US</span>
                 </div>
+                <div className="text-crimsonRed">
                 <p>
                   We are elated to announce the twelfth edition of our
                   trailblazing and exciting Cultural and Carnival Festival,
@@ -54,7 +55,8 @@ export default function Home() {
                 <p>
                   So, what are you waiting for? The spotlight awaits you!
                 </p>
-                <Link href={"/about"} className="bg-neonPurple rounded-3xl text-electricBlue hover:scale-105 hover:text-crimsonRed hover:bg-black duration-500 px-4 py-1 flex md:w-[150px] w-[120px] md:text-sm text-xs justify-center items-center justify-self-center mt-5 font-aquire">
+                </div>
+                <Link href={"/about"} className="bg-electricBlue rounded-3xl text-orangeYellow hover:scale-105 hover:text-crimsonRed hover:bg-black duration-500 px-4 py-1 flex md:w-[150px] w-[120px] md:text-sm text-xs justify-center items-center justify-self-center mt-5 font-aquire">
                   Read More
                 </Link>
               </div>
