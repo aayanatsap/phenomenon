@@ -25,7 +25,7 @@ export const EventsCard = ({title, content, rules, banner, key} : {
   return (
     <div className='lg:w-screen lg:h-screen lg:mb-8 mb-16 lg:px-0 px-3 py-10 lg:py-0' key={key}>
       <div className='w-full flex justify-center mb-8'>
-        <span className='text-electricBlue text-4xl md:text-5xl font-bold lg:hidden text-center font-aquireBold'>{title}</span>
+        <span className='text-lightblue text-4xl md:text-5xl font-bold lg:hidden text-center font-aquireBold'>{title}</span>
       </div>
       <div className='flex w-full lg:h-3/5 lg:flex-row flex-col justify-center items-center gap-10 lg:gap-16'>
         <div className='lg:h-[400px] lg:w-[320px] w-[250px] h-[350px] rounded-2xl'>
