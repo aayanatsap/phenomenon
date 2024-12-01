@@ -49,8 +49,9 @@ export function Footer() {
       <hr className='w-full border-t border-aquaBlue'/>
       <div className="flex flex-col w-full md:text-base text-sm">
         <span className="text-center text-lightblue font-semibold">Website developed by</span>
-        <span className='text-center text-whitepink font-semibold'><a href=" https://www.linkedin.com/in/roshan-pramod-0b7806322/" target="__blank" className=""><span className="hover:text-midgray duration-500 font-bold">T Roshan Pramod</span></a></span>
-        <span className='text-center text-whitepink font-semibold'><a href=" https://www.linkedin.com/in/roshan-pramod-0b7806322/" target="__blank" className=""><span className="hover:text-midgray duration-500 font-bold">Editors x Clients LLC</span></a></span>
+        <p className="text-center text-white font-bold">
+          <span className='text-center text-whitepink font-semibold'><a href=" https://www.linkedin.com/in/roshan-pramod-0b7806322/" target="__blank" className=""><span className="hover:text-midgray duration-500 font-bold">T Roshan Pramod</span></a></span> || <span className='text-center text-whitepink font-semibold'><a href="" target="__blank" className=""><span className="hover:text-midgray duration-500 font-bold">Editors x Clients LLC</span></a></span>
+        </p>
       </div>
     </footer>
   );

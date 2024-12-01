@@ -35,7 +35,7 @@ export const EventsCard = ({title, content, rules, banner, key} : {
           <span className='text-lightblue text-4xl md:text-4xl font-bold lg:block hidden text-center font-aquireBold'>{title}</span>
           <div className='grid grid-flow-row w-full h-full lg:gap-0 gap-5'>
             <span className=' md:text-3xl text-2xl text-babyblue font-aquire'>{!viewRules ? ("Description") : ("Rules")}</span>
-            <div className='overflow-auto lg:h-[200px] scrollbar-thin scrollbar-track-transparent scrollbar-thumb-electricBlue'>
+            <div className='overflow-auto lg:h-[200px] scrollbar-thin scrollbar-track-transparent scrollbar-thumb-babyblue'>
               <AnimatePresence>
                 {!viewRules ? (
                   <motion.div

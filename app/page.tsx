@@ -64,6 +64,11 @@ export default function Home() {
           </div>
         </div>
         <Swipcards/>
+        <div className='flex justify-center mt-5 font-aquireBold overflow-hidden'>
+          <Link href={"/events"} className='bg-lightblue px-4 py-1 lg:text-xl md:text-lg text-base hover:scale-105 text-whitepink hover:text-darkGalaxy duration-500 rounded-full'>
+            Know More
+          </Link>
+        </div>
       </div>
   );
 }

@@ -169,11 +169,6 @@ function swipcards() {
           </div>
         </div>
       </Swiper>
-      <div className='flex justify-center mt-5 font-aquireBold'>
-        <Link href={"/events"} className='bg-midgray px-4 py-1 lg:text-xl md:text-lg text-base hover:scale-105 text-whitepink hover:text-black hover:bg-electricBlue duration-500 font-semibold rounded-full'>
-          Know More
-        </Link>
-      </div>
     </div>
   );
 }
