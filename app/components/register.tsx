@@ -991,21 +991,6 @@ export const DelegationRegistration = () => {
   const selectedEventData = getEventData();
   console.log(selectedEventData);
 
-  useEffect(() => {
-    if (selectedEventData.length > 0) { // Ensure there is data
-      const sum = selectedEventData.reduce((total, event) => {
-        return total + (event?.members || 0); // Safely handle undefined or missing members
-      }, 0);
-      changeMembers(sum);
-    } else {
-      changeMembers(0); // Handle cases where there is no data
-    }
-  }, [selectedEventData]);
-  
-  useEffect(() => {
-    console.log(members);
-  }, [members]);
-
   const Template = useCallback((props: { name: string | number | bigint | boolean | ReactElement<any, string | JSXElementConstructor<any>> | Iterable<ReactNode> | ReactPortal | Promise<AwaitedReactNode> | null | undefined; member: any; }) => {
     return (
       <div className="flex flex-col justify-center items-center mt-11 shadow-lg my-10">
