@@ -11,8 +11,7 @@ export default function page() {
     "All prices are inclusive of GST (if applicable).",  
     "Institutional delegation: An institution does not need to send a team to every event. Participation in at least 10 events is required for institution registration.",  
     "A clear list of all members of an institutional delegation is required for registration (irrespective of the number of delegations).",  
-    "‘Individual’ participants need not be from the same institution.",  
-    "Registrations open on December 5, 2024.",  
+    "‘Individual’ participants need not be from the same institution.",   
     "There will be no Best Institution Award.",  
     "General Passes for each day will be available for purchase on that day on campus.",  
     "Registration for an event includes entry to the campus, concert/artist performance access and event participation on the day of the event only. All events except Movie Business are one-day events only. For entry into the campus on the other day, a general pass will have to be purchased.",  
@@ -21,16 +20,17 @@ export default function page() {
   ]
 
   return (
-    <div className="mb-32">
+    <div className="mb-44">
       <section className="">
         <div className="py-8 px-4 mx-auto my-1 lg:py-16 lg:px-6">
           <div className="mx-auto lg:px-0 md:px-10 px-1 lg:max-w-screen-md text-center mb-8 lg:mb-12">
             <h2 className="lg:mb-12 mb-7 md:text-4xl text-2xl font-aquireBold tracking-tight font-extrabold text-purple-600 dark:text-white mun-gradient">
-              REGISTRATIONS ARE OPEN!
+              REGISTRATIONS WILL OPEN SOON!
             </h2>
-            <ul className='text-electricBlue text-left px-3 md:px-5 lg:px-0'>
+            <ul className='text-electricBlue text-left px-3 md:px-5 lg:px-0 md:text-xl text-lg font-bold font-trench list-disc list-outside '>
+              <li>Registrations open on <span className='text-neonPurple'>December 5</span>, 2024.</li>
               {rules.map((rule, idx) => (
-                <li key={idx} className='list-disc list-outside md:text-xl text-lg font-bold font-trench'>{rule}</li>
+                <li key={idx} className=''>{rule}</li>
               ))}
             </ul>
             <div className='md:text-xl text-base text-neonPurple flex flex-col items-center px-2 mt-3 font-aquire'>
@@ -39,7 +39,7 @@ export default function page() {
               <span>2nd Place: <span className='font-aquireBold'>₹1000</span> voucher per participant</span>
             </div>
           </div>
-          <div className="hidden lg:block">
+          {/* <div className="hidden lg:block">
             <div className=" lg:grid lg:grid-cols-2 lg:space-y-0  -space-y-28 -mt-16 -mb-20">
             <Individual/>
             <Institutional/>
@@ -142,9 +142,10 @@ export default function page() {
                 </div>
               </div>
             </div>
-          </div>
+          </div> */}
         </div>
       </section>
     </div>
   )
 }
+ 

@@ -66,7 +66,7 @@ export const EventsCard = ({title, content, rules, banner, key} : {
               onClick={() => setViewRules(!viewRules)}
               className='bg-electricBlue text-galaxyBlue hover:scale-105 hover:text-electricBlue hover:bg-neonPurple duration-500 lg:py-2 py-1.5 px-8 h-auto rounded-full self-end'
             >
-              <span className='font-semibold md:text-base text-sm'>
+              <span className='font-semibold md:text-base text-sm font-aquireBold'>
                 {viewRules ? ("View Description") : ("View Rules")}
               </span>
             </button>

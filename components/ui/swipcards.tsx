@@ -122,8 +122,8 @@ function swipcards() {
     <div className='w-screen mt-10 '>
       <div className='flex flex-col items-center justify-center lg:mb-14 mb-6 md:mb-12 gap-5'>
         <span className='md:text-5xl text-4xl font-semibold text-electricBlue font-aquireBold'>OUR EVENTS</span>
-        <div className='md:text-xl text-base text-neonPurple flex flex-col items-center px-2 font-trench font-bold'>
-          <span className='md:text-2xl text-gl font-bold'>PRIZES</span>
+        <div className='md:text-xl text-base text-neonPurple flex flex-col items-center px-2 font-aquire'>
+          <span className='md:text-2xl text-gl font-aquireBold'>PRIZES</span>
           <span>1st Place: <span className='font-aquireBold'>₹2000</span> voucher per participant</span>
           <span>2nd Place: <span className='font-aquireBold'>₹1000</span> voucher per participant</span>
         </div>
@@ -154,7 +154,7 @@ function swipcards() {
           <SwiperSlide key={idx} className="flex justify-center !w-[250px] !h-[300px] md:!w-[350px] md:!h-[400px] lg:!w-[420px] lg:!h-[470px] !rounded-2xl relative">
             <Image src={card.banner} alt={card.title} className="w-full h-full rounded-2xl absolute -z-[500]" />
             <div className='w-full grid grid-flow-row px-3 md:py-5 items-center h-full'>
-              <span className='font-bold text-xl md:text-3xl text-center self-start md:mt-3 mt-3 text-superNovaYellow font-aquire'>{card.title}</span>
+              <span className='font-bold text-xl md:text-3xl text-center self-start md:mt-3 mt-3 text-superNovaYellow font-aquireBold'>{card.title}</span>
               <p className='text-center lg:px-10 lg:text-[20px] md:text-base text-[13px] md:px-4 font-trench font-bold'>{card.content}</p>
             </div>
           </SwiperSlide>        
@@ -167,7 +167,7 @@ function swipcards() {
           </div>
         </div>
       </Swiper>
-      <div className='flex justify-center mt-5 font-aquire'>
+      <div className='flex justify-center mt-5 font-aquireBold'>
         <Link href={"/events"} className='bg-neonPurple px-4 py-1 lg:text-xl md:text-lg text-base hover:scale-105 text-electricBlue hover:text-black hover:bg-electricBlue duration-500 font-semibold rounded-full'>
           Know More
         </Link>
