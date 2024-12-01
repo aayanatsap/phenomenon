@@ -135,7 +135,7 @@ export const FloatingNav = ({
             transition={{
               duration: 0.4
             }}
-            className="flex flex-row gap-5 justify-self-center justify-items-center mr-[60px] py-5 bg-galaxyBlue bg-opacity-90 px-[25px] rounded-3xl">
+            className="flex flex-row gap-5 justify-self-center justify-items-center mr-[35px] py-5 bg-darkGalaxy bg-opacity-[0.87] px-[25px] rounded-3xl">
               {navItems.map((navItem, idx) => (
                 <motion.div
                   key={`nav-link-${navItem.link}-${idx}`} // Unique key for each item
@@ -152,7 +152,7 @@ export const FloatingNav = ({
                       "relative items-center flex text-neonPurple hover:text-electricBlue hover:scale-105 duration-500"
                     )}
                   >
-                    <span className="font-bold text-base px-0.5 text-center">
+                    <span className="text-base px-0.5 text-center font-aquireBold">
                       {navItem.name}
                     </span>
                   </Link>
@@ -183,9 +183,9 @@ export const FloatingNav = ({
               type: "spring",
               stiffness: 45,
               duration: 0.2,
-          }} className="justify-self-end hidden lg:block">
+          }} className="justify-self-end hidden lg:block font-aquireBold">
           <Link href={"/registrations"}
-              className="flex items-center text-galaxyBlue border-2 bg-electricBlue border-electricBlue hover:scale-105 duration-500 hover:bg-neonPurple hover:border-aquaBlue justify-self-end font-medium relative hover:text-white px-4 py-1.5 rounded-full"
+              className="flex items-center text-galaxyBlue border-2 bg-electricBlue border-electricBlue hover:scale-105 duration-500 hover:bg-neonPurple hover:border-aquaBlue justify-self-end relative hover:text-white px-4 py-1.5 rounded-full"
           >
             <span>Register</span>
           </Link>
@@ -220,9 +220,9 @@ export const FloatingNav = ({
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -140 }}
               transition={{ type: "spring", stiffness: 70, duration: 0.1 }}
-              className="lg:hidden fixed justify-self-end top-[85px] md:top-[95px] w-screen"
+              className="lg:hidden fixed justify-self-end top-[5.270rem] md:top-[95px] w-screen"
             >
-              <div className="grid grid-flow-col bg-galaxyBlue rounded-full border-2   border-electricBlue py-5 md:px-5 px-3 md:gap-0 gap-2 justify-items-center">
+              <div className="grid grid-flow-col bg-darkGalaxy rounded-full border-2   border-neonPurple py-5 md:px-5 px-3 md:gap-0 gap-2 justify-items-center">
                 {navItems.map((navItem, idx) => (
                   <motion.div
                     initial={{
@@ -235,6 +235,7 @@ export const FloatingNav = ({
                       delay:0.1,
                       duration: 0.2
                     }}
+                    key={`mobile-nav-link-${navItem.link}-${idx}-1`}
                   >
                     <Link
                       key={`mobile-nav-link-${navItem.link}-${idx}`} // Unique key for mobile menu items

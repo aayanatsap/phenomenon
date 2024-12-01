@@ -991,6 +991,21 @@ export const DelegationRegistration = () => {
   const selectedEventData = getEventData();
   console.log(selectedEventData);
 
+  useEffect(() => {
+    if (selectedEventData.length > 0) { // Ensure there is data
+      const sum = selectedEventData.reduce((total, event) => {
+        return total + (event?.members || 0); // Safely handle undefined or missing members
+      }, 0);
+      changeMembers(sum);
+    } else {
+      changeMembers(0); // Handle cases where there is no data
+    }
+  }, [selectedEventData]);
+  
+  useEffect(() => {
+    console.log(members);
+  }, [members]);
+
   const Template = useCallback((props: { name: string | number | bigint | boolean | ReactElement<any, string | JSXElementConstructor<any>> | Iterable<ReactNode> | ReactPortal | Promise<AwaitedReactNode> | null | undefined; member: any; }) => {
     return (
       <div className="flex flex-col justify-center items-center mt-11 shadow-lg my-10">
@@ -1404,13 +1419,21 @@ export const DelegationRegistration = () => {
           {selectedEventData.map((event , idx) => (
             <div className="md:w-[97vw] w-[95vw] grid grid-cols-1 justify-items-center mt-10" key={idx}>
               {/* <hr className="border-t border-gray-200 w-full z-10"/> */}
-              {event.category === "" ? (
-                <span className="text-electricBlue font-semibold md:text-5xl text-4xl mt-10 text-center">
-                  {event.name.replace(/_/g, " ")}
-                </span>
+              {event.name ? (
+                <>
+                  {event.category === "" ? (
+                    <span className="text-electricBlue font-semibold md:text-5xl text-4xl mt-10 text-center">
+                      {event.name.replace(/_/g, " ")}
+                    </span>
+                  ) : (
+                    <span className="text-electricBlue font-semibold md:text-5xl text-4xl mt-10 text-center">
+                      {event.name.replace(/_/g, " ")} ({event.category})
+                    </span>
+                  )}
+                </>
               ) : (
                 <span className="text-electricBlue font-semibold md:text-5xl text-4xl mt-10 text-center">
-                  {event.name.replace(/_/g, " ")} ({event.category})
+                  Unkonwn Event
                 </span>
               )}
               <div className="w-[95%]">
@@ -1440,7 +1463,7 @@ export const DelegationRegistration = () => {
                     {Array.from({ length: event.members }, (_, i) => {
                       let delegateNumber = i + 1;
                       return (
-                        <SwiperSlide className="!flex !max-w-lg justify-center">
+                        <SwiperSlide className="!flex !max-w-lg justify-center" key={i}>
                           <Template
                             name={`Participant ${delegateNumber}`}
                             member={`participant_${delegateNumber}`}

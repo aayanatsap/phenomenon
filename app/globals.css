@@ -30,3 +30,49 @@
   .galaxy-button {
     background: linear-gradient(135deg, #6A0DAD, #FF5733, #FF66B2);
   }
+
+  @font-face {
+    font-family: 'Salvar';
+    src: url('/fonts/SalvarRegular-gxwoP.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+  }
+
+  @font-face {
+    font-family: 'AquireBold';
+    src: url('/fonts/AquireBold-8Ma60.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+  }
+  @font-face {
+    font-family: 'Aquire';
+    src: url('/fonts/Aquire-BW0ox.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+  }
+  @font-face {
+    font-family: 'Leblanc';
+    src: url('/fonts/LeblancFree-jEOWy.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+  }
+  @font-face {
+    font-family: 'Trench';
+    src: url('/fonts/TrenchThin-16R0.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+  }
+
+  @font-face {
+    font-family: 'Digital7';
+    src: url('/fonts/Digital7-rg1mL.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+  }
+
+  @font-face {
+    font-family: 'Digital7Mono';
+    src: url('/fonts/Digital7Mono-Yz9J4.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+  }

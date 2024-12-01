@@ -54,51 +54,51 @@ function Rules() {
   return (
     <div className='flex flex-col w-screen items-center gap-16 mb-52 md:px-10 px-2 font-semibold'>
       <div className='flex flex-col items-center md:gap-10  gap-7'>
-        <span className='text-electricBlue font-bold text-4xl md:text-5xl'>General Rules</span>
-        <ul className='text-electricBlue md:w-4/5 w-5/6 list-inside'>
+        <span className='text-electricBlue font-bold text-4xl md:text-5xl font-aquireBold'>General Rules</span>
+        <ul className='text-electricBlue md:w-4/5 w-5/6 list-inside font-trench font-bold md:text-xl text-[17px] '>
           {generalRules.map((rule, idx) => (
-            <li key={idx} className='list-disc md:text-lg list-outside'>{rule}</li>
+            <li key={idx} className='list-disc list-outside'>{rule}</li>
           ))}
           <li>
             <ul>
             {generalRulesinside.map((rule, idx) => (
-              <li key={idx} className='list-disc md:text-lg list-inside'>{rule}</li>
+              <li key={idx} className='list-disc list-inside'>{rule}</li>
             ))}
             </ul>
           </li>
-          <li className='list-disc md:text-lg list-outside'>
+          <li className='list-disc list-outside'>
             In case of emergencies, follow the evacuation protocols as guided by the security team. First-aid stations will be available on-site for minor injuries or health issues.
           </li>
         </ul>
       </div>
       <div className='flex flex-col items-center md:gap-10  gap-7'>
-        <span className='text-electricBlue font-bold text-4xl md:text-5xl'>Event Rules</span>
-        <ul className='text-electricBlue md:w-4/5 w-5/6 list-inside'>
+        <span className='text-electricBlue font-bold text-4xl md:text-5xl font-aquireBold'>Event Rules</span>
+        <ul className='text-electricBlue md:w-4/5 w-5/6 list-inside md:text-xl text-[17px] font-trench font-bold'>
           {eventRulespart1.map((rule, idx) => (
-            <li key={idx} className='list-disc md:text-lg list-outside'>{rule}</li>
+            <li key={idx} className='list-disc list-outside'>{rule}</li>
           ))}
           <li>
-            <ol className='list-disc md:text-lg list-inside'>
+            <ol className='list-disc list-inside'>
               <li>Category 1- Grades 8th to 10th</li>
               <li>Category 2- Grades 11th to 2nd Semester of 1st year degree</li>
             </ol>
           </li>
           {eventRulespart2.map((rule, idx) => (
-            <li key={idx} className='list-disc md:text-lg list-outside'>{rule}</li>
+            <li key={idx} className='list-disc list-outside'>{rule}</li>
           ))}
         </ul>
       </div>
       <div className='flex flex-col items-center md:gap-10  gap-7'>
-        <span className='text-electricBlue font-bold text-4xl md:text-5xl text-center'>Non-Harassment Policy</span>
+        <span className='text-electricBlue font-bold text-4xl md:text-5xl text-center font-aquireBold'>Non-Harassment Policy</span>
         <div className='w-screen lg:px-36 px-10 text-center md:px-24'>
-          <p className='text-neonPurple text-lg md:text-xl font-bold '>Please note that those who fail to follow these guidelines will be escorted out of the campus. If necessary, legal actions will be taken against those who misbehave. The confiscated items will not be returned.</p>
+          <p className='text-neonPurple text-base md:text-lg font-bold font-aquire'>Please note that those who fail to follow these guidelines will be escorted out of the campus. If necessary, legal actions will be taken against those who misbehave. The confiscated items will not be returned.</p>
         </div>
-        <ul className='text-electricBlue md:w-4/5 w-5/6 list-inside'>
+        <ul className='text-electricBlue md:w-4/5 w-5/6 list-inside font-trench font-bold'>
           {nhpolicy.map((rule, idx) => (
-            <li key={idx} className='list-disc md:text-lg list-outside'>{rule}</li>
+            <li key={idx} className='list-disc md:text-xl text-lg list-outside'>{rule}</li>
           ))}
         </ul>
-        <span className='font-bold text-neonPurple md:text-lg text-base '>The confiscated items will not be returned.</span>
+        <span className='font-bold text-neonPurple md:text-lg text-base font-aquire text-center'>The confiscated items will not be returned.</span>
       </div>
     </div>
   )

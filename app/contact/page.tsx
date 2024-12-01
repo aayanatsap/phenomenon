@@ -8,26 +8,26 @@ export default function Contact() {
   return (
     <>
       <div className="w-full flex justify-center mb-14 px-5">
-        <span className="text-electricBlue md:text-5xl text-4xl font-semibold text-center ">Get in touch with us</span>
+        <span className="text-electricBlue md:text-5xl text-4xl font-semibold text-center font-aquireBold">Get in touch with us</span>
       </div>
       <div className="py-0 flex flex-wrap gap-20 items-center justify-center bg-transparent dark:bg-transparent w-full mx-auto px-8 mb-60">
         <Card title={<>
           <div>
-            <h4 className="mun-gradient mb-1 text-3xl font-bold text-dark text-center items-center justify-center py-4">
+            <h4 className="mun-gradient mb-1 text-3xl font-bold text-dark text-center items-center justify-center py-4 font-aquireBold">
               Coordinator Contacts
             </h4>
-            <p className="text-base text-body-color text-center">
+            <p className="md:text-lg text-base text-center font-aquire font-normal">
               Teacher Coordinators :
               <br />
-              <a href="mailto:robin.colaco@gmail.com" className="hover:text-neonPurple duration-500" target="_blank">Mr Robin Colaco - robin.colaco@gmail.com</a> <br></br>
-              <a href="mailto:hemavathy72@gmail.com" className="hover:text-neonPurple duration-500" target="_blank">Ms Hemavathy P - hemavathy72@gmail.com</a><br></br>
-              <a href="mailto:bindut23@yahoo.in" className="hover:text-neonPurple duration-500" target="_blank">Ms Bindu Thomas - bindut23@yahoo.in</a><br></br>
-              <a href="mailto:elizabethsebastian028@gmail.com" className="hover:text-neonPurple duration-500" target="_blank">Ms Elizabeth Sebastian - elizabethsebastian028@gmail.com</a><br></br>
+              <a href="mailto:robin.colaco@gmail.com" className="hover:text-neonPurple duration-500 font-trench font-bold" target="_blank">Mr Robin Colaco : robin.colaco@gmail.com</a> <br></br>
+              <a href="mailto:hemavathy72@gmail.com" className="hover:text-neonPurple duration-500 font-trench font-bold" target="_blank">Ms Hemavathy P : hemavathy72@gmail.com</a><br></br>
+              <a href="mailto:bindut23@yahoo.in" className="hover:text-neonPurple duration-500 font-trench font-bold" target="_blank">Ms Bindu Thomas : bindut23@yahoo.in</a><br></br>
+              <a href="mailto:elizabethsebastian028@gmail.com" className="hover:text-neonPurple duration-500 font-trench font-bold" target="_blank">Ms Elizabeth Sebastian : elizabethsebastian028@gmail.com</a><br></br>
               <br></br>
               Student Coordinators :
               <br></br> 
-              <a href="tel:+919686303913" className="hover:text-neonPurple duration-500" target="_blank">Sugandha Gupta - +91 9686303913</a> <br></br>
-              <a href="tel:+919986030607" className="hover:text-neonPurple duration-500" target="_blank">Yug Nagori - +91 9986030607</a> <br></br>
+              <a href="tel:+919686303913" className="hover:text-neonPurple duration-500 font-trench font-bold" target="_blank">Sugandha Gupta : +91 9686303913</a> <br></br>
+              <a href="tel:+919986030607" className="hover:text-neonPurple duration-500 font-trench font-bold" target="_blank">Yug Nagori : +91 9986030607</a> <br></br>
             </p>
           </div></>} icon={""}>
           <CanvasRevealEffect
@@ -44,23 +44,23 @@ export default function Contact() {
         </Card>
         <Card title={<>
           <div>
-            <h4 className="mun-gradient mb-1 text-3xl font-bold text-dark text-center items-center justify-center py-4">
+            <h4 className=" mb-1 text-3xl text-dark text-center items-center justify-center py-4 font-aquireBold">
               Contact Numbers
             </h4>
-            <p className="text-base text-body-color text-center">
+            <p className="md:text-lg text-base text-center font-normal font-aquire">
               Head of Events :
               <br />
-              <a href="tel:+919632223034" className="hover:text-neonPurple duration-500" target="_blank">Ashrith Puppala - +91 9632223034</a> <br></br>
-              <a href="tel:+918277265341" className="hover:text-neonPurple duration-500" target="_blank">Daksh R - +91 8277265341</a> <br></br>
-              <a href="tel:+916360964174" className="hover:text-neonPurple duration-500" target="_blank">Felicia Andrew - +91 6360964174</a> <br></br>
+              <a href="tel:+919632223034" className="hover:text-neonPurple duration-500 font-trench font-bold" target="_blank">Ashrith Puppala : +91 9632223034</a> <br></br>
+              <a href="tel:+918277265341" className="hover:text-neonPurple duration-500 font-trench font-bold" target="_blank">Daksh R : +91 8277265341</a> <br></br>
+              <a href="tel:+916360964174" className="hover:text-neonPurple duration-500 font-trench font-bold" target="_blank">Felicia Andrew : +91 6360964174</a> <br></br>
               <br></br>
               Head of Registrations :
               <br></br> 
-              <a href="tel:+918217590592" className="hover:text-neonPurple duration-500" target="_blank">Om Agarwal - +91 8217590592</a> <br></br>
-              <a href="tel:+919353615399" className="hover:text-neonPurple duration-500" target="_blank">Dia Jain - +91 9353615399</a> <br></br>
+              <a href="tel:+918217590592" className="hover:text-neonPurple duration-500 font-trench font-bold" target="_blank">Om Agarwal : +91 8217590592</a> <br></br>
+              <a href="tel:+919353615399" className="hover:text-neonPurple duration-500 font-trench font-bold" target="_blank">Dia Jain : +91 9353615399</a> <br></br>
               <br></br>
               IT & Technology Head :<br></br> 
-              <a href="tel:+919740521910" className="hover:text-neonPurple duration-500" target="_blank">T Roshan Pramod - +91 9740521910</a> <br></br>
+              <a href="tel:+919740521910" className="hover:text-neonPurple duration-500 font-trench font-bold" target="_blank">T Roshan Pramod : +91 9740521910</a> <br></br>
             </p>
           </div></>} icon={""}>
           <CanvasRevealEffect
@@ -77,10 +77,10 @@ export default function Contact() {
         </Card>
         <Card title={<>
           <div>
-            <h4 className="mun-gradient mb-1 text-3xl font-bold text-dark text-center items-center py-4 justify-center">
+            <h4 className="mun-gradient mb-1 text-3xl font-bold text-dark text-center items-center py-4 justify-center font-aquireBold">
               Our Location
             </h4>
-            <a href="https://maps.app.goo.gl/B9gsKWkNANzHkZVc9" target="_blank" className="text-base hover:text-galaxyBlue duration-500 text-body-color flex">
+            <a href="https://maps.app.goo.gl/B9gsKWkNANzHkZVc9" target="_blank" className="md:text-xl text-lg hover:text-galaxyBlue duration-500 text-body-color flex font-trench font-bold">
               <p className="text-center">
                 27, Museum Rd, Shanthala Nagar, Ashok Nagar, Bengaluru,
                 Karnataka 560025{" "}
@@ -95,11 +95,11 @@ export default function Contact() {
         </Card>
         <Card title={<>
             <div>
-              <h4 className="mun-gradient mb-1 text-3xl font-bold text-dark text-center items-center justify-center py-4">
+              <h4 className="mun-gradient mb-1 text-3xl font-bold text-dark text-center items-center justify-center py-4 font-aquireBold">
                 Official Email
               </h4>
               <p className="text-base text-body-color text-center">
-                <a href="mailto:phenomenon@sjbhs.edu.in" className="text-lg hover:text-galaxyBlue duration-500">phenomenon@sjbhs.edu.in</a> <br></br>
+                <a href="mailto:phenomenon@sjbhs.edu.in" className="md:text-xl text-lg hover:text-galaxyBlue duration-500 font-trench font-bold">phenomenon@sjbhs.edu.in</a> <br></br>
               </p>
             </div></>} icon={""}>
           <CanvasRevealEffect
