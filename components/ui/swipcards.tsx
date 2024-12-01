@@ -152,7 +152,9 @@ function swipcards() {
       >
         {cardsData.map((card, idx) => (
           <SwiperSlide key={idx} className="flex justify-center !w-[250px] !h-[300px] md:!w-[350px] md:!h-[400px] lg:!w-[420px] lg:!h-[470px] !rounded-2xl relative">
-            <Image src={card.banner} alt={card.title} className="w-full h-full rounded-2xl absolute -z-[500] opacity-60 bg-black" />
+            <div className='bg-darkGalaxy absolute !w-[250px] !h-[300px] md:!w-[350px] md:!h-[400px] lg:!w-[420px] lg:!h-[470px] -z-[500]'>
+              <Image src={card.banner} alt={card.title} className="w-full h-full rounded-2xl opacity-60" />
+            </div>
             <div className='w-full grid grid-flow-row px-3 md:py-5 items-center h-full'>
               <span className='font-bold text-xl md:text-3xl text-center self-start md:mt-3 mt-3 text-lightblue font-aquireBold'>{card.title}</span>
               <p className='text-center lg:px-10 lg:text-[20px] md:text-base text-[13px] md:px-4 font-trench font-bold text-whitepink'>{card.content}</p>
@@ -160,10 +162,10 @@ function swipcards() {
           </SwiperSlide>        
         ))}
         <div className='text-galaxyBlue flex w-full justify-center mt-5'>
-          <div className='bg-lightGray !grid !justify-items-center pb-0.5  px-4 rounded-full bg-opacity-30'>
-              <FaArrowLeft className='swiper-button-prev lg:!size-[50px] md:!size-[40px] !size-[30px] hover:cursor-pointer !text-lightblue hover:!text-neonPurple duration-500 !font-bold'/>
+          <div className='bg-whitepink !grid !justify-items-center pb-0.5  px-4 rounded-full bg-opacity-30'>
+              <FaArrowLeft className='swiper-button-prev lg:!size-[50px] md:!size-[40px] !size-[30px] hover:cursor-pointer !text-lightblue hover:!text-lightgray hover:!scale-105 duration-500 !font-bold'/>
               <div className="pagination"></div>
-              <FaArrowRight className='swiper-button-next lg:!size-[50px] md:!size-[40px] !size-[30px] hover:cursor-pointer !text-lightblue hover:!text-neonPurple duration-500 !font-bold'/>
+              <FaArrowRight className='swiper-button-next lg:!size-[50px] md:!size-[40px] !size-[30px] hover:cursor-pointer !text-lightblue hover:!text-lightgray hover:!scale-105 duration-500 !font-bold'/>
           </div>
         </div>
       </Swiper>
