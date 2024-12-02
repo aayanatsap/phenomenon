@@ -268,7 +268,7 @@ function Events() {
         <div className="flex justify-center">
           <span className="text-6xl text-babyblue text-center font-bold mb-5 font-aquireBold">OUR EVENTS</span>
         </div>
-        <div className='md:text-xl text-base text-neonPurple flex flex-col items-center px-2 mb-8 font-aquire'>
+        <div className='md:text-xl text-base text-neonPurple flex flex-col items-center px-2 mb-8 font-aquire text-center'>
           <span className='md:text-2xl text-gl font-aquireBold text-lightblue'>PRIZES</span>
           <span className='font-aquireBold text-babyblue'>1st Place: <span className='font-aquireBold text-lightgray'>₹2000</span> voucher per participant</span>
           <span className='font-aquireBold text-babyblue'>2nd Place: <span className='font-aquireBold text-lightgray'>₹1000</span> voucher per participant</span>

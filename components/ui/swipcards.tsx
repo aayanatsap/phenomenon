@@ -122,7 +122,7 @@ function swipcards() {
     <div className='w-screen mt-10 '>
       <div className='flex flex-col items-center justify-center lg:mb-14 mb-6 md:mb-12 gap-5'>
         <span className='md:text-5xl text-4xl font-semibold text-lightblue font-aquireBold'>OUR EVENTS</span>
-        <div className='md:text-xl text-base text-neonPurple flex flex-col items-center px-2 font-aquire'>
+        <div className='md:text-xl text-base text-neonPurple flex flex-col items-center px-2 font-aquire text-center'>
           <span className='md:text-2xl text-gl font-aquireBold text-lightgray'>PRIZES</span>
           <span className='font-aquireBold text-lightgray'>1st Place: <span className='font-aquireBold text-lightblue'>₹2000</span> voucher per participant</span>
           <span className='font-aquireBold text-lightgray'>2nd Place: <span className='font-aquireBold text-lightblue'>₹1000</span> voucher per participant</span>
