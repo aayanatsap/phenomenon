@@ -193,9 +193,9 @@ export const FloatingNav = ({
         <div className="lg:hidden flex justify-self-end items-center ">
           <button onClick={() => setIsOpen(!isOpen)}>
             {isOpen ? (
-              <AiOutlineClose className="w-7 h-7 text-aquaBlue" /> // Close icon
+              <AiOutlineClose className="w-7 h-7 text-lightblue" /> // Close icon
             ) : (
-              <AiOutlineMenu className="w-7 h-7 text-aquaBlue" /> // Hamburger menu icon
+              <AiOutlineMenu className="w-7 h-7 text-lightblue" /> // Hamburger menu icon
             )}
           </button>
         </div>
@@ -222,7 +222,7 @@ export const FloatingNav = ({
               transition={{ type: "spring", stiffness: 70, duration: 0.1 }}
               className="lg:hidden fixed justify-self-end top-[5.270rem] md:top-[95px] w-screen"
             >
-              <div className="grid grid-flow-col bg-darkGalaxy rounded-full border-2   border-neonPurple py-5 md:px-5 px-3 md:gap-0 gap-2 justify-items-center">
+              <div className="grid grid-flow-col bg-darkGalaxy rounded-full border-2   border-lightblue py-5 md:px-5 px-3 md:gap-0 gap-2 justify-items-center">
                 {navItems.map((navItem, idx) => (
                   <motion.div
                     initial={{
@@ -241,7 +241,7 @@ export const FloatingNav = ({
                       key={`mobile-nav-link-${navItem.link}-${idx}`} // Unique key for mobile menu items
                       href={navItem.link}
                       className={
-                        "items-center flex text-neonPurple justify-items-center hover:text-aquaBlue hover:scale-105 duration-500"
+                        "items-center flex text-lightblue justify-items-center hover:text-white font-aquire hover:scale-105 duration-500"
                       }
                     >
                       <span className="font-semibold lg:px-1 text-center md:text-base text-[10px]">
@@ -265,7 +265,7 @@ export const FloatingNav = ({
                   <Link
                     href={"/registrations"}
                     className={
-                      "items-center flex justify-items-center text-neonPurple hover:text-aquaBlue hover:scale-105 duration-500"
+                      "items-center flex justify-items-center text-lightblue font-aquire hover:text-whitepink hover:scale-105 duration-500"
                     }
                   >
                     <span className="font-semibold lg:px-1 text-center md:text-base text-[10px]">
