@@ -21,7 +21,7 @@ export default function Home() {
           <div className="text-electricBlue w-full grid lg:grid-flow-col grid-flow-row lg:justify-items-auto items-center justify-items-center ">
             <div className="grid lg:grid-flow-row md:grid-flow-col justify-items-center items-center lg:gap-5 lg:mb-0 mb-14">
               <div className="grid justify-items-center items-center h-full w-full bg-transparent mb-5 lg:mb-0">
-                <div className="lg:size-[300px] md:size-[250px] size-[200px] rounded-full lg:text-[44px] md:text-[36px] text-[30px] font-bold text-whitepink md:border-8 border-[6px] border-babyblue flex items-center justify-center lg:mt-0 hover:cursor-pointer hover:scale-105 duration-500">
+                <div className="lg:size-[300px] md:size-[250px] size-[200px] rounded-full lg:text-[44px] md:text-[36px] text-[27px] font-bold text-whitepink md:border-8 border-[6px] border-babyblue flex items-center justify-center lg:mt-0 hover:cursor-pointer hover:scale-105 duration-500">
                   <span className="font-aquireBold">20 Events</span>
                 </div>
               </div>
@@ -56,7 +56,7 @@ export default function Home() {
                   So, what are you waiting for? The spotlight awaits you!
                 </p>
                 </div>
-                <Link href={"/about"} className="bg-lightblue rounded-3xl text-babyblue border-babyblue hover:scale-105 hover:text-whitepink hover:bg-babyblue duration-500 px-4 py-1 flex md:w-[150px] w-[120px] md:text-sm text-xs justify-center items-center justify-self-center mt-5 font-aquire">
+                <Link href={"/about"} className="bg-lightblue rounded-3xl text-darkGalaxy border-babyblue hover:scale-105 hover:text-whitepink hover:bg-babyblue duration-500 px-4 py-1 flex md:w-[150px] w-[120px] md:text-sm text-xs justify-center items-center justify-self-center mt-5 font-aquire">
                   Read More
                 </Link>
               </div>
@@ -65,7 +65,7 @@ export default function Home() {
         </div>
         <Swipcards/>
         <div className='flex justify-center mt-5 font-aquireBold overflow-hidden'>
-          <Link href={"/events"} className='bg-lightblue px-4 py-1 lg:text-xl md:text-lg text-base hover:scale-105 text-whitepink hover:text-darkGalaxy duration-500 rounded-full'>
+          <Link href={"/events"} className='bg-lightblue px-4 py-1 md:text-base text-sm hover:scale-105 text-galaxyBlue hover:text-whitepink hover:bg-babyblue duration-500 rounded-full'>
             Know More
           </Link>
         </div>
