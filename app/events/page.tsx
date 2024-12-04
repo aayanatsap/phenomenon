@@ -275,7 +275,7 @@ function Events() {
         </div>
         <div className="flex w-full justify-center font-aquire"> 
           <div className="grid lg:w-1/4 w-[70%] md:w-3/5 self-center gap-3 mb-24">
-            <Link href={"/"} target="_blank" className="flex items-center justify-center lg:text-lg md:text-base text-sm text-lightblue bg-transparent border-2 hover:border-opacity-0 border-midgray font-semibold hover:text-whitepink hover:bg-galaxyBlue hover:scale-105 duration-500 px-5 py-1 rounded-xl h-[40px]">
+            <Link href={"https://drive.google.com/file/d/1pItom5OeBjk-0-xONRamkA0agr6VlZA4/view?usp=drive_link"} target="_blank" className="flex items-center justify-center lg:text-lg md:text-base text-sm text-lightblue bg-transparent border-2 hover:border-opacity-0 border-midgray font-semibold hover:text-whitepink hover:bg-galaxyBlue hover:scale-105 duration-500 px-5 py-1 rounded-xl h-[40px]">
               View Schedule
             </Link>
           </div>

@@ -29,7 +29,7 @@ export default function Home() {
                 <Link href={"https://drive.google.com/file/d/1_JpW59UTqZ_N2i-3rJyqW24L4kFTlqlk/view?usp=sharing"} target="_blank" className="flex justify-center items-center lg:text-lg md:text-base text-sm text-whitepink bg-transparent border-2 hover:border-opacity-0 border-lightblue font-semibold hover:text-lightgray hover:bg-galaxyBlue hover:scale-105 duration-500 px-5 py-1 rounded-xl h-[40px]">
                   View Brochure
                 </Link>
-                <Link href={"/"} target="_blank" className="flex items-center justify-center lg:text-lg md:text-base text-sm text-whitepink bg-transparent border-2 hover:border-opacity-0 border-lightblue font-semibold hover:text-lightgray hover:bg-galaxyBlue hover:scale-105 duration-500 px-5 py-1 rounded-xl h-[40px]">
+                <Link href={"https://drive.google.com/file/d/1pItom5OeBjk-0-xONRamkA0agr6VlZA4/view?usp=drive_link"} target="_blank" className="flex items-center justify-center lg:text-lg md:text-base text-sm text-whitepink bg-transparent border-2 hover:border-opacity-0 border-lightblue font-semibold hover:text-lightgray hover:bg-galaxyBlue hover:scale-105 duration-500 px-5 py-1 rounded-xl h-[40px]">
                   View Schedule
                 </Link>
               </div>

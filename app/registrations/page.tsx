@@ -39,6 +39,11 @@ export default function page() {
               <span className='font-aquireBold text-lightgray'>2nd Place: <span className='font-aquireBold text-lightblue'>₹1000</span> voucher per participant</span>
             </div>
           </div>
+          <div className="flex justify-center self-center w-full font-aquireBold">
+            <Link href={"https://drive.google.com/file/d/1pItom5OeBjk-0-xONRamkA0agr6VlZA4/view?usp=drive_link"} target="_blank" className="flex items-center justify-center lg:text-lg md:text-base text-sm text-whitepink bg-transparent border-2 hover:border-opacity-0 border-lightblue font-semibold hover:text-lightgray hover:bg-galaxyBlue hover:scale-105 duration-500 px-5 py-1 rounded-xl h-[40px] md:w-[400px] w-[300px]">
+              View Schedule
+            </Link>
+          </div>
           {/* <div className="hidden lg:block">
             <div className=" lg:grid lg:grid-cols-2 lg:space-y-0  -space-y-28 -mt-16 -mb-20">
             <Individual/>
