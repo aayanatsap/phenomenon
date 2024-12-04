@@ -14,6 +14,8 @@ export const metadata: Metadata = {
   }
 };  
 
+/* https://sjbhs.edu.in/phenomenon add to links while exporting */
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -25,7 +27,7 @@ export default function RootLayout({
         <link rel="icon" href="/logo.ico" type="image/x-icon" />
       </head>
       <body className="bg-darkGalaxy">
-        {/* <div className="fixed body-bg-image h-screen w-screen -z-[5000] opacity-60"></div> */}
+        {/* <div className="fixed body-bg-image h-screen w-screen -z-[5000] opacity-60"></div> background image not required */}
         <Navbar/>
         <div className="translate-y-[150px]">
           {children}
