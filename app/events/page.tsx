@@ -250,7 +250,7 @@ const cardsData = [
   },
   {
     title : "BOX CRICKET",
-    content : "Cricket is more than just a sport, its a religion. With Raw pace, unpredictable bouncers, toe-crushing yorkers and exhilarating strokes. A game that promises to hit every nerve in the body. Step onto the 22 yard pitch, where the most fiercest players battle for the ultimate prize. Patience, Determination and unwavering commitment are the qualities that set the champions apart. Do you have what it takes to be the next master blaster?", 
+    content : "Cricket is more than just a sport, its a religion. With Raw pace, unpredictable bouncers, toe-crushing yorkers and exhilarating strokes. A game that promises to hit every nerve in the body. Step onto the 22 yard pitch, where the most fierce players battle for the ultimate prize. Patience, Determination and unwavering commitment are the qualities that set the champions apart. Do you have what it takes to be the next master blaster?", 
     rules : [
       "Team Event (5 members per team inclusive of 1 substitute)",  
       "This event is open to students from grades 8th to 1st Year Degree",  

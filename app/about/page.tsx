@@ -9,7 +9,7 @@ function About() {
         St Joseph’s Boys’ High School has been acclaimed for going beyond academic excellence since 1858. Our education is aimed at creating mature, capable individuals, who can rise to the challenges of the changing world. The Jesuit philosophy of ‘Fide Et Labore’ is embodied in every aspect of our fests.
       </p>
       <p>
-        We are elated to announce the twelfth edition of our trailblazing and exciting Cultural and Carnival Festival, Phenomenon - One Space, Limitless Experiences. 
+        We are elated to announce the twelfth edition of our trailblazing and exciting Cultural and Literary festival, Phenomenon - One Space, Limitless Experiences. 
       </p>
       <p>
         Phenomenon, the vibrant fest organized by St. Joseph’s Boys’ High School, is a celebration like no other! With an incredible lineup of events spanning science, commerce, music, literature, dance, and sports, there’s truly something for everyone.

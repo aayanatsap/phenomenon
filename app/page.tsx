@@ -42,7 +42,7 @@ export default function Home() {
                 <div className="text-whitepink">
                 <p>
                   We are elated to announce the twelfth edition of our
-                  trailblazing and exciting Cultural and Carnival Festival,
+                  trailblazing and exciting Cultural and Literary festival,
                   Phenomenon
                 </p>
                 <p>
