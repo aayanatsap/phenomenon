@@ -239,7 +239,7 @@ export function Indiregister() {
               type="text"
               name={`${props.member}_first_name`}
               id={`${props.member}_first_name`}
-              className="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none 
+              className="block py-2.5 px-0 w-full text-sm text-lightblue bg-transparent border-0 border-b-2 border-gray-300 appearance-none 
               dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
               placeholder=" "
               required
@@ -260,7 +260,7 @@ export function Indiregister() {
               type="text"
               name={`${props.member}_last_name`}
               id={`${props.member}_last_name`}
-              className="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 
+              className="block py-2.5 px-0 w-full text-sm text-lightblue bg-transparent border-0 border-b-2 
               border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 
               focus:outline-none focus:ring-0 focus:border-blue-600 peer"
               placeholder=" "
@@ -283,7 +283,7 @@ export function Indiregister() {
             type="email"
             name={`${props.member}_email`}
             id={`${props.member}_email`}
-            className="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 
+            className="block py-2.5 px-0 w-full text-sm text-lightblue bg-transparent border-0 border-b-2 
             border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 
             focus:outline-none focus:ring-0 focus:border-blue-600 peer"
             placeholder=" "
@@ -328,7 +328,7 @@ export function Indiregister() {
               type="tel"
               name={`${props.member}_phone`}
               id={`${props.member}_phone`}
-              className="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 
+              className="block py-2.5 px-0 w-full text-sm text-lightblue bg-transparent border-0 border-b-2 
               border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 
               focus:outline-none focus:ring-0 focus:border-blue-600 peer"
               placeholder=" "
@@ -374,8 +374,7 @@ export function Indiregister() {
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
-        total: members, // Number of members
-        registrationType: "individual", // or "delegation"
+        total: ((members1) + (members2)) // Number of members
       }),
     }).then((t) => t.json());
     
@@ -404,14 +403,43 @@ export function Indiregister() {
           body: JSONdata,
         };
   
-        const result = await (await fetch(endpoint, options)).json();
-        if (result.result === "success") {
-          changeStatus("done");
-          console.log(ids);
-          putIds(result.ids);
-        } else {
-          changeStatus("error");
-        }
+        try {
+  const response = await fetch(endpoint, options);
+  console.log("Response status:", response.status);
+
+  if (!response.ok) {
+    // Log the server's error response for debugging
+    const errorText = await response.text();
+    console.error("Error response from server:", errorText);
+
+    // Throw an error with the HTTP status code for error handling
+    throw new Error(`Request failed with status ${response.status}`);
+  }
+
+  // Parse the JSON response if the request is successful
+  const result = await response.json();
+  console.log("Result from server:", result);
+
+  // Additional handling for the result
+  if (result.result === "success") {
+    putIds(result.ids); // Assuming `putIds` is a state setter
+    changeStatus("done"); // Update the status to "done" after success
+  } else {
+    console.error("Unexpected result:", result);
+    changeStatus("error"); // Update the status to "error" for any unexpected result
+  }
+} catch (error) {
+  console.error("Fetch failed:", error.message);
+
+  // Update the UI state to reflect the error
+  changeStatus("error");
+
+  // Optionally, log additional error details for debugging
+  if (error instanceof Error) {
+    console.error("Error details:", error.stack || error.message);
+  }
+}
+
       },
       prefill: {
         name: "",
@@ -453,7 +481,7 @@ export function Indiregister() {
     const day2EventValue = event.target.events_day2?.value?.trim() || "";
   
     const data = {
-      name: `${event.target.first_name.value} ${event.target.last_name.value}`,
+      fName: `${event.target.first_name.value} ${event.target.last_name.value}`,
       email: event.target.email.value,
       phoneNumber: event.target.phone.value,
       dateOfBirth: event.target.date_of_birth.value,
@@ -527,7 +555,7 @@ export function Indiregister() {
                   type="text"
                   name="first_name"
                   id="first_name"
-                  className="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none 
+                  className="block py-2.5 px-0 w-full text-sm text-lightblue bg-transparent border-0 border-b-2 border-gray-300 appearance-none 
                   dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
                   placeholder=" "
                   required
@@ -547,7 +575,7 @@ export function Indiregister() {
                   type="text"
                   name="last_name"
                   id="last_name"
-                  className="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none 
+                  className="block py-2.5 px-0 w-full text-sm text-lightblue bg-transparent border-0 border-b-2 border-gray-300 appearance-none 
                   dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
                   placeholder=" "
                   required
@@ -568,7 +596,7 @@ export function Indiregister() {
                 type="email"
                 name="email"
                 id="email"
-                className="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none 
+                className="block py-2.5 px-0 w-full text-sm text-lightblue bg-transparent border-0 border-b-2 border-gray-300 appearance-none 
                 dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
                 placeholder=" "
                 required
@@ -612,7 +640,7 @@ export function Indiregister() {
                     type="tel"
                     name="phone"
                     id="phone"
-                    className="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none 
+                    className="block py-2.5 px-0 w-full text-sm text-lightblue bg-transparent border-0 border-b-2 border-gray-300 appearance-none 
                     dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 
                     focus:border-blue-600 peer"
                     placeholder=" "
@@ -647,7 +675,7 @@ export function Indiregister() {
                     !day2 ? "bg-black text-blue-500" : "text-electricBlue"
                   } font-semibold py-1 px-4 rounded-2xl text-center cursor-pointer`}
                 >
-                  <span className="text-sm">Only Day 1</span>
+                  <span className="text-sm text-lightblue">Only Day 1</span>
                   <input type="radio" name="day1" id="day1" className="hidden" checked={!day2} />
                 </div>
                 <div
@@ -656,7 +684,7 @@ export function Indiregister() {
                     day2 ? "bg-black text-blue-500" : "text-electricBlue"
                   } font-semibold py-1 px-4 rounded-2xl text-center cursor-pointer`}
                 >
-                  <span className="text-sm">Only Day 2</span>
+                  <span className="text-sm text-lightblue">Only Day 2</span>
                   <input type="radio" name="day2" id="day2" className="hidden" checked={day2} />
                 </div>
               </div>
@@ -896,26 +924,26 @@ export function Indiregister() {
           disabled={currentStatus === "done" ? true : false}
         >
           {currentStatus === "entering"
-            ? "PAY"
-            : currentStatus === "loading"
-            ? "Loading"
-            : currentStatus === "done"
-            ? "Success"
-            : "Error"}
-        </button>
-      </form>
-      {currentStatus === "done" ? (
-        <div className="flex flex-col justify-center items-center p-10 h-full mx-24 rounded-lg shadow-emerald-500 shadow-sm bg-black">
-          <p className="mb-3 text-4xl text-white">
-            Congrats you are officially part of Phenomenon 2024 🎉
-          </p>
-          <p className="mb-3 text-xl text-white">
-            {`Take a screen shot of your UUID so you not don't forget`}
-          </p>
-          <ul className="list-none mt-14 text-lg">
-            {ids.map((person) => (
-              <li className="text-white" key={person}>
-                {person[0]} : PHENOMENON{person[1]}
+  ? "PAY"
+  : currentStatus === "loading"
+  ? "Loading"
+  : currentStatus === "done"
+  ? "Success"
+  : "Error"}
+</button>
+</form>
+{currentStatus === "done" ? (
+  <div className="flex flex-col justify-center items-center p-10 h-full mx-24 rounded-lg shadow-emerald-500 shadow-sm bg-black">
+    <p className="mb-3 text-4xl text-white">
+      Congrats! You are officially part of Phenomenon 2024 🎉
+    </p>
+    <p className="mb-3 text-xl text-white">
+      {`Take a screenshot of your Participant ID so you don't forget.`}
+    </p>
+    <ul className="list-none mt-14 text-lg">
+      {ids.map((person, index) => (
+        <li className="text-white" key={index}>
+          {person[0]} : PMN{person[1]}
               </li>
             ))}
           </ul>
@@ -1075,7 +1103,7 @@ export const DelegationRegistration = () => {
               type="text"
               name={`${props.member}_first_name`}
               id={`${props.member}_first_name`}
-              className="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+              className="block py-2.5 px-0 w-full text-sm text-lightblue bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
               placeholder=" "
               required
             />
@@ -1091,7 +1119,7 @@ export const DelegationRegistration = () => {
               type="text"
               name={`${props.member}_last_name`}
               id={`${props.member}_last_name`}
-              className="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+              className="block py-2.5 px-0 w-full text-sm text-lightblue bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
               placeholder=" "
               required
             />
@@ -1108,7 +1136,7 @@ export const DelegationRegistration = () => {
             type="email"
             name={`${props.member}_email`}
             id={`${props.member}_email`}
-            className="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+            className="block py-2.5 px-0 w-full text-sm text-lightblue bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
             placeholder=" "
             required
           />
@@ -1141,7 +1169,7 @@ export const DelegationRegistration = () => {
               type="tel"
               name={`${props.member}_phone`}
               id={`${props.member}_phone`}
-              className="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+              className="block py-2.5 px-0 w-full text-sm text-lightblue bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
               placeholder=" "
               required
             />
@@ -1314,7 +1342,7 @@ export const DelegationRegistration = () => {
               <form
                 onSubmit={(e) => {
                   e.preventDefault();
-                  console.log("Name: "+ (e.target as HTMLInputElement).name.value)
+                  console.log("Name: "+ (e.target as HTMLInputElement).name.valueOf)
                  
                   // changeDetails([(e.target as HTMLInputElement).name.value, (e.target as HTMLInputElement).days.value]);
                   

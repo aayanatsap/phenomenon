@@ -59,5 +59,8 @@
     font-weight: normal;
     font-style: normal;
   }
+  input {
+    color: white; /* Change this to your desired text color */
+  }
 
   /* https://sjbhs.edu.in/phenomenon add to links while exporting */
