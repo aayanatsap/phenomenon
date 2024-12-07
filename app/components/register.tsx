@@ -225,7 +225,10 @@ export function Indiregister() {
 
   }, [members1])
 
-  const Template = useCallback((props: { name: string | number | bigint | boolean | ReactElement<any, string | JSXElementConstructor<any>> | Iterable<ReactNode> | ReactPortal | Promise<AwaitedReactNode> | null | undefined; member: any; }) => {
+  const Template = useCallback((props: { 
+    name: React.ReactNode; 
+    member: string; 
+  }) => {
     return (
       <div className="flex flex-col justify-center items-center mt-11 shadow-lg my-10">
         <h1 className="text-white md:text-5xl text-3xl text-center">{props.name}</h1>
@@ -236,13 +239,18 @@ export function Indiregister() {
               type="text"
               name={`${props.member}_first_name`}
               id={`${props.member}_first_name`}
-              className="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+              className="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none 
+              dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
               placeholder=" "
               required
             />
             <label
               htmlFor={`${props.member}_first_name`}
-              className="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transhtmlForm -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
+              className="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform 
+              -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 
+              peer-focus:text-blue-600 peer-focus:dark:text-blue-500 
+              peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 
+              peer-focus:scale-75 peer-focus:-translate-y-6"
             >
               First name
             </label>
@@ -252,13 +260,19 @@ export function Indiregister() {
               type="text"
               name={`${props.member}_last_name`}
               id={`${props.member}_last_name`}
-              className="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+              className="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 
+              border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 
+              focus:outline-none focus:ring-0 focus:border-blue-600 peer"
               placeholder=" "
               required
             />
             <label
               htmlFor={`${props.member}_last_name`}
-              className="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transhtmlForm -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
+              className="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform 
+              -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 
+              peer-focus:text-blue-600 peer-focus:dark:text-blue-500 
+              peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 
+              peer-focus:scale-75 peer-focus:-translate-y-6"
             >
               Last name
             </label>
@@ -269,13 +283,19 @@ export function Indiregister() {
             type="email"
             name={`${props.member}_email`}
             id={`${props.member}_email`}
-            className="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+            className="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 
+            border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 
+            focus:outline-none focus:ring-0 focus:border-blue-600 peer"
             placeholder=" "
             required
           />
           <label
-            htmlFor="email"
-            className="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transhtmlForm -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
+            htmlFor={`${props.member}_email`}
+            className="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform 
+            -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 
+            peer-focus:text-blue-600 peer-focus:dark:text-blue-500 
+            peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 
+            peer-focus:scale-75 peer-focus:-translate-y-6"
           >
             Email address
           </label>
@@ -286,13 +306,19 @@ export function Indiregister() {
               type="text"
               name={`${props.member}_date_of_birth`}
               id={`${props.member}_date_of_birth`}
-              className="block py-2.5 px-0 w-full text-sm text-gray-500 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer "
+              className="block py-2.5 px-0 w-full text-sm text-gray-500 bg-transparent border-0 border-b-2 
+              border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 
+              focus:outline-none focus:ring-0 focus:border-blue-600 peer "
               placeholder=" "
               required
             />
             <label
               htmlFor={`${props.member}_date_of_birth`}
-              className="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transhtmlForm -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
+              className="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform 
+              -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 
+              peer-focus:text-blue-600 peer-focus:dark:text-blue-500 
+              peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 
+              peer-focus:scale-75 peer-focus:-translate-y-6"
             >
               Date Of Birth
             </label>
@@ -302,13 +328,19 @@ export function Indiregister() {
               type="tel"
               name={`${props.member}_phone`}
               id={`${props.member}_phone`}
-              className="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+              className="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 
+              border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 
+              focus:outline-none focus:ring-0 focus:border-blue-600 peer"
               placeholder=" "
               required
             />
             <label
               htmlFor={`${props.member}_phone`}
-              className="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transhtmlForm -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
+              className="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform 
+              -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 
+              peer-focus:text-blue-600 peer-focus:dark:text-blue-500 
+              peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 
+              peer-focus:scale-75 peer-focus:-translate-y-6"
             >
               Phone number
             </label>
@@ -317,18 +349,25 @@ export function Indiregister() {
       </div>
     );
   }, []);
-
-  const makePayment = async (info: { name?: string; institution?: any; country?: any; experience?: any; placements?: any; backupCountry?: any; email?: any; phoneNumber?: any; backupCommittee?: any; committee?: any; food?: any; person_two_name?: string | undefined; person_two_institution?: any; person_two_experience?: any; person_two_placements?: any; person_two_email?: any; person_two_phone?: any; person_two_backupCommittee?: any; person_two_food?: any; total?: number; order_id?: any; payment_id?: any; razorpay_signature?: any; }) => {
+  
+  const makePayment = async (info: { 
+    name?: string; institution?: any; country?: any; experience?: any; placements?: any; backupCountry?: any; 
+    email?: any; phoneNumber?: any; backupCommittee?: any; committee?: any; food?: any; 
+    person_two_name?: string; person_two_institution?: any; person_two_experience?: any; 
+    person_two_placements?: any; person_two_email?: any; person_two_phone?: any; 
+    person_two_backupCommittee?: any; person_two_food?: any; total?: number; 
+    order_id?: any; payment_id?: any; razorpay_signature?: any; 
+  }) => {
     changeStatus("loading");
-
+  
     const res = await initializeRazorpay();
-
+  
     if (!res) {
       alert("Razorpay SDK Failed to load");
       return;
     }
     console.log("time to fetch");
-
+  
     const data = await fetch("https://mun-backend.vercel.app/indipay", {
       method: "POST",
       headers: {
@@ -353,22 +392,18 @@ export function Indiregister() {
         info.order_id = response.razorpay_order_id;
         info.payment_id = response.razorpay_payment_id;
         info.razorpay_signature = response.razorpay_signature;
-
+  
         const JSONdata = JSON.stringify(info);
-
-        // API endpoint where we send htmlForm data.
         const endpoint = "https://mun-backend.vercel.app/individual ";
-
+  
         const options = {
           method: "POST",
-
           headers: {
             "Content-Type": "application/json",
           },
           body: JSONdata,
         };
-
-        // Send the htmlForm data to our htmlForms API on Vercel and get a response.
+  
         const result = await (await fetch(endpoint, options)).json();
         if (result.result === "success") {
           changeStatus("done");
@@ -387,32 +422,35 @@ export function Indiregister() {
         color: "#000000",
       },
     };
-
+  
     const paymentObject = new window.Razorpay(options);
     paymentObject.open();
   };
+  
   const initializeRazorpay = () => {
     return new Promise((resolve) => {
       const script = document.createElement("script");
       script.src = "https://checkout.razorpay.com/v1/checkout.js";
-      // document.body.appendChild(script);
-
+  
       script.onload = () => {
         resolve(true);
       };
       script.onerror = () => {
         resolve(false);
       };
-
+  
       document.body.appendChild(script);
     });
   };
-
+  
   const handleSubmit = async (event: { preventDefault: () => void; target: any }) => {
     event.preventDefault();
   
     const requiresCategoryDay1 = ["Western_Vocal_Solo", "Pensworthy", "Mr/Ms_Phenomenon"].includes(event.target.events_day1?.value);
     const requiresCategoryDay2 = ["Western_Dance_Group", "3-A-Side_Basketball"].includes(event.target.events_day2?.value);
+  
+    // Extract the day2 event value and trim it
+    const day2EventValue = event.target.events_day2?.value?.trim() || "";
   
     const data = {
       name: `${event.target.first_name.value} ${event.target.last_name.value}`,
@@ -423,18 +461,18 @@ export function Indiregister() {
       day1: {
         event: event.target.events_day1?.value || "",
         category: requiresCategoryDay1 ? event.target.category_day1?.value || null : null,
-        members: members1 || 1, // Default to 1 for solo events
+        members: members1, 
         additionalParticipants: [],
       },
-      day2: event.target.events_day2?.value
+      day2: day2EventValue !== ""
         ? {
-            event: event.target.events_day2?.value || "",
+            event: day2EventValue,
             category: requiresCategoryDay2 ? event.target.category_day2?.value || null : null,
-            members: members2 || 1, // Default to 1 for solo events
+            members: members2,
             additionalParticipants: [],
           }
         : null,
-      total: (members1 || 1) + (members2 || 0),
+      total: (members1) + (members2),
     };
   
     // Dynamically add additional participants for Day 1
@@ -452,10 +490,12 @@ export function Indiregister() {
     }
   
     // Dynamically add additional participants for Day 2
-    if (members2 > 1) {
+    if (data.day2 && members2 > 1) {
       for (let i = 2; i <= members2; i++) {
-        data.day2?.additionalParticipants.push({
-          name: `${event.target[`participant_day2_${i}_first_name`]?.value || ""} ${event.target[`participant_day2_${i}_last_name`]?.value || ""}`,
+        data.day2.additionalParticipants.push({
+          name: `${event.target[`participant_day2_${i}_first_name`]?.value || ""} ${
+            event.target[`participant_day2_${i}_last_name`]?.value || ""
+          }`.trim(),
           email: event.target[`participant_day2_${i}_email`]?.value || "",
           phoneNumber: event.target[`participant_day2_${i}_phone`]?.value || "",
           dateOfBirth: event.target[`participant_day2_${i}_date_of_birth`]?.value || "",
@@ -467,8 +507,6 @@ export function Indiregister() {
     makePayment(data);
   };
   
-  
-
   return (
     <div className="flex flex-col justify-center items-center ">
       <h1 className="text-white font-bold sm:text-5xl text-4xl  text-center mun-gradient">
@@ -489,13 +527,17 @@ export function Indiregister() {
                   type="text"
                   name="first_name"
                   id="first_name"
-                  className="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+                  className="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none 
+                  dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
                   placeholder=" "
                   required
                 />
                 <label
                   htmlFor="first_name"
-                  className="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transhtmlForm -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
+                  className="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform 
+                  -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 
+                  peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 
+                  peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
                 >
                   First name
                 </label>
@@ -505,13 +547,17 @@ export function Indiregister() {
                   type="text"
                   name="last_name"
                   id="last_name"
-                  className="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+                  className="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none 
+                  dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
                   placeholder=" "
                   required
                 />
                 <label
                   htmlFor="last_name"
-                  className="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transhtmlForm -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
+                  className="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform 
+                  -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 
+                  peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 
+                  peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
                 >
                   Last name
                 </label>
@@ -522,13 +568,18 @@ export function Indiregister() {
                 type="email"
                 name="email"
                 id="email"
-                className="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+                className="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none 
+                dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
                 placeholder=" "
                 required
               />
               <label
                 htmlFor="email"
-                className="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transhtmlForm -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
+                className="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform 
+                -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 
+                peer-focus:text-blue-600 peer-focus:dark:text-blue-500 
+                peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 
+                peer-focus:scale-75 peer-focus:-translate-y-6"
               >
                 Email address
               </label>
@@ -539,35 +590,46 @@ export function Indiregister() {
                   type="text"
                   name="date_of_birth"
                   id="date_of_birth"
-                  className="block py-2.5 px-0 w-full text-sm text-gray-500 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer "
+                  className="block py-2.5 px-0 w-full text-sm text-gray-500 bg-transparent border-0 border-b-2 border-gray-300 appearance-none 
+                  dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer "
                   placeholder=" "
                   required
                 />
                 <label
                   htmlFor="date_of_birth"
-                  className="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transhtmlForm -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
+                  className="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform 
+                  -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 
+                  peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 
+                  peer-placeholder-shown:translate-y-0 peer-focus:scale-75 
+                  peer-focus:-translate-y-6"
                 >
                   Date Of Birth
                 </label>
               </div>
               <div className="grid  md:gap-6">
-              <div className="relative z-0 w-full mb-6 group">
-                <input
-                  type="tel"
-                  name="phone"
-                  id="phone"
-                  className="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
-                  placeholder=" "
-                  required
-                />
-                <label
-                  htmlFor="phone"
-                  className="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transhtmlForm -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
-                >
-                  Phone number
-                </label>
+                <div className="relative z-0 w-full mb-6 group">
+                  <input
+                    type="tel"
+                    name="phone"
+                    id="phone"
+                    className="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none 
+                    dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 
+                    focus:border-blue-600 peer"
+                    placeholder=" "
+                    required
+                  />
+                  <label
+                    htmlFor="phone"
+                    className="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform 
+                    -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 
+                    peer-focus:text-blue-600 peer-focus:dark:text-blue-500 
+                    peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 
+                    peer-focus:scale-75 peer-focus:-translate-y-6"
+                  >
+                    Phone number
+                  </label>
+                </div>
               </div>
-            </div>
             </div>
             <div className="grid md:grid-cols-2 md:gap-6 items-center mb-5">
               <div className="relative z-0 w-full group flex flex-row items-center text-electricBlue gap-2">
@@ -611,6 +673,7 @@ export function Indiregister() {
                     className="mt-3 text-sm rounded-lg focus:ring-blue-500  block w-full p-2.5 bg-gray-700 border-gray-600 placeholder-gray-400 text-white md:mb-0 "
                     onChange={(e) => (setEvent1(e.target.value))}
                   >
+                    <option value="null">-----</option>
                     <option value="Mr/Ms_Phenomenon">Mr/Ms Phenomenon (Personality)</option>
                     <option value="Mystry_Inc.">Mystry Inc.(Treasure Hunt)</option>
                     <option value="Western_Dance_Solo">Western Dance Solo</option>
@@ -642,6 +705,7 @@ export function Indiregister() {
                     className="  mt-3 text-sm rounded-lg focus:ring-blue-500  block w-full p-2.5 bg-gray-700 border-gray-600 placeholder-gray-400 text-white md:mb-0 mb-5"
                     onChange={(e) => {e.target.value}}
                   >
+                    <option value="null">---</option>
                     <option value="Junior">Junior(8th to 10th)</option>
                     <option value="Senior">Senior(11th to 1st year degree)</option>
                   </select>
@@ -661,6 +725,7 @@ export function Indiregister() {
                     className="mt-3 text-sm rounded-lg focus:ring-blue-500  block w-full p-2.5 bg-gray-700 border-gray-600 placeholder-gray-400 text-white "
                     onChange={(e) => (setEvent2(e.target.value))}
                   >
+                    <option value="null">-----</option>
                     <option value="Western_Dance_Group">Western Dance Group</option>
                     <option value="Western_Vocal_Solo">Western Vocal Solo</option>
                     <option value="Trilogy">Trilogy (Potpourri)</option>
@@ -673,7 +738,7 @@ export function Indiregister() {
                   </select>
                 </div>
                 <div className={`${showCount2 ? "block": "hidden"}`}>
-                  <label htmlFor="members_day1" className="text-sm text-gray-400">Number of Members</label>
+                  <label htmlFor="members_day2" className="text-sm text-gray-400">Number of Members</label>
                   <input 
                     type="number" 
                     name="members_day2" 
@@ -712,6 +777,8 @@ export function Indiregister() {
               </div>
             </div>
           </div>
+  
+          {/* Day 1 Additional Participants */}
           {members1 > 1 ? (
             <div className="md:w-[97vw] w-[95vw] grid grid-cols-1 justify-items-center mt-10">
               <hr className="border-t border-gray-200 w-full z-10"/>
@@ -741,19 +808,17 @@ export function Indiregister() {
                   modules={[EffectCoverflow, Pagination, Navigation]}
                   className='text-electricBlue flex flex-col items-center'
                 >
-                  
-                    {Array.from({ length: members1 - 1 }, (_, i) => {
-                      let delegateNumber = i + 2;
-                      return (
-                        <SwiperSlide className="!flex !max-w-lg justify-center">
+                  {Array.from({ length: members1 - 1 }, (_, i) => {
+                    let delegateNumber = i + 2;
+                    return (
+                      <SwiperSlide className="!flex !max-w-lg justify-center" key={i}>
                         <Template
                           name={`Participant ${delegateNumber}`}
-                          member={`participant_${delegateNumber}`}
-                          key={i}
+                          member={`participant_day1_${delegateNumber}`}
                         />
-                        </SwiperSlide>
-                      );
-                    })}
+                      </SwiperSlide>
+                    );
+                  })}
                   
                   <div className='text-galaxyBlue flex w-full justify-center mt-5'>
                     <div className='bg-lightGray !grid !justify-items-center pb-0.5  px-4 rounded-full bg-opacity-30'>
@@ -768,6 +833,8 @@ export function Indiregister() {
           ) : (
             ""
           )}
+  
+          {/* Day 2 Additional Participants */}
           {members2 > 1 ? (
             <div className="md:w-[97vw] w-[95vw] grid grid-cols-1 justify-items-center mt-10">
               <hr className="border-t border-gray-200 w-full z-10"/>
@@ -797,19 +864,17 @@ export function Indiregister() {
                   modules={[EffectCoverflow, Pagination, Navigation]}
                   className='text-electricBlue flex flex-col items-center'
                 >
-                  
-                    {Array.from({ length: members2 - 1 }, (_, i) => {
-                      let delegateNumber = i + 2;
-                      return (
-                        <SwiperSlide className="!flex !max-w-lg justify-center">
-                          <Template
-                            name={`Participant ${delegateNumber}`}
-                            member={`participant_${delegateNumber}`}
-                            key={i}
-                          />
-                          </SwiperSlide>
-                      );
-                    })}
+                  {Array.from({ length: members2 - 1 }, (_, i) => {
+                    let delegateNumber = i + 2;
+                    return (
+                      <SwiperSlide className="!flex !max-w-lg justify-center" key={i}>
+                        <Template
+                          name={`Participant ${delegateNumber}`}
+                          member={`participant_day2_${delegateNumber}`}
+                        />
+                      </SwiperSlide>
+                    );
+                  })}
                   
                   <div className='text-galaxyBlue flex w-full justify-center mt-5'>
                     <div className='bg-lightGray !grid !justify-items-center pb-0.5  px-4 rounded-full bg-opacity-30'>
@@ -827,7 +892,7 @@ export function Indiregister() {
         </div>
         <button
           type="submit"
-          className="px-4 py-3 bg-blue-600 hover:bg-blue-700 w-[50vw] sm:w-80 mt-10 rounded-md text-white outline-none  shadow-lg transhtmlForm align-left active:scale-90 transition-transhtmlForm "
+          className="px-4 py-3 bg-blue-600 hover:bg-blue-700 w-[50vw] sm:w-80 mt-10 rounded-md text-white outline-none shadow-lg transform align-left active:scale-90 transition-transform"
           disabled={currentStatus === "done" ? true : false}
         >
           {currentStatus === "entering"
@@ -840,14 +905,10 @@ export function Indiregister() {
         </button>
       </form>
       {currentStatus === "done" ? (
-        <div
-           
-          className="flex flex-col justify-center items-center p-10 h-full mx-24 rounded-lg shadow-emerald-500 shadow-sm bg-black"
-        >
+        <div className="flex flex-col justify-center items-center p-10 h-full mx-24 rounded-lg shadow-emerald-500 shadow-sm bg-black">
           <p className="mb-3 text-4xl text-white">
             Congrats you are officially part of Phenomenon 2024 🎉
           </p>
-
           <p className="mb-3 text-xl text-white">
             {`Take a screen shot of your UUID so you not don't forget`}
           </p>
@@ -864,7 +925,7 @@ export function Indiregister() {
       )}
     </div>
   );
-}
+} 
 
 export const DelegationRegistration = () => {
   const [members, changeMembers] = useState(0);
