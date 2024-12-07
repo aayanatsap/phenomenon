@@ -40,7 +40,7 @@ const config = {
         },
         zoom: {
           '0%, 100%': { transform: 'scale(1)', opacity: '1' },
-          '20%': { transform: 'scale(5)', opacity: '0' },
+          '20%': { transform: 'scale(1.5)', opacity: '0' },
           '25%': { transform: 'scale(0)', opacity: '0' },
           '30%': { transform: 'scale(0)', opacity: '0.5' },
         }

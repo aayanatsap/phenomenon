@@ -24,20 +24,25 @@ export default function page() {
       <section className="">
         <div className="py-8 px-4 mx-auto my-1 lg:py-16 lg:px-6">
           <div className="mx-auto lg:px-0 md:px-10 px-1 lg:max-w-screen-md text-center mb-8 lg:mb-12">
-            <h2 className="lg:mb-12 mb-7 md:text-4xl text-2xl font-aquireBold tracking-tight font-extrabold text-purple-600 dark:text-white mun-gradient">
+            <h2 className="lg:mb-12 mb-7 md:text-4xl text-3xl font-aquireBold tracking-tight font-extrabold text-babyblue mun-gradient">
               REGISTRATIONS WILL OPEN SOON!
             </h2>
-            <ul className='text-electricBlue text-left px-3 md:px-5 lg:px-0 md:text-xl text-lg font-bold font-trench list-disc list-outside '>
-              <li>Registrations open on <span className='text-neonPurple'>December 5</span>, 2024.</li>
+            <ul className='text-whitepink text-left px-3 md:px-5 lg:px-0 md:text-xl text-lg font-bold font-trench list-disc list-outside '>
+              <li>Registrations open on <span className='text-lightblue'>December 5</span>, 2024.</li>
               {rules.map((rule, idx) => (
                 <li key={idx} className=''>{rule}</li>
               ))}
             </ul>
-            <div className='md:text-xl text-base text-neonPurple flex flex-col items-center px-2 mt-3 font-aquire'>
-              <span className='md:text-2xl text-gl font-aquireBold'>PRIZES</span>
-              <span>1st Place: <span className='font-aquireBold'>₹2000</span> voucher per participant</span>
-              <span>2nd Place: <span className='font-aquireBold'>₹1000</span> voucher per participant</span>
+            <div className='md:text-xl text-base text-neonPurple flex flex-col items-center px-2 font-aquire'>
+              <span className='md:text-2xl text-gl font-aquireBold text-lightgray'>PRIZES</span>
+              <span className='font-aquireBold text-lightgray'>1st Place: <span className='font-aquireBold text-lightblue'>₹2000</span> voucher per participant</span>
+              <span className='font-aquireBold text-lightgray'>2nd Place: <span className='font-aquireBold text-lightblue'>₹1000</span> voucher per participant</span>
             </div>
+          </div>
+          <div className="flex justify-center self-center w-full font-aquireBold">
+            <Link href={"https://drive.google.com/file/d/1pItom5OeBjk-0-xONRamkA0agr6VlZA4/view?usp=drive_link"} target="_blank" className="flex items-center justify-center lg:text-lg md:text-base text-sm text-whitepink bg-transparent border-2 hover:border-opacity-0 border-lightblue font-semibold hover:text-lightgray hover:bg-galaxyBlue hover:scale-105 duration-500 px-5 py-1 rounded-xl h-[40px] md:w-[400px] w-[300px]">
+              View Schedule
+            </Link>
           </div>
           {/* <div className="hidden lg:block">
             <div className=" lg:grid lg:grid-cols-2 lg:space-y-0  -space-y-28 -mt-16 -mb-20">

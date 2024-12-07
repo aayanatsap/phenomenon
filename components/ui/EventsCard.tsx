@@ -25,7 +25,7 @@ export const EventsCard = ({title, content, rules, banner, key} : {
   return (
     <div className='lg:w-screen lg:h-screen lg:mb-8 mb-16 lg:px-0 px-3 py-10 lg:py-0' key={key}>
       <div className='w-full flex justify-center mb-8'>
-        <span className='text-electricBlue text-4xl md:text-5xl font-bold lg:hidden text-center font-aquireBold'>{title}</span>
+        <span className='text-lightblue text-4xl md:text-5xl font-bold lg:hidden text-center font-aquireBold'>{title}</span>
       </div>
       <div className='flex w-full lg:h-3/5 lg:flex-row flex-col justify-center items-center gap-10 lg:gap-16'>
         <div className='lg:h-[400px] lg:w-[320px] w-[250px] h-[350px] rounded-2xl'>
@@ -35,7 +35,7 @@ export const EventsCard = ({title, content, rules, banner, key} : {
           <span className='text-lightblue text-4xl md:text-4xl font-bold lg:block hidden text-center font-aquireBold'>{title}</span>
           <div className='grid grid-flow-row w-full h-full lg:gap-0 gap-5'>
             <span className=' md:text-3xl text-2xl text-babyblue font-aquire'>{!viewRules ? ("Description") : ("Rules")}</span>
-            <div className='overflow-auto lg:h-[200px] scrollbar-thin scrollbar-track-transparent scrollbar-thumb-electricBlue'>
+            <div className='overflow-auto lg:h-[200px] scrollbar-thin scrollbar-track-transparent scrollbar-thumb-babyblue'>
               <AnimatePresence>
                 {!viewRules ? (
                   <motion.div

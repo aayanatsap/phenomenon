@@ -250,7 +250,7 @@ const cardsData = [
   },
   {
     title : "BOX CRICKET",
-    content : "Cricket is more than just a sport, its a religion. With Raw pace, unpredictable bouncers, toe-crushing yorkers and exhilarating strokes. A game that promises to hit every nerve in the body. Step onto the 22 yard pitch, where the most fiercest players battle for the ultimate prize. Patience, Determination and unwavering commitment are the qualities that set the champions apart. Do you have what it takes to be the next master blaster?", 
+    content : "Cricket is more than just a sport, its a religion. With Raw pace, unpredictable bouncers, toe-crushing yorkers and exhilarating strokes. A game that promises to hit every nerve in the body. Step onto the 22 yard pitch, where the most fierce players battle for the ultimate prize. Patience, Determination and unwavering commitment are the qualities that set the champions apart. Do you have what it takes to be the next master blaster?", 
     rules : [
       "Team Event (5 members per team inclusive of 1 substitute)",  
       "This event is open to students from grades 8th to 1st Year Degree",  
@@ -268,14 +268,14 @@ function Events() {
         <div className="flex justify-center">
           <span className="text-6xl text-babyblue text-center font-bold mb-5 font-aquireBold">OUR EVENTS</span>
         </div>
-        <div className='md:text-xl text-base text-neonPurple flex flex-col items-center px-2 mb-8 font-aquire'>
+        <div className='md:text-xl text-base text-neonPurple flex flex-col items-center px-2 mb-8 font-aquire text-center'>
           <span className='md:text-2xl text-gl font-aquireBold text-lightblue'>PRIZES</span>
           <span className='font-aquireBold text-babyblue'>1st Place: <span className='font-aquireBold text-lightgray'>₹2000</span> voucher per participant</span>
           <span className='font-aquireBold text-babyblue'>2nd Place: <span className='font-aquireBold text-lightgray'>₹1000</span> voucher per participant</span>
         </div>
         <div className="flex w-full justify-center font-aquire"> 
           <div className="grid lg:w-1/4 w-[70%] md:w-3/5 self-center gap-3 mb-24">
-            <Link href={"/"} target="_blank" className="flex items-center justify-center lg:text-lg md:text-base text-sm text-lightblue bg-transparent border-2 hover:border-opacity-0 border-midgray font-semibold hover:text-whitepink hover:bg-galaxyBlue hover:scale-105 duration-500 px-5 py-1 rounded-xl h-[40px]">
+            <Link href={"https://drive.google.com/file/d/1pItom5OeBjk-0-xONRamkA0agr6VlZA4/view?usp=drive_link"} target="_blank" className="flex items-center justify-center lg:text-lg md:text-base text-sm text-lightblue bg-transparent border-2 hover:border-opacity-0 border-midgray font-semibold hover:text-whitepink hover:bg-galaxyBlue hover:scale-105 duration-500 px-5 py-1 rounded-xl h-[40px]">
               View Schedule
             </Link>
           </div>
