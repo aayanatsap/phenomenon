@@ -283,7 +283,7 @@ export function Indiregister() {
         <div  className="grid md:grid-cols-2 md:gap-6 ">
           <div className="relative z-0 w-full mb-6 group">
             <input
-              type="date"
+              type="text"
               name={`${props.member}_date_of_birth`}
               id={`${props.member}_date_of_birth`}
               className="block py-2.5 px-0 w-full text-sm text-gray-500 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer "
@@ -408,54 +408,66 @@ export function Indiregister() {
     });
   };
 
-  const handleSubmit = async (event: {preventDefault: () => void; target: { first_name: { value: string; }; last_name: { value: string; }; institution: { value: any; }; country: { value: any; }; number_muns: { value: any; }; placements: { value: any; }; backupCountry: { value: any; }; email: { value: any; }; phone: { value: any; }; backupCommittee: { value: any; }; committee: { value: any; }; food: { value: any; }; person_two_first_name: { value: string; }; person_two_last_name: { value: string; }; person_two_institution: { value: any; }; person_two_experience: { value: any; }; person_two_placements: { value: any; }; person_two_email: { value: any; }; person_two_phone: { value: any; }; person_two_backupCommittee: { value: any; }; person_two_food: { value: any; }; }; }) => {
-    console.log("On it ");
-
-    // Stop the htmlForm from submitting and refreshing the page.
+  const handleSubmit = async (event: { preventDefault: () => void; target: any }) => {
     event.preventDefault();
-    const data: {
-      name: string;
-      institution: any;
-      country: any;
-      experience: any;
-      placements: any;
-      backupCountry: any;
-      email: any;
-      phoneNumber: any;
-      backupCommittee: any;
-      committee: any;
-      food: any;
-      person_two_name?: string;
-      person_two_institution?: any;
-      person_two_experience?: any;
-      person_two_placements?: any;
-      person_two_email?: any;
-      person_two_phone?: any;
-      person_two_backupCommittee?: any;
-      person_two_food?: any;
-      total: number;
-    } = {
-      name: event.target.first_name.value + " " + event.target.last_name.value,
-      institution: event.target.institution.value,
-      country: event.target.country.value,
-      experience: event.target.number_muns.value,
-      placements: event.target.placements.value,
-      backupCountry: event.target.backupCountry.value,
+  
+    const requiresCategoryDay1 = ["Western_Vocal_Solo", "Pensworthy", "Mr/Ms_Phenomenon"].includes(event.target.events_day1?.value);
+    const requiresCategoryDay2 = ["Western_Dance_Group", "3-A-Side_Basketball"].includes(event.target.events_day2?.value);
+  
+    const data = {
+      name: `${event.target.first_name.value} ${event.target.last_name.value}`,
       email: event.target.email.value,
       phoneNumber: event.target.phone.value,
-      backupCommittee: event.target.backupCommittee.value,
-      committee: event.target.committee.value,
-      food: event.target.food.value,
-      total: 0
+      dateOfBirth: event.target.date_of_birth.value,
+      isChecked: isChecked,
+      day1: {
+        event: event.target.events_day1?.value || "",
+        category: requiresCategoryDay1 ? event.target.category_day1?.value || null : null,
+        members: members1 || 1, // Default to 1 for solo events
+        additionalParticipants: [],
+      },
+      day2: event.target.events_day2?.value
+        ? {
+            event: event.target.events_day2?.value || "",
+            category: requiresCategoryDay2 ? event.target.category_day2?.value || null : null,
+            members: members2 || 1, // Default to 1 for solo events
+            additionalParticipants: [],
+          }
+        : null,
+      total: (members1 || 1) + (members2 || 0),
     };
-    data.total = members;
+  
+    // Dynamically add additional participants for Day 1
+    if (members1 > 1) {
+      for (let i = 2; i <= members1; i++) {
+        data.day1.additionalParticipants.push({
+          name: `${event.target[`participant_day1_${i}_first_name`]?.value || ""} ${
+            event.target[`participant_day1_${i}_last_name`]?.value || ""
+          }`.trim(),
+          email: event.target[`participant_day1_${i}_email`]?.value || "",
+          phoneNumber: event.target[`participant_day1_${i}_phone`]?.value || "",
+          dateOfBirth: event.target[`participant_day1_${i}_date_of_birth`]?.value || "",
+        });
+      }
+    }
+  
+    // Dynamically add additional participants for Day 2
+    if (members2 > 1) {
+      for (let i = 2; i <= members2; i++) {
+        data.day2?.additionalParticipants.push({
+          name: `${event.target[`participant_day2_${i}_first_name`]?.value || ""} ${event.target[`participant_day2_${i}_last_name`]?.value || ""}`,
+          email: event.target[`participant_day2_${i}_email`]?.value || "",
+          phoneNumber: event.target[`participant_day2_${i}_phone`]?.value || "",
+          dateOfBirth: event.target[`participant_day2_${i}_date_of_birth`]?.value || "",
+        });
+      }
+    }
+  
+    console.log("Final Data:", data);
     makePayment(data);
-    console.log(data);
-
-    // Get data from the htmlForm.
-
-    // const result = await response.json();
   };
+  
+  
 
   return (
     <div className="flex flex-col justify-center items-center ">
@@ -524,7 +536,7 @@ export function Indiregister() {
             <div  className="grid md:grid-cols-2 md:gap-6 ">
               <div className="relative z-0 w-full mb-6 group">
                 <input
-                  type="date"
+                  type="text"
                   name="date_of_birth"
                   id="date_of_birth"
                   className="block py-2.5 px-0 w-full text-sm text-gray-500 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer "
