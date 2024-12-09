@@ -1544,25 +1544,20 @@ export const DelegationRegistration = () => {
           <h1 className="text-red-500 font-semibold sm:text-md text-md text-center mt-5">
             {`Only External Delegates are allowed to register through this, Internal won't be refunded`}
           </h1>
-          {selectedEventData.map((event , idx) => (
-            <div className="md:w-[97vw] w-[95vw] grid grid-cols-1 justify-items-center mt-10" key={idx}>
-              {/* <hr className="border-t border-gray-200 w-full z-10"/> */}
-              {event.name ? (
-                <>
-                  {event.category === "" ? (
-                    <span className="text-babyblue font-semibold md:text-5xl text-4xl mt-10 text-center">
-                      {event.name.replace(/_/g, " ")}
-                    </span>
-                  ) : (
-                    <span className="text-babyblue font-semibold md:text-5xl text-4xl mt-10 text-center">
-                      {event.name.replace(/_/g, " ")} ({event.category})
-                    </span>
-                  )}
-                </>
-              ) : (
-                <span className="text-babyblue font-semibold md:text-5xl text-4xl mt-10 text-center">
-                  Unkonwn Event
-                </span>
+          {selectedEventData.map((event, idx) => (
+              <div
+                className="md:w-[97vw] w-[95vw] grid grid-cols-1 justify-items-center mt-10"
+                key={idx}
+              >
+                {event.name ? (
+                  <span className="text-babyblue font-semibold md:text-5xl text-4xl mt-10 text-center">
+                    {event.name.replace(/_/g, " ")} 
+                    {event.category && event.category !== "None" ? ` (${event.category})` : ""}
+                  </span>
+                ) : (
+                  <span className="text-babyblue font-semibold md:text-5xl text-4xl mt-10 text-center">
+                    Unknown Event
+                  </span>
               )}
               <div className="w-[95%]">
                 <Swiper
