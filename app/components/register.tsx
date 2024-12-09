@@ -660,7 +660,7 @@ export function Indiregister() {
               </div>
             </div>
             <div className="grid md:grid-cols-2 md:gap-6 items-center mb-5">
-              <div className="relative z-0 w-full group flex flex-row items-center text-electricBlue gap-2">
+              <div className="relative z-0 w-full group flex flex-row items-center text-babyblue gap-2">
                 <div className="relative inline-block w-11 h-5">
                   <input id="switch-component" type="checkbox" className="peer appearance-none w-11 h-5 bg-slate-500 rounded-full checked:bg-slate-800 cursor-pointer transition-colors duration-300" checked={isChecked} onChange={(e) => setIsChecked(e.target.checked)}/>
                   <span className="absolute top-0 left-0 w-5 h-5 bg-white rounded-full border border-slate-300 shadow-sm transition-transform duration-300 peer-checked:translate-x-6 peer-checked:border-slate-800 cursor-pointer">
@@ -672,7 +672,7 @@ export function Indiregister() {
                 <div
                   onClick={() => setDay2(false)}
                   className={`${
-                    !day2 ? "bg-black text-blue-500" : "text-electricBlue"
+                    !day2 ? "bg-black text-blue-500" : "text-babyblue"
                   } font-semibold py-1 px-4 rounded-2xl text-center cursor-pointer`}
                 >
                   <span className="text-sm text-lightblue">Only Day 1</span>
@@ -681,7 +681,7 @@ export function Indiregister() {
                 <div
                   onClick={() => setDay2(true)}
                   className={`${
-                    day2 ? "bg-black text-blue-500" : "text-electricBlue"
+                    day2 ? "bg-black text-blue-500" : "text-babyblue"
                   } font-semibold py-1 px-4 rounded-2xl text-center cursor-pointer`}
                 >
                   <span className="text-sm text-lightblue">Only Day 2</span>
@@ -810,7 +810,7 @@ export function Indiregister() {
           {members1 > 1 ? (
             <div className="md:w-[97vw] w-[95vw] grid grid-cols-1 justify-items-center mt-10">
               <hr className="border-t border-gray-200 w-full z-10"/>
-              <span className="text-electricBlue font-semibold md:text-5xl text-4xl mt-10">
+              <span className="text-babyblue font-semibold md:text-5xl text-4xl mt-10">
                 DAY 1
               </span>
               <div className="w-[95%]">
@@ -834,7 +834,7 @@ export function Indiregister() {
                     clickable: true
                   } as any}
                   modules={[EffectCoverflow, Pagination, Navigation]}
-                  className='text-electricBlue flex flex-col items-center'
+                  className='text-babyblue flex flex-col items-center'
                 >
                   {Array.from({ length: members1 - 1 }, (_, i) => {
                     let delegateNumber = i + 2;
@@ -850,9 +850,9 @@ export function Indiregister() {
                   
                   <div className='text-galaxyBlue flex w-full justify-center mt-5'>
                     <div className='bg-lightGray !grid !justify-items-center pb-0.5  px-4 rounded-full bg-opacity-30'>
-                      <FaArrowLeft className='swiper-button-prev lg:!size-[50px] md:!size-[40px] !size-[30px] hover:cursor-pointer !text-electricBlue hover:!text-neonPurple duration-500 !font-bold'/>
+                      <FaArrowLeft className='swiper-button-prev lg:!size-[50px] md:!size-[40px] !size-[30px] hover:cursor-pointer !text-babyblue hover:!text-neonPurple duration-500 !font-bold'/>
                       <div className="pagination"></div>
-                      <FaArrowRight className='swiper-button-next lg:!size-[50px] md:!size-[40px] !size-[30px] hover:cursor-pointer !text-electricBlue hover:!text-neonPurple duration-500 !font-bold'/>
+                      <FaArrowRight className='swiper-button-next lg:!size-[50px] md:!size-[40px] !size-[30px] hover:cursor-pointer !text-babyblue hover:!text-neonPurple duration-500 !font-bold'/>
                     </div>
                   </div>
                 </Swiper>
@@ -866,7 +866,7 @@ export function Indiregister() {
           {members2 > 1 ? (
             <div className="md:w-[97vw] w-[95vw] grid grid-cols-1 justify-items-center mt-10">
               <hr className="border-t border-gray-200 w-full z-10"/>
-              <span className="text-electricBlue font-semibold md:text-5xl text-4xl mt-10">
+              <span className="text-babyblue font-semibold md:text-5xl text-4xl mt-10">
                 DAY 2
               </span>
               <div className="w-[95%]">
@@ -890,7 +890,7 @@ export function Indiregister() {
                     clickable: true
                   } as any}
                   modules={[EffectCoverflow, Pagination, Navigation]}
-                  className='text-electricBlue flex flex-col items-center'
+                  className='text-babyblue flex flex-col items-center'
                 >
                   {Array.from({ length: members2 - 1 }, (_, i) => {
                     let delegateNumber = i + 2;
@@ -906,9 +906,9 @@ export function Indiregister() {
                   
                   <div className='text-galaxyBlue flex w-full justify-center mt-5'>
                     <div className='bg-lightGray !grid !justify-items-center pb-0.5  px-4 rounded-full bg-opacity-30'>
-                      <FaArrowLeft className='swiper-button-prev lg:!size-[50px] md:!size-[40px] !size-[30px] hover:cursor-pointer !text-electricBlue hover:!text-neonPurple duration-500 !font-bold'/>
+                      <FaArrowLeft className='swiper-button-prev lg:!size-[50px] md:!size-[40px] !size-[30px] hover:cursor-pointer !text-babyblue hover:!text-neonPurple duration-500 !font-bold'/>
                       <div className="pagination"></div>
-                      <FaArrowRight className='swiper-button-next lg:!size-[50px] md:!size-[40px] !size-[30px] hover:cursor-pointer !text-electricBlue hover:!text-neonPurple duration-500 !font-bold'/>
+                      <FaArrowRight className='swiper-button-next lg:!size-[50px] md:!size-[40px] !size-[30px] hover:cursor-pointer !text-babyblue hover:!text-neonPurple duration-500 !font-bold'/>
                     </div>
                   </div>
                 </Swiper>
@@ -1082,7 +1082,7 @@ export const DelegationRegistration = () => {
       const eventData: any = {
         name: eventTitle,
         members: memberCounts[index] || 0, // Ensure member count exists
-        category: categorySelections[index] || "", // Ensure category exists
+        category: categorySelections[index] || "None", // Ensure category exists
       };
       
       return eventData;
@@ -1150,7 +1150,7 @@ export const DelegationRegistration = () => {
         <div  className="grid md:grid-cols-2 md:gap-6 ">
           <div className="relative z-0 w-full mb-6 group">
             <input
-              type="date"
+              type="text"
               name={`${props.member}_date_of_birth`}
               id={`${props.member}_date_of_birth`}
               className="block py-2.5 px-0 w-full text-sm text-gray-500 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer "
@@ -1187,80 +1187,106 @@ export const DelegationRegistration = () => {
 
   const [currentStatus, changeStatus] = useState("entering");
 
-  const makePayment = async (info: { name?: string; type?: string; total?: number; delegation?: { name: string; country: any; experience: any; placements: any; backupCountry: any; email: any; phoneNumber: any; backupCommittee: any; committee: any; food: any; }[]; order_id?: any; payment_id?: any; razorpay_signature?: any; }) => {
-    console.log("Members: " + members)
-                  console.log("Name: " + delegationDetails)
-
-    changeStatus("loading");
-
+  const logEventData = (eventData) => {
+    console.group("Event Data");
+    eventData.forEach((event, index) => {
+      console.group(`Event #${index + 1}: ${event.name}`);
+      console.log("Category:", event.category || "None");
+      console.log("Number of Members:", event.members);
+  
+      if (event.participants.length > 0) {
+        console.group("Participants");
+        event.participants.forEach((participant, idx) => {
+          console.group(`Participant #${idx + 1}`);
+          console.log("Name:", participant.name);
+          console.log("Email:", participant.email);
+          console.log("Date of Birth:", participant.date_of_birth);
+          console.log("Phone Number:", participant.phoneNumber);
+          console.groupEnd();
+        });
+        console.groupEnd();
+      } else {
+        console.warn("No participants registered for this event.");
+      }
+  
+      console.groupEnd();
+    });
+    console.groupEnd();
+  };
+  
+  const makePayment = async (info) => {
+    console.log("Initiating Payment...");
+  
     const res = await initializeRazorpay();
-
     if (!res) {
-      alert("Razorpay SDK Failed to load");
+      alert("Failed to load Razorpay SDK");
       return;
     }
-    console.log("time to fetch");
-    const delregtype = "delegation";
-    const data = await fetch("https://mun-backend.vercel.app/indipay", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-
-      },
-       body: JSON.stringify({ total: members, registrationType: "delegation" }) // or "delegation"
-    }).then((t) => t.json());
-
-    var options = {
-      key: process.env.RAZORPAY_KEY,
-      name: `St Joseph's Boys' Highschool`,
-      currency: data.currency,
-      amount: data.amount,
-      order_id: data.id,
-      description: "SJBHS MUN",
-      image: { logo },
-      handler: async function (response: { razorpay_order_id: any; razorpay_payment_id: any; razorpay_signature: any; }) {
-        info.order_id = response.razorpay_order_id;
-        info.payment_id = response.razorpay_payment_id;
-        info.razorpay_signature = response.razorpay_signature;
-
-        const JSONdata = JSON.stringify(info);
-        console.log("This is the final info we got  "+ JSONdata)
-
-        // API endpoint where we send htmlForm data.
-        const endpoint = "https://mun-backend.vercel.app/delegation ";
-
-        const options = {
-          method: "POST",
-
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSONdata,
-        };
-
-        // Send the htmlForm data to our htmlForms API on Vercel and get a response.
-        const result = await (await fetch(endpoint, options)).json();
-        if (result.result === "success") {
-          changeStatus("done");
-          console.log(ids);
-          putIds(result.ids);
-        } else {
-          changeStatus("error");
-        }
-      },
-      prefill: {
-        name: "",
-        email: "   ",
-        contact: " ",
-      },
-      theme: {
-        color: "#000000",
-      },
-    };
-
-    const paymentObject = new window.Razorpay(options);
-    paymentObject.open();
+  
+    try {
+      // Use the correct total participants here
+      const response = await fetch("https://mun-backend.vercel.app/indipay", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ 
+          total: info.totalParticipants, // Pass totalParticipants instead of members
+          registrationType: "delegation" 
+        }),
+      });
+  
+      const data = await response.json();
+  
+      const paymentOptions = {
+        key: process.env.RAZORPAY_KEY,
+        name: `St Joseph's Boys' Highschool`,
+        description: "SJBHS MUN",
+        image: { logo },
+        order_id: data.id,
+        amount: data.amount,
+        currency: data.currency,
+        handler: async (response) => {
+          info.order_id = response.razorpay_order_id;
+          info.payment_id = response.razorpay_payment_id;
+          info.razorpay_signature = response.razorpay_signature;
+  
+          console.log("Payment Successful:", response);
+  
+          const backendResponse = await fetch(
+            "https://mun-backend.vercel.app/delegation",
+            {
+              method: "POST",
+              headers: { "Content-Type": "application/json" },
+              body: JSON.stringify(info),
+            }
+          ).then((res) => res.json());
+  
+          if (backendResponse.result === "success") {
+            console.log("Backend Response:", backendResponse);
+            changeStatus("done");
+            putIds(backendResponse.ids);
+          } else {
+            console.error("Error from Backend:", backendResponse);
+            changeStatus("error");
+          }
+        },
+        prefill: {
+          name: "",
+          email: "",
+          contact: "",
+        },
+        theme: { color: "#000000" },
+      };
+  
+      const paymentObject = new window.Razorpay(paymentOptions);
+      paymentObject.open();
+    } catch (err) {
+      console.error("Payment Error:", err);
+      changeStatus("error");
+    }
   };
+  
+  
+  
   const initializeRazorpay = () => {
     return new Promise((resolve) => {
       const script = document.createElement("script");
@@ -1277,62 +1303,55 @@ export const DelegationRegistration = () => {
       document.body.appendChild(script);
     });
   };
-  const handleSubmit = async (event: { preventDefault: () => void; target: { [x: string]: { value: any; }; head_delegate_first_name: { value: string; }; head_delegate_last_name: { value: string; }; head_delegate_country: { value: any; }; head_delegate_number_muns: { value: any; }; head_delegate_placements: { value: any; }; head_delegate_backupCountry: { value: any; }; head_delegate_email: { value: any; }; head_delegate_phone: { value: any; }; head_delegate_backupCommittee: { value: any; }; head_delegate_committee: { value: any; }; head_delegate_food: { value: any; }; }; }) => {
-    console.log("On it ");
-
-    // Stop the htmlForm from submitting and refreshing the page.
+  const handleSubmit = async (event) => {
     event.preventDefault();
-
-    // Get data from the htmlForm.
-    let delegation = [
-      {
-        name:
-          event.target.head_delegate_first_name.value +
-          " " +
-          event.target.head_delegate_last_name.value,
-        country: event.target.head_delegate_country.value,
-        experience: event.target.head_delegate_number_muns.value,
-        placements: event.target.head_delegate_placements.value,
-        backupCountry: event.target.head_delegate_backupCountry.value,
-        email: event.target.head_delegate_email.value,
-        phoneNumber: event.target.head_delegate_phone.value,
-        backupCommittee: event.target.head_delegate_backupCommittee.value,
-        committee: event.target.head_delegate_committee.value,
-        food: event.target.head_delegate_food.value,
-      },
-    ];
-    for (let i = 2; i <= members; i++) {
-      delegation.push({
-        name:
-          event.target[`delegate_${i}_first_name`].value +
-          " " +
-          event.target[`delegate_${i}_last_name`].value,
-        country: event.target[`delegate_${i}_country`].value,
-        experience: event.target[`delegate_${i}_number_muns`].value,
-        placements: event.target[`delegate_${i}_placements`].value,
-        backupCountry: event.target[`delegate_${i}_backupCountry`].value,
-        email: event.target[`delegate_${i}_email`].value,
-        phoneNumber: event.target[`delegate_${i}_phone`].value,
-        backupCommittee: event.target[`delegate_${i}_backupCommittee`].value,
-        committee: event.target[`delegate_${i}_committee`].value,
-        food: event.target[`delegate_${i}_food`].value,
-      });
-    }
-    const data = {
-      
-      name: delegationDetails[0],
-      type: delegationDetails[1],
-      total: members,
-      delegation: delegation,
-    };
-    console.log("This is the data we are sending to the function, with the name: data" +JSON.stringify(data))
-    makePayment(data);
+  
+    let totalParticipants = 0; // Initialize total participants
+  
+    const eventDataWithParticipants = eventSelections.map((eventTitle, index) => {
+      const eventObject = {
+        name: eventTitle,
+        members: memberCounts[index] || 0,
+        category: categorySelections[index] || "None",
+        participants: [],
+      };
+  
+      for (let i = 0; i < eventObject.members; i++) {
+        const firstName = event.target[`participant_${eventTitle.replace(/ /g, "_")}_${i + 1}_first_name`]?.value;
+        const lastName = event.target[`participant_${eventTitle.replace(/ /g, "_")}_${i + 1}_last_name`]?.value;
+        const email = event.target[`participant_${eventTitle.replace(/ /g, "_")}_${i + 1}_email`]?.value;
+        const dob = event.target[`participant_${eventTitle.replace(/ /g, "_")}_${i + 1}_date_of_birth`]?.value;
+        const phone = event.target[`participant_${eventTitle.replace(/ /g, "_")}_${i + 1}_phone`]?.value;
+  
+        if (firstName && lastName && email && dob && phone) {
+          eventObject.participants.push({
+            name: `${firstName} ${lastName}`,
+            email,
+            date_of_birth: dob,
+            phoneNumber: phone,
+          });
+        }
+      }
+  
+      // Update total participants based on the actual number of participants
+      totalParticipants += eventObject.participants.length;
+  
+      return eventObject;
+    });
+  
+    console.log("Event Data with Participants:", eventDataWithParticipants);
+    console.log("Total Participants:", totalParticipants);
+  
+    // Pass the correct total participants to the backend
+    makePayment({ events: eventDataWithParticipants, totalParticipants });
   };
+  
+  
   const [delegationDetails, changeDetails] = useState(["", "test"]);
   return (
     
     <div className="mt-10 mb-44">
-      {members < 10 ? (
+      {members < 2 ? (
         <>
           <h1 className="md:text-6xl text-4xl text-white text-center font-bold mun-gradient">
             INSTITUTIONAL INFORMATION
@@ -1380,7 +1399,7 @@ export const DelegationRegistration = () => {
                       id="total_members"
                       className="bg-gray-50 border border-gray-300 text-gray-500 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
                       placeholder="0"
-                      min="10"
+                      min="2"
                       required
                       onChange={(e) => {
                         setEventno(parseInt(e.target.value))
@@ -1443,7 +1462,7 @@ export const DelegationRegistration = () => {
                               ?.max}
                             value={memberCounts[index] || ""}
                             onChange={(e) =>
-                              handleMemberCountChange(index, parseInt(e.target.value, 10))
+                              handleMemberCountChange(index, parseInt(e.target.value, 2))
                             }
                           />
                         </div>
@@ -1466,11 +1485,13 @@ export const DelegationRegistration = () => {
                           >
                             {eventSelections[index] === "3-A-Side_Basketball" ? (
                               <>
+                                <option value="null">---</option>
                                 <option value="Female">Female</option>
                                 <option value="Male">Male</option>
                               </>
                             ) : (
                               <>
+                                <option value="null">---</option>
                                 <option value="Junior">Junior(8th to 10th)</option>
                                 <option value="Senior">Senior(11th to 1st year degree)</option>
                               </>
@@ -1500,7 +1521,7 @@ export const DelegationRegistration = () => {
             INSTITUTIONAL REGISTRATION
           </h1>
           <h1 className="text-red-500 font-semibold sm:text-md text-md text-center mt-5">
-            {`Only Internal Delegates are allowed to register through this, external delegates won't be refunded`}
+            {`Only External Delegates are allowed to register through this, Internal won't be refunded`}
           </h1>
           {selectedEventData.map((event , idx) => (
             <div className="md:w-[97vw] w-[95vw] grid grid-cols-1 justify-items-center mt-10" key={idx}>
@@ -1508,17 +1529,17 @@ export const DelegationRegistration = () => {
               {event.name ? (
                 <>
                   {event.category === "" ? (
-                    <span className="text-electricBlue font-semibold md:text-5xl text-4xl mt-10 text-center">
+                    <span className="text-babyblue font-semibold md:text-5xl text-4xl mt-10 text-center">
                       {event.name.replace(/_/g, " ")}
                     </span>
                   ) : (
-                    <span className="text-electricBlue font-semibold md:text-5xl text-4xl mt-10 text-center">
+                    <span className="text-babyblue font-semibold md:text-5xl text-4xl mt-10 text-center">
                       {event.name.replace(/_/g, " ")} ({event.category})
                     </span>
                   )}
                 </>
               ) : (
-                <span className="text-electricBlue font-semibold md:text-5xl text-4xl mt-10 text-center">
+                <span className="text-babyblue font-semibold md:text-5xl text-4xl mt-10 text-center">
                   Unkonwn Event
                 </span>
               )}
@@ -1543,27 +1564,28 @@ export const DelegationRegistration = () => {
                     clickable: true
                   } as any}
                   modules={[EffectCoverflow, Pagination, Navigation]}
-                  className='text-electricBlue flex flex-col items-center'
+                  className='text-babyblue flex flex-col items-center'
                 >
                   
                     {Array.from({ length: event.members }, (_, i) => {
-                      let delegateNumber = i + 1;
-                      return (
-                        <SwiperSlide className="!flex !max-w-lg justify-center" key={i}>
-                          <Template
-                            name={`Participant ${delegateNumber}`}
-                            member={`participant_${delegateNumber}`}
-                            key={i}
-                          />
-                        </SwiperSlide>
-                      );
-                    })}
+  let delegateNumber = i + 1;
+  return (
+    <SwiperSlide className="!flex !max-w-lg justify-center" key={i}>
+      <Template
+        name={`Participant ${delegateNumber}`}
+        member={`participant_${event.name.replace(/ /g, "_")}_${delegateNumber}`}
+        key={i}
+      />
+    </SwiperSlide>
+  );
+})}
+
                   
                   <div className='text-galaxyBlue flex w-full justify-center mt-5'>
                     <div className='bg-lightGray !grid !justify-items-center pb-0.5  px-4 rounded-full bg-opacity-30'>
-                      <FaArrowLeft className='swiper-button-prev lg:!size-[50px] md:!size-[40px] !size-[30px] hover:cursor-pointer !text-electricBlue hover:!text-neonPurple duration-500 !font-bold'/>
+                      <FaArrowLeft className='swiper-button-prev lg:!size-[50px] md:!size-[40px] !size-[30px] hover:cursor-pointer !text-babyblue hover:!text-neonPurple duration-500 !font-bold'/>
                       <div className="pagination"></div>
-                      <FaArrowRight className='swiper-button-next lg:!size-[50px] md:!size-[40px] !size-[30px] hover:cursor-pointer !text-electricBlue hover:!text-neonPurple duration-500 !font-bold'/>
+                      <FaArrowRight className='swiper-button-next lg:!size-[50px] md:!size-[40px] !size-[30px] hover:cursor-pointer !text-babyblue hover:!text-neonPurple duration-500 !font-bold'/>
                     </div>
                   </div>
                 </Swiper>
@@ -1575,13 +1597,15 @@ export const DelegationRegistration = () => {
             className="px-4 py-3 bg-blue-600 hover:bg-blue-700 w-[50vw] sm:w-80 m-10 rounded-md text-white outline-none  shadow-lg transhtmlForm align-left active:scale-90 transition-transhtmlForm "
             disabled={currentStatus === "done" ? true : false}
           >
+            
             {currentStatus === "entering"
               ? "PAY"
               : currentStatus === "loading"
               ? "Loading"
               : currentStatus === "done"
               ? "Success"
-              : "Error"}
+              : "Error"
+              }
           </button>
         </form>
       )}
