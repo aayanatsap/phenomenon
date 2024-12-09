@@ -956,6 +956,8 @@ export function Indiregister() {
 } 
 
 export const DelegationRegistration = () => {
+  const [institutionName, setInstitutionName] = useState("");
+  const [totalEvents, setTotalEvents] = useState(0);
   const [members, changeMembers] = useState(0);
   const [ids, putIds] = useState([]);
   const [eventno, setEventno] = useState(0);
@@ -1308,8 +1310,9 @@ export const DelegationRegistration = () => {
   
     let totalParticipants = 0; // Initialize total participants
   
-    const eventDataWithParticipants = eventSelections.map((eventTitle, index) => {
+    const eventDataWithParticipants = (eventSelections || []).map((eventTitle, index) => {
       const eventObject = {
+        institutionName, // Use the state value
         name: eventTitle,
         members: memberCounts[index] || 0,
         category: categorySelections[index] || "None",
@@ -1317,11 +1320,11 @@ export const DelegationRegistration = () => {
       };
   
       for (let i = 0; i < eventObject.members; i++) {
-        const firstName = event.target[`participant_${eventTitle.replace(/ /g, "_")}_${i + 1}_first_name`]?.value;
-        const lastName = event.target[`participant_${eventTitle.replace(/ /g, "_")}_${i + 1}_last_name`]?.value;
-        const email = event.target[`participant_${eventTitle.replace(/ /g, "_")}_${i + 1}_email`]?.value;
-        const dob = event.target[`participant_${eventTitle.replace(/ /g, "_")}_${i + 1}_date_of_birth`]?.value;
-        const phone = event.target[`participant_${eventTitle.replace(/ /g, "_")}_${i + 1}_phone`]?.value;
+        const firstName = event.target[`participant_${eventTitle.replace(/ /g, "_")}_${i + 1}_first_name`]?.value || "";
+        const lastName = event.target[`participant_${eventTitle.replace(/ /g, "_")}_${i + 1}_last_name`]?.value || "";
+        const email = event.target[`participant_${eventTitle.replace(/ /g, "_")}_${i + 1}_email`]?.value || "";
+        const dob = event.target[`participant_${eventTitle.replace(/ /g, "_")}_${i + 1}_date_of_birth`]?.value || "";
+        const phone = event.target[`participant_${eventTitle.replace(/ /g, "_")}_${i + 1}_phone`]?.value || "";
   
         if (firstName && lastName && email && dob && phone) {
           eventObject.participants.push({
@@ -1333,21 +1336,26 @@ export const DelegationRegistration = () => {
         }
       }
   
-      // Update total participants based on the actual number of participants
       totalParticipants += eventObject.participants.length;
   
       return eventObject;
     });
   
+    console.log("Institution Name:", institutionName); // Logs the correct institution name
     console.log("Event Data with Participants:", eventDataWithParticipants);
     console.log("Total Participants:", totalParticipants);
   
-    // Pass the correct total participants to the backend
-    makePayment({ events: eventDataWithParticipants, totalParticipants });
+    // Pass data to makePayment
+    makePayment({
+      institutionName,
+      events: eventDataWithParticipants,
+      totalParticipants,
+    });
   };
   
   
-  const [delegationDetails, changeDetails] = useState(["", "test"]);
+  
+  
   return (
     
     <div className="mt-10 mb-44">
@@ -1359,16 +1367,25 @@ export const DelegationRegistration = () => {
           <section className="">
             <div className="py-8 px-4 mx-auto max-w-2xl lg:py-16">
               <form
-                onSubmit={(e) => {
-                  e.preventDefault();
-                  console.log("Name: "+ (e.target as HTMLInputElement).name.valueOf)
-                 
-                  // changeDetails([(e.target as HTMLInputElement).name.value, (e.target as HTMLInputElement).days.value]);
-                  
-                  changeMembers((e.target as HTMLFormElement).total_members.value);
-                  
-                }}
-              > 
+                  onSubmit={(e) => {
+                    e.preventDefault();
+
+                    const institution = (e.target as HTMLFormElement).institution.value;
+                    const eventsCount = parseInt((e.target as HTMLFormElement).total_members.value, 10);
+
+                    // Update state with the institution name and total events
+                    setInstitutionName(institution);
+                    setTotalEvents(eventsCount);
+
+                    // Debug logs
+                    console.log("Institution Name:", institution);
+                    console.log("Total Events:", eventsCount);
+
+                    // Update members count or handle further logic
+                    changeMembers(eventsCount);
+                  }}
+                >
+
                 <div className="grid gap-4 grid-cols-2  sm:gap-6">
                   <div className="col-span-2">
                     <label
@@ -1379,19 +1396,23 @@ export const DelegationRegistration = () => {
                     </label>
                     <input
                       type="text"
-                      name="name"
-                      id="name"
+                      name="institution"
+                      id="institution"
                       className="bg-gray-50 border border-gray-300 text-gray-500 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
-                      placeholder="Name"
+                      placeholder="Institution Name"
                       required
+                      value={institutionName} // Bind the input value to state
+                      onChange={(e) => setInstitutionName(e.target.value)} // Update state on change
                     />
+
+
                   </div>
                   <div className="col-span-2">
                     <label
                       htmlFor="item-weight"
                       className="block mb-2 text-sm font-medium text-gray-500 dark:text-white"
                     >
-                      TOTAL DELEGATES
+                      TOTAL EVENTS
                     </label>
                     <input
                       type="number"
