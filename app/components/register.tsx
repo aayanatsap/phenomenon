@@ -1393,7 +1393,7 @@ export const DelegationRegistration = () => {
   return (
     
     <div className="mt-10 mb-44">
-      {members < 2 ? (
+      {members < 6 ? (
         <>
           <h1 className="md:text-6xl text-4xl text-white text-center font-bold mun-gradient">
             INSTITUTIONAL INFORMATION

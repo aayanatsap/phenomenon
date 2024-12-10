@@ -45,8 +45,9 @@ export default function page() {
             </Link>
           </div>
           <div className="hidden lg:block">
-            <div className=" lg:grid lg:grid-cols-1 lg:space-y-0  -space-y-28 -mt-16 -mb-20">
+            <div className=" lg:grid lg:grid-cols-2 lg:space-y-0  -space-y-28 -mt-16 -mb-20">
             <Individual/>
+            <Institutional/>
             </div>
           </div>
           <div className=" lg:hidden grid grid-flow-row justify-items-center gap-24 mb-14">
