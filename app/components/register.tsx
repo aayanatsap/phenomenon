@@ -127,16 +127,14 @@ export function Indiregister() {
     let i = 0 
     let j = 0
     let flag = false
-    if(event2 === "Western_Vocal_Solo" || event2 === "Pensworthy"){
-      setShowcat2(true);
-    }else{
-      setShowcat2(false)
-    }
-    if(event2 === "3-A-Side_Basketball"){
-      setbasket(true)
+    if(event2 === "Western_Vocal_Solo" || event2 === "3-A-Side_Basketball"){
       setShowcat2(true)
+      if(event2 === "3-A-Side_Basketball"){
+        setbasket(true)
+      }else{
+        setbasket(false)
+      }
     }else{
-      setbasket(false)
       setShowcat2(false)
     }
     for(i ; i<eventsConst.length; i++){
@@ -170,7 +168,7 @@ export function Indiregister() {
     let i = 0 
     let j = 0
     let flag = false
-    if(event1 === "Western_Vocal_Solo" || event1 === "Pensworthy"){
+    if(event1 === "Pensworthy"){
       setShowcat1(true);
     }else{
       setShowcat1(false)
@@ -178,7 +176,6 @@ export function Indiregister() {
     for(i ; i<eventsConst.length; i++){
       if(event1 === eventsConst[i].title){
         setMembers1(eventsConst[i].members)
-        console.log(eventsConst[i].title)
         flag = true
         break
       }
@@ -787,6 +784,7 @@ export function Indiregister() {
                       className="  mt-3 text-sm rounded-lg focus:ring-blue-500  block w-full p-2.5 bg-gray-700 border-gray-600 placeholder-gray-400 text-white md:mb-0 mb-5"
                       onChange={(e) => {e.target.value}}
                     >
+                      <option value="null">-----</option>
                       <option value="Female">Female</option>
                       <option value="Male">Male</option>
                     </select>
@@ -797,6 +795,7 @@ export function Indiregister() {
                       className="  mt-3 text-sm rounded-lg focus:ring-blue-500  block w-full p-2.5 bg-gray-700 border-gray-600 placeholder-gray-400 text-white md:mb-0 mb-5"
                       onChange={(e) => {e.target.value}}
                     >
+                      <option value="null">-----</option>
                       <option value="Junior">Junior(8th to 10th)</option>
                       <option value="Senior">Senior(11th to 1st year degree)</option>
                     </select>
