@@ -1216,58 +1216,86 @@ export const DelegationRegistration = () => {
     console.groupEnd();
   };
   
-  const makePayment = async (info) => {
-    console.log("Initiating Payment...");
+  const makePayment = async (paymentData) => {
+    changeStatus("loading");
   
     const res = await initializeRazorpay();
     if (!res) {
-      alert("Failed to load Razorpay SDK");
+      alert("Razorpay SDK Failed to load");
+      changeStatus("error");
       return;
     }
   
+    console.log("Fetching payment details...");
+  
     try {
-      // Use the correct total participants here
       const response = await fetch("https://mun-backend.vercel.app/indipay", {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ 
-          total: info.totalParticipants, // Pass totalParticipants instead of members
-          registrationType: "delegation" 
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          total: paymentData.totalParticipants, // Use totalParticipants from the structured object
         }),
       });
   
+      if (!response.ok) {
+        const errorDetails = await response.text();
+        console.error("Error from /indipay:", errorDetails);
+        alert(`Error from /indipay: ${errorDetails}`);
+        changeStatus("error");
+        return;
+      }
+  
       const data = await response.json();
+      console.log("Payment details:", data);
   
       const paymentOptions = {
         key: process.env.RAZORPAY_KEY,
         name: `St Joseph's Boys' Highschool`,
+        currency: data.currency,
+        amount: data.amount,
+        order_id: data.id,
         description: "SJBHS MUN",
         image: { logo },
-        order_id: data.id,
-        amount: data.amount,
-        currency: data.currency,
-        handler: async (response) => {
-          info.order_id = response.razorpay_order_id;
-          info.payment_id = response.razorpay_payment_id;
-          info.razorpay_signature = response.razorpay_signature;
+        handler: async function (response) {
+          paymentData.order_id = response.razorpay_order_id;
+          paymentData.payment_id = response.razorpay_payment_id;
+          paymentData.razorpay_signature = response.razorpay_signature;
   
-          console.log("Payment Successful:", response);
+          const endpoint = "https://mun-backend.vercel.app/delegation";
   
-          const backendResponse = await fetch(
-            "https://mun-backend.vercel.app/delegation",
-            {
+          try {
+            const backendResponse = await fetch(endpoint, {
               method: "POST",
-              headers: { "Content-Type": "application/json" },
-              body: JSON.stringify(info),
-            }
-          ).then((res) => res.json());
+              headers: {
+                "Content-Type": "application/json",
+              },
+              body: JSON.stringify(paymentData),
+            });
   
-          if (backendResponse.result === "success") {
-            console.log("Backend Response:", backendResponse);
-            changeStatus("done");
-            putIds(backendResponse.ids);
-          } else {
-            console.error("Error from Backend:", backendResponse);
+            if (!backendResponse.ok) {
+              const errorDetails = await backendResponse.text();
+              console.error("Error from /institutional:", errorDetails);
+              alert(`Error from /institutional: ${errorDetails}`);
+              changeStatus("error");
+              return;
+            }
+  
+            const result = await backendResponse.json();
+            console.log("Backend Response:", result);
+  
+            if (result.result === "success") {
+              putIds(result.ids);
+              changeStatus("done");
+              alert("Registration successful!");
+            } else {
+              console.error("Unexpected Backend Response:", result);
+              changeStatus("error");
+            }
+          } catch (err) {
+            console.error("Error in backend request:", err.message);
+            alert(`Error: ${err.message}`);
             changeStatus("error");
           }
         },
@@ -1276,13 +1304,16 @@ export const DelegationRegistration = () => {
           email: "",
           contact: "",
         },
-        theme: { color: "#000000" },
+        theme: {
+          color: "#000000",
+        },
       };
   
       const paymentObject = new window.Razorpay(paymentOptions);
       paymentObject.open();
     } catch (err) {
-      console.error("Payment Error:", err);
+      console.error("Error in makePayment:", err.message);
+      alert(`Error: ${err.message}`);
       changeStatus("error");
     }
   };
@@ -1305,14 +1336,14 @@ export const DelegationRegistration = () => {
       document.body.appendChild(script);
     });
   };
+  
   const handleSubmit = async (event) => {
     event.preventDefault();
   
     let totalParticipants = 0; // Initialize total participants
   
-    const eventDataWithParticipants = (eventSelections || []).map((eventTitle, index) => {
+    const events = (eventSelections || []).map((eventTitle, index) => {
       const eventObject = {
-        institutionName, // Use the state value
         name: eventTitle,
         members: memberCounts[index] || 0,
         category: categorySelections[index] || "None",
@@ -1320,18 +1351,24 @@ export const DelegationRegistration = () => {
       };
   
       for (let i = 0; i < eventObject.members; i++) {
-        const firstName = event.target[`participant_${eventTitle.replace(/ /g, "_")}_${i + 1}_first_name`]?.value || "";
-        const lastName = event.target[`participant_${eventTitle.replace(/ /g, "_")}_${i + 1}_last_name`]?.value || "";
-        const email = event.target[`participant_${eventTitle.replace(/ /g, "_")}_${i + 1}_email`]?.value || "";
-        const dob = event.target[`participant_${eventTitle.replace(/ /g, "_")}_${i + 1}_date_of_birth`]?.value || "";
-        const phone = event.target[`participant_${eventTitle.replace(/ /g, "_")}_${i + 1}_phone`]?.value || "";
+        const firstName =
+          event.target[`participant_${eventTitle.replace(/ /g, "_")}_${i + 1}_first_name`]?.value || "";
+        const lastName =
+          event.target[`participant_${eventTitle.replace(/ /g, "_")}_${i + 1}_last_name`]?.value || "";
+        const email =
+          event.target[`participant_${eventTitle.replace(/ /g, "_")}_${i + 1}_email`]?.value || "";
+        const dob =
+          event.target[`participant_${eventTitle.replace(/ /g, "_")}_${i + 1}_date_of_birth`]?.value ||
+          "";
+        const phone =
+          event.target[`participant_${eventTitle.replace(/ /g, "_")}_${i + 1}_phone`]?.value || "";
   
         if (firstName && lastName && email && dob && phone) {
           eventObject.participants.push({
-            name: `${firstName} ${lastName}`,
+            name: `${firstName} ${lastName}`.trim(),
             email,
-            date_of_birth: dob,
             phoneNumber: phone,
+            dateOfBirth: dob,
           });
         }
       }
@@ -1341,19 +1378,17 @@ export const DelegationRegistration = () => {
       return eventObject;
     });
   
-    console.log("Institution Name:", institutionName); // Logs the correct institution name
-    console.log("Event Data with Participants:", eventDataWithParticipants);
-    console.log("Total Participants:", totalParticipants);
+    const paymentData = {
+      institutionName, // Institution name (from state)
+      totalParticipants, // Total participants across all events
+      events, // List of events and their participant data
+    };
   
-    // Pass data to makePayment
-    makePayment({
-      institutionName,
-      events: eventDataWithParticipants,
-      totalParticipants,
-    });
+    console.log("Payment Data:", paymentData);
+  
+    // Pass the single object to makePayment
+    makePayment(paymentData);
   };
-  
-  
   
   
   return (
