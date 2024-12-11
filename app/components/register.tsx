@@ -1572,7 +1572,7 @@ export const DelegationRegistration = () => {
           className="flex flex-col justify-center items-center mt-10 mb-52"
           onSubmit={handleSubmit}
         >
-          <h1 className="md:text-6xl text-4xl text-white text-center">
+          <h1 className="md:text-6xl text-4xl text-white text-center font-bold">
             INSTITUTIONAL REGISTRATION
           </h1>
           <h1 className="text-red-500 font-semibold sm:text-md text-md text-center mt-5">
@@ -1584,7 +1584,7 @@ export const DelegationRegistration = () => {
                 key={idx}
               >
                 {event.name ? (
-                  <span className="text-babyblue font-semibold md:text-5xl text-4xl mt-10 text-center">
+                  <span className="text-babyblue font-bold md:text-5xl text-4xl mt-10 text-center">
                     {event.name.replace(/_/g, " ")} 
                     {event.category && event.category !== "None" ? ` (${event.category})` : ""}
                   </span>
@@ -1622,7 +1622,7 @@ export const DelegationRegistration = () => {
   return (
     <SwiperSlide className="!flex !max-w-lg justify-center" key={i}>
       <Template
-        name={`Participant ${delegateNumber}`}
+        name={`PARTICIPANT ${delegateNumber}`}
         member={`participant_${event.name.replace(/ /g, "_")}_${delegateNumber}`}
         key={i}
       />
@@ -1669,7 +1669,7 @@ export const DelegationRegistration = () => {
           </p>
 
           <p className="mb-3 text-xl text-white">
-            {`Take a screen shot of your UUID so you not don't forget`}
+            {`Take a screenshot of your UID to present at registration`}
           </p>
           <ul className="list-none mt-14 text-lg">
             {ids.map((person) => (
