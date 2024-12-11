@@ -1559,7 +1559,7 @@ export const DelegationRegistration = () => {
                 </div>
                 <button
                   type="submit"
-                  className="inline-flex items-center px-5 py-2.5 mt-4 sm:mt-6 text-sm font-medium text-center bg-amber-600 text-white bg-primary-700 rounded-lg focus:ring-4 focus:ring-primary-200 dark:focus:ring-primary-900 hover:bg-primary-800"
+                  className="inline-flex items-center px-5 py-2.5 mt-4 sm:mt-6 text-sm font-bold bg-lightblue text-center text-whitepink font-aquire rounded-2xl hover:scale-105 hover:text-darkGalaxy hover:bg-babyblue duration-500 focus:ring-4 focus:ring-primary-200 dark:focus:ring-primary-900 hover:bg-primary-800"
                 >
                   Register
                 </button>
