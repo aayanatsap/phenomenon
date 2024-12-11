@@ -50,7 +50,7 @@ export function Footer() {
       <div className="flex flex-col w-full md:text-sm text-xs font-trench">
         <span className="text-center text-lightblue font-bold font-aquire">Website developed by</span>
         <p className="text-center text-white font-aquire">
-          <span className='text-center text-whitepink font-semibold'><a href=" https://www.linkedin.com/in/roshan-pramod-0b7806322/" target="__blank" className=""><span className="hover:text-midgray duration-500 font-bold">T Roshan Pramod</span></a></span> || <span className='text-center text-whitepink font-semibold'><a href="https://www.linkedin.com/in/paradoxical-media-bb93a2341" target="__blank" className=""><span className="hover:text-midgray duration-500 font-bold">Paradoxical Media</span></a></span>
+          <span className='text-center text-whitepink font-semibold'><a href=" https://www.linkedin.com/in/roshan-pramod-0b7806322/" target="__blank" className=""><span className="hover:text-midgray duration-500 font-bold">T Roshan Pramod</span></a></span> || <span className='text-center text-whitepink font-semibold'><a href="https://www.linkedin.com/company/paradoxicalmedia/" target="__blank" className=""><span className="hover:text-midgray duration-500 font-bold">Paradoxical Media</span></a></span>
         </p>
       </div>
     </footer>

@@ -1255,7 +1255,7 @@ export const DelegationRegistration = () => {
         currency: data.currency,
         amount: data.amount,
         order_id: data.id,
-        description: "SJBHS MUN",
+        description: "Phenomenon 2024",
         image: { logo },
         handler: async function (response) {
           paymentData.order_id = response.razorpay_order_id;
@@ -1674,7 +1674,7 @@ export const DelegationRegistration = () => {
           <ul className="list-none mt-14 text-lg">
             {ids.map((person) => (
               <li className="text-white" key={person}>
-                {person[0]} : PHENOMENON{person[1]}
+                {person[0]} : PMN{person[1]}
               </li>
             ))}
           </ul>
