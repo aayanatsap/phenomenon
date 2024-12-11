@@ -537,7 +537,7 @@ export function Indiregister() {
       <h1 className="text-whitepink font-bold sm:text-5xl text-4xl  text-center font-aquireBold">
         INDIVIDUAL REGISTRATION
       </h1>
-      <h1 className="text-lightblue font-semibold sm:text-md text-md text-center mt-5">
+      <h1 className="text-lightblue font-trench font-semibold md:text-xl text-center mt-5">
         {`Only Individual Delegates are allowed to register through this.`}
       </h1>
       <form
