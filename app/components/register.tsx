@@ -227,8 +227,8 @@ export function Indiregister() {
     member: string; 
   }) => {
     return (
-      <div className="flex flex-col justify-center items-center mt-11 shadow-lg my-10">
-        <h1 className="text-white md:text-5xl text-3xl text-center">{props.name}</h1>
+      <div className="flex flex-col justify-center items-center mt-11 shadow-lg my-10 font-trench font-bold">
+        <h1 className="text-whitepink font-aquire md:text-5xl text-3xl text-center font-normal mb-5">{props.name}</h1>
         {/* register htmlForm */}
         <div className="grid md:grid-cols-2 md:gap-6 w-full">
           <div className="relative z-0 w-full mb-6 group">
@@ -236,14 +236,14 @@ export function Indiregister() {
               type="text"
               name={`${props.member}_first_name`}
               id={`${props.member}_first_name`}
-              className="block py-2.5 px-0 w-full text-sm text-lightblue bg-transparent border-0 border-b-2 border-gray-300 appearance-none 
-              dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+              className="block py-2.5 px-0 w-full text-sm text-lightblue bg-transparent border-0 border-b-2 border-whitepink appearance-none 
+              dark:text-white dark:border-midgray dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
               placeholder=" "
               required
             />
             <label
               htmlFor={`${props.member}_first_name`}
-              className="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform 
+              className="peer-focus:font-medium absolute text-base font-bold text-whitepink dark:text-gray-400 duration-300 transform 
               -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 
               peer-focus:text-blue-600 peer-focus:dark:text-blue-500 
               peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 
@@ -258,14 +258,14 @@ export function Indiregister() {
               name={`${props.member}_last_name`}
               id={`${props.member}_last_name`}
               className="block py-2.5 px-0 w-full text-sm text-lightblue bg-transparent border-0 border-b-2 
-              border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 
+              border-whitepink appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 
               focus:outline-none focus:ring-0 focus:border-blue-600 peer"
               placeholder=" "
               required
             />
             <label
               htmlFor={`${props.member}_last_name`}
-              className="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform 
+              className="peer-focus:font-medium absolute text-base font-bold text-whitepink dark:text-gray-400 duration-300 transform 
               -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 
               peer-focus:text-blue-600 peer-focus:dark:text-blue-500 
               peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 
@@ -281,14 +281,14 @@ export function Indiregister() {
             name={`${props.member}_email`}
             id={`${props.member}_email`}
             className="block py-2.5 px-0 w-full text-sm text-lightblue bg-transparent border-0 border-b-2 
-            border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 
+            border-whitepink appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 
             focus:outline-none focus:ring-0 focus:border-blue-600 peer"
             placeholder=" "
             required
           />
           <label
             htmlFor={`${props.member}_email`}
-            className="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform 
+            className="peer-focus:font-medium absolute text-base font-bold text-whitepink dark:text-gray-400 duration-300 transform 
             -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 
             peer-focus:text-blue-600 peer-focus:dark:text-blue-500 
             peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 
@@ -297,21 +297,21 @@ export function Indiregister() {
             Email address
           </label>
         </div>
-        <div  className="grid md:grid-cols-2 md:gap-6 ">
+        <div  className="grid md:grid-flow-col md:gap-6 w-full">
           <div className="relative z-0 w-full mb-6 group">
             <input
               type="text"
               name={`${props.member}_date_of_birth`}
               id={`${props.member}_date_of_birth`}
               className="block py-2.5 px-0 w-full text-sm text-gray-500 bg-transparent border-0 border-b-2 
-              border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 
+              border-whitepink appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 
               focus:outline-none focus:ring-0 focus:border-blue-600 peer "
               placeholder=" "
               required
             />
             <label
               htmlFor={`${props.member}_date_of_birth`}
-              className="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform 
+              className="peer-focus:font-medium absolute text-base font-bold text-whitepink dark:text-gray-400 duration-300 transform 
               -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 
               peer-focus:text-blue-600 peer-focus:dark:text-blue-500 
               peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 
@@ -326,14 +326,14 @@ export function Indiregister() {
               name={`${props.member}_phone`}
               id={`${props.member}_phone`}
               className="block py-2.5 px-0 w-full text-sm text-lightblue bg-transparent border-0 border-b-2 
-              border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 
+              border-whitepink appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 
               focus:outline-none focus:ring-0 focus:border-blue-600 peer"
               placeholder=" "
               required
             />
             <label
               htmlFor={`${props.member}_phone`}
-              className="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform 
+              className="peer-focus:font-medium absolute text-base font-bold text-whitepink dark:text-gray-400 duration-300 transform 
               -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 
               peer-focus:text-blue-600 peer-focus:dark:text-blue-500 
               peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 
@@ -534,17 +534,17 @@ export function Indiregister() {
   
   return (
     <div className="flex flex-col justify-center items-center ">
-      <h1 className="text-white font-bold sm:text-5xl text-4xl  text-center mun-gradient">
+      <h1 className="text-whitepink font-bold sm:text-5xl text-4xl  text-center font-aquireBold">
         INDIVIDUAL REGISTRATION
       </h1>
-      <h1 className="text-red-500 font-semibold sm:text-md text-md text-center mt-5">
+      <h1 className="text-lightblue font-semibold sm:text-md text-md text-center mt-5">
         {`Only Individual Delegates are allowed to register through this.`}
       </h1>
       <form
         onSubmit={handleSubmit}
         className="flex flex-col justify-center items-center mb-52"
       >
-        <div className="flex flex-col justify-center items-center mt-1">
+        <div className="flex flex-col justify-center items-center mt-1 font-trench font-bold">
           <div className="sm:w-auto w-[70vw] mt-11 px-5 shadow-lg my-10 ">
             <div className="grid md:grid-cols-2 md:gap-6 ">
               <div className="relative z-0 w-full mb-6 group">
@@ -559,7 +559,7 @@ export function Indiregister() {
                 />
                 <label
                   htmlFor="first_name"
-                  className="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform 
+                  className="peer-focus:font-medium absolute text-base text-whitepink dark:text-gray-400 duration-300 transform 
                   -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 
                   peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 
                   peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
@@ -579,7 +579,7 @@ export function Indiregister() {
                 />
                 <label
                   htmlFor="last_name"
-                  className="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform 
+                  className="peer-focus:font-medium absolute text-base text-whitepink dark:text-gray-400 duration-300 transform 
                   -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 
                   peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 
                   peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
@@ -600,7 +600,7 @@ export function Indiregister() {
               />
               <label
                 htmlFor="email"
-                className="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform 
+                className="peer-focus:font-medium absolute text-base text-whitepink dark:text-gray-400 duration-300 transform 
                 -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 
                 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 
                 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 
@@ -622,7 +622,7 @@ export function Indiregister() {
                 />
                 <label
                   htmlFor="date_of_birth"
-                  className="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform 
+                  className="peer-focus:font-medium absolute text-base text-whitepink dark:text-gray-400 duration-300 transform 
                   -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 
                   peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 
                   peer-placeholder-shown:translate-y-0 peer-focus:scale-75 
@@ -645,7 +645,7 @@ export function Indiregister() {
                   />
                   <label
                     htmlFor="phone"
-                    className="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform 
+                    className="peer-focus:font-medium absolute text-base text-whitepink dark:text-gray-400 duration-300 transform 
                     -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 
                     peer-focus:text-blue-600 peer-focus:dark:text-blue-500 
                     peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 
@@ -663,25 +663,25 @@ export function Indiregister() {
                   <span className="absolute top-0 left-0 w-5 h-5 bg-white rounded-full border border-slate-300 shadow-sm transition-transform duration-300 peer-checked:translate-x-6 peer-checked:border-slate-800 cursor-pointer">
                   </span>
                 </div>
-                <label htmlFor="switch-component" className={`${isChecked ? "text-blue-500" : "text-gray-500"} text-sm`}>Participate on both days</label>
+                <label htmlFor="switch-component" className={`${isChecked ? "text-babyblue" : "text-whitepink"} text-base`}>Participate on both days</label>
               </div>
               <div className={`${isChecked ? "hidden" : "flex"} flex-row md:gap-5 md:text-base text-sm items-center md:mt-0 mt-5 justify-self-center`}>
                 <div
                   onClick={() => setDay2(false)}
                   className={`${
-                    !day2 ? "bg-black text-blue-500" : "text-babyblue"
+                    !day2 ? " text-lightblue" : "text-whitepink"
                   } font-semibold py-1 px-4 rounded-2xl text-center cursor-pointer`}
                 >
-                  <span className="text-sm text-lightblue">Only Day 1</span>
+                  <span className="text-base">Only Day 1</span>
                   <input type="radio" name="day1" id="day1" className="hidden" checked={!day2} />
                 </div>
                 <div
                   onClick={() => setDay2(true)}
                   className={`${
-                    day2 ? "bg-black text-blue-500" : "text-babyblue"
+                    day2 ? " text-lightblue" : "text-whitepink"
                   } font-semibold py-1 px-4 rounded-2xl text-center cursor-pointer`}
                 >
-                  <span className="text-sm text-lightblue">Only Day 2</span>
+                  <span className="text-base">Only Day 2</span>
                   <input type="radio" name="day2" id="day2" className="hidden" checked={day2} />
                 </div>
               </div>
@@ -689,13 +689,13 @@ export function Indiregister() {
             <div className="grid md:grid-row-2 lg:gap-6 gap-8 md:gap-12 mb-6 lg:mt-0 mt-12">
               <div className={`grid lg:grid-flow-col grid-flow-row gap-3 ${show1 ? "block" : "hidden"}`}>
                 <div className={``}>
-                  <label htmlFor="events_day1" className="text-sm text-gray-400 ">
+                  <label htmlFor="events_day1" className="text-base text-whitepink ">
                     Event (Day 1)
                   </label>
                   <select
                     id="events_day1"
                     name="events_day1"
-                    className="mt-3 text-sm rounded-lg focus:ring-blue-500  block w-full p-2.5 bg-gray-700 border-gray-600 placeholder-gray-400 text-white md:mb-0 "
+                    className="mt-3 text-base rounded-lg focus:ring-blue-500  block w-full p-2.5 bg-gray-700 border-gray-600 placeholder-gray-400 text-white md:mb-0 "
                     onChange={(e) => (setEvent1(e.target.value))}
                   >
                     <option value="null">-----</option>
@@ -710,7 +710,7 @@ export function Indiregister() {
                   </select>
                 </div>
                 <div className={`${showCount1 ? "block": "hidden"}`}>
-                  <label htmlFor="members_day1" className="text-sm text-gray-400">Number of Members</label>
+                  <label htmlFor="members_day1" className="text-whitepink">Number of Members</label>
                   <input 
                     type="number" 
                     name="members_day1" 
@@ -718,7 +718,7 @@ export function Indiregister() {
                     max={maxMem1} 
                     min={minMem1} 
                     onChange={(e) => (setMembers1(parseInt(e.target.value)))} 
-                    className="  mt-3 text-sm rounded-lg focus:ring-blue-500  block w-full p-2.5 bg-gray-700 border-gray-600 placeholder-gray-400 text-white md:mb-0 mb-5"
+                    className="  mt-3 text-sm rounded-lg focus:ring-blue-500  block w-full p-2.5 bg-gray-700 border-gray-600 placeholder-gray-400 text-white md:mb-0 mb-5 h-auto"
                     placeholder={`min: ${minMem1}, max: ${maxMem1}`}
                   />
                 </div>
@@ -727,7 +727,7 @@ export function Indiregister() {
                   <select
                     id="category_day1"
                     name="category_day1"
-                    className="  mt-3 text-sm rounded-lg focus:ring-blue-500  block w-full p-2.5 bg-gray-700 border-gray-600 placeholder-gray-400 text-white md:mb-0 mb-5"
+                    className="  mt-3 text-base rounded-lg focus:ring-blue-500  block w-full p-2.5 bg-gray-700 border-gray-600 placeholder-gray-400 text-white md:mb-0 mb-5"
                     onChange={(e) => {e.target.value}}
                   >
                     <option value="null">---</option>
@@ -740,14 +740,14 @@ export function Indiregister() {
                 <div className={``}>
                   <label
                     htmlFor="events_day2"
-                    className="text-sm text-gray-400 "
+                    className="text-base text-whitepink "
                   >
                     Event (Day 2)
                   </label>
                   <select
                     id="events_day2"
                     name="events_day2"
-                    className="mt-3 text-sm rounded-lg focus:ring-blue-500  block w-full p-2.5 bg-gray-700 border-gray-600 placeholder-gray-400 text-white "
+                    className="mt-3 text-base rounded-lg focus:ring-blue-500  block w-full p-2.5 bg-gray-700 border-gray-600 placeholder-gray-400 text-white "
                     onChange={(e) => (setEvent2(e.target.value))}
                   >
                     <option value="null">-----</option>
@@ -763,7 +763,7 @@ export function Indiregister() {
                   </select>
                 </div>
                 <div className={`${showCount2 ? "block": "hidden"}`}>
-                  <label htmlFor="members_day2" className="text-sm text-gray-400">Number of Members</label>
+                  <label htmlFor="members_day2" className=" text-whitepink">Number of Members</label>
                   <input 
                     type="number" 
                     name="members_day2" 
@@ -776,12 +776,12 @@ export function Indiregister() {
                   />
                 </div>
                 <div className={`${showcat2 ? "block" : "hidden"}`}>
-                  <label htmlFor="category_day2" className="text-gray-400 text-sm">Category</label>
+                  <label htmlFor="category_day2" className="text-whitepink">Category</label>
                   {basket ? (
                     <select
                       id="category_day2"
                       name="category_day2"
-                      className="  mt-3 text-sm rounded-lg focus:ring-blue-500  block w-full p-2.5 bg-gray-700 border-gray-600 placeholder-gray-400 text-white md:mb-0 mb-5"
+                      className="  mt-3 text-base rounded-lg focus:ring-blue-500  block w-full p-2.5 bg-gray-700 border-gray-600 placeholder-gray-400 text-white md:mb-0 mb-5"
                       onChange={(e) => {e.target.value}}
                     >
                       <option value="null">-----</option>
@@ -792,7 +792,7 @@ export function Indiregister() {
                     <select
                       id="category_day2"
                       name="category_day2"
-                      className="  mt-3 text-sm rounded-lg focus:ring-blue-500  block w-full p-2.5 bg-gray-700 border-gray-600 placeholder-gray-400 text-white md:mb-0 mb-5"
+                      className="  mt-3 text-base rounded-lg focus:ring-blue-500  block w-full p-2.5 bg-gray-700 border-gray-600 placeholder-gray-400 text-white md:mb-0 mb-5"
                       onChange={(e) => {e.target.value}}
                     >
                       <option value="null">-----</option>
@@ -809,7 +809,7 @@ export function Indiregister() {
           {members1 > 1 ? (
             <div className="md:w-[97vw] w-[95vw] grid grid-cols-1 justify-items-center mt-10">
               <hr className="border-t border-gray-200 w-full z-10"/>
-              <span className="text-babyblue font-semibold md:text-5xl text-4xl mt-10">
+              <span className="text-babyblue font-aquireBold font-semibold md:text-5xl text-4xl mt-10">
                 DAY 1
               </span>
               <div className="w-[95%]">
@@ -850,7 +850,7 @@ export function Indiregister() {
                   <div className='text-galaxyBlue flex w-full justify-center mt-5'>
                     <div className='bg-lightGray !grid !justify-items-center pb-0.5  px-4 rounded-full bg-opacity-30'>
                       <FaArrowLeft className='swiper-button-prev lg:!size-[50px] md:!size-[40px] !size-[30px] hover:cursor-pointer !text-babyblue hover:!text-neonPurple duration-500 !font-bold'/>
-                      <div className="pagination"></div>
+                      <div className="pagination bg-whitepink space-x-2 px-3 rounded-full bg-opacity-50"></div>
                       <FaArrowRight className='swiper-button-next lg:!size-[50px] md:!size-[40px] !size-[30px] hover:cursor-pointer !text-babyblue hover:!text-neonPurple duration-500 !font-bold'/>
                     </div>
                   </div>
@@ -865,7 +865,7 @@ export function Indiregister() {
           {members2 > 1 ? (
             <div className="md:w-[97vw] w-[95vw] grid grid-cols-1 justify-items-center mt-10">
               <hr className="border-t border-gray-200 w-full z-10"/>
-              <span className="text-babyblue font-semibold md:text-5xl text-4xl mt-10">
+              <span className="text-babyblue font-aquireBold font-semibold md:text-5xl text-4xl mt-10">
                 DAY 2
               </span>
               <div className="w-[95%]">
@@ -903,11 +903,11 @@ export function Indiregister() {
                     );
                   })}
                   
-                  <div className='text-galaxyBlue flex w-full justify-center mt-5'>
+                  <div className='text-galaxyBlue flex w-full justify-center mt-5 '>
                     <div className='bg-lightGray !grid !justify-items-center pb-0.5  px-4 rounded-full bg-opacity-30'>
-                      <FaArrowLeft className='swiper-button-prev lg:!size-[50px] md:!size-[40px] !size-[30px] hover:cursor-pointer !text-babyblue hover:!text-neonPurple duration-500 !font-bold'/>
-                      <div className="pagination"></div>
-                      <FaArrowRight className='swiper-button-next lg:!size-[50px] md:!size-[40px] !size-[30px] hover:cursor-pointer !text-babyblue hover:!text-neonPurple duration-500 !font-bold'/>
+                      <FaArrowLeft className='swiper-button-prev lg:!size-[50px] md:!size-[40px] !size-[30px] hover:cursor-pointer !text-babyblue hover:!text-whitepink duration-500 !font-bold'/>
+                      <div className="pagination bg-whitepink space-x-2 px-3 rounded-full bg-opacity-50"></div>
+                      <FaArrowRight className='swiper-button-next lg:!size-[50px] md:!size-[40px] !size-[30px] hover:cursor-pointer !text-babyblue hover:!text-whitepink duration-500 !font-bold'/>
                     </div>
                   </div>
                 </Swiper>
@@ -919,7 +919,7 @@ export function Indiregister() {
         </div>
         <button
           type="submit"
-          className="px-4 py-3 bg-blue-600 hover:bg-blue-700 w-[50vw] sm:w-80 mt-10 rounded-md text-white outline-none shadow-lg transform align-left active:scale-90 transition-transform"
+          className="font-aquireBold px-4 py-3 bg-blue-600 hover:bg-blue-700 w-[50vw] sm:w-80 mt-10 rounded-md text-white outline-none shadow-lg transform align-left active:scale-90 transition-transform"
           disabled={currentStatus === "done" ? true : false}
         >
           {currentStatus === "entering"
@@ -932,14 +932,14 @@ export function Indiregister() {
 </button>
 </form>
 {currentStatus === "done" ? (
-  <div className="flex flex-col justify-center items-center p-10 h-full mx-24 rounded-lg shadow-emerald-500 shadow-sm bg-black">
-    <p className="mb-3 text-4xl text-white">
+  <div className="flex flex-col justify-center items-center md:p-10 p-5 h-full md:mx-24 mx-5 bg-transparent rounded-2xl border border-lightblue font-trench mb-52 text-center">
+    <p className="mb-3 md:text-4xl text-xl text-whitepink font-aquireBold">
       Congrats! You are officially part of Phenomenon 2024 🎉
     </p>
-    <p className="mb-3 text-xl text-white">
+    <p className="mb-3 md:text-2xl text-base font-bold text-white">
       {`Take a screenshot of your Participant ID so you don't forget.`}
     </p>
-    <ul className="list-none mt-14 text-lg">
+    <ul className="list-none mt-14 text-xl font-bold">
       {ids.map((person, index) => (
         <li className="text-white" key={index}>
           {person[0]} : PMN{person[1]}
@@ -1095,8 +1095,8 @@ export const DelegationRegistration = () => {
 
   const Template = useCallback((props: { name: string | number | bigint | boolean | ReactElement<any, string | JSXElementConstructor<any>> | Iterable<ReactNode> | ReactPortal | Promise<AwaitedReactNode> | null | undefined; member: any; }) => {
     return (
-      <div className="flex flex-col justify-center items-center mt-11 shadow-lg my-10">
-        <h1 className="text-white md:text-5xl text-3xl text-center">{props.name}</h1>
+      <div className="flex flex-col justify-center items-center mt-11 shadow-lg my-10 font-trench">
+        <h1 className="text-white md:text-5xl text-3xl text-center mb-5 font-aquire">{props.name}</h1>
         {/* register htmlForm */}
         <div className="grid md:grid-cols-2 md:gap-6 w-full">
           <div className="relative z-0 w-full mb-6 group">
@@ -1104,13 +1104,13 @@ export const DelegationRegistration = () => {
               type="text"
               name={`${props.member}_first_name`}
               id={`${props.member}_first_name`}
-              className="block py-2.5 px-0 w-full text-sm text-lightblue bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+              className="block py-2.5 px-0 w-full font-bold text-whitepink  bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
               placeholder=" "
               required
             />
             <label
               htmlFor={`${props.member}_first_name`}
-              className="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transhtmlForm -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
+              className="peer-focus:font-medium absolute font-bold text-whitepink dark:text-gray-400 duration-300 transhtmlForm -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
             >
               First name
             </label>
@@ -1120,13 +1120,13 @@ export const DelegationRegistration = () => {
               type="text"
               name={`${props.member}_last_name`}
               id={`${props.member}_last_name`}
-              className="block py-2.5 px-0 w-full text-sm text-lightblue bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+              className="block py-2.5 px-0 w-full font-bold text-whitepink  bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
               placeholder=" "
               required
             />
             <label
               htmlFor={`${props.member}_last_name`}
-              className="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transhtmlForm -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
+              className="peer-focus:font-medium absolute font-bold text-whitepink dark:text-gray-400 duration-300 transhtmlForm -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
             >
               Last name
             </label>
@@ -1137,30 +1137,30 @@ export const DelegationRegistration = () => {
             type="email"
             name={`${props.member}_email`}
             id={`${props.member}_email`}
-            className="block py-2.5 px-0 w-full text-sm text-lightblue bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+            className="block py-2.5 px-0 w-full font-bold text-whitepink  bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
             placeholder=" "
             required
           />
           <label
             htmlFor="email"
-            className="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transhtmlForm -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
+            className="peer-focus:font-medium absolute font-bold text-whitepink dark:text-gray-400 duration-300 transhtmlForm -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
           >
             Email address
           </label>
         </div>
-        <div  className="grid md:grid-cols-2 md:gap-6 ">
+        <div  className="grid md:grid-flow-col md:gap-6 w-full">
           <div className="relative z-0 w-full mb-6 group">
             <input
               type="text"
               name={`${props.member}_date_of_birth`}
               id={`${props.member}_date_of_birth`}
-              className="block py-2.5 px-0 w-full text-sm text-gray-500 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer "
+              className="block py-2.5 px-0 w-full font-bold text-whitepink bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer "
               placeholder=" "
               required
             />
             <label
               htmlFor={`${props.member}_date_of_birth`}
-              className="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transhtmlForm -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
+              className="peer-focus:font-medium absolute font-bold text-whitepink dark:text-gray-400 duration-300 transhtmlForm -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
             >
               Date Of Birth
             </label>
@@ -1170,13 +1170,13 @@ export const DelegationRegistration = () => {
               type="tel"
               name={`${props.member}_phone`}
               id={`${props.member}_phone`}
-              className="block py-2.5 px-0 w-full text-sm text-lightblue bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+              className="block py-2.5 px-0 w-full font-bold text-whitepink  bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
               placeholder=" "
               required
             />
             <label
               htmlFor={`${props.member}_phone`}
-              className="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transhtmlForm -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
+              className="peer-focus:font-medium absolute font-bold text-whitepink dark:text-gray-400 duration-300 transhtmlForm -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
             >
               Phone number
             </label>
@@ -1395,11 +1395,11 @@ export const DelegationRegistration = () => {
     <div className="mt-10 mb-44">
       {members < 6 ? (
         <>
-          <h1 className="md:text-6xl text-4xl text-white text-center font-bold mun-gradient">
+          <h1 className="md:text-6xl text-4xl text-whitepink font-aquireBold text-center font-bold mun-gradient">
             INSTITUTIONAL INFORMATION
           </h1>
           <section className="">
-            <div className="py-8 px-4 mx-auto max-w-2xl lg:py-16">
+            <div className="py-8 px-4 mx-auto max-w-2xl lg:py-16 font-trench">
               <form
                   onSubmit={(e) => {
                     e.preventDefault();
@@ -1424,7 +1424,7 @@ export const DelegationRegistration = () => {
                   <div className="col-span-2">
                     <label
                       htmlFor="name"
-                      className="block mb-2 text-sm font-medium text-gray-500 dark:text-white"
+                      className="block mb-2 font-medium text-whitepink dark:text-white"
                     >
                       SCHOOL NAME
                     </label>
@@ -1432,7 +1432,7 @@ export const DelegationRegistration = () => {
                       type="text"
                       name="institution"
                       id="institution"
-                      className="bg-gray-50 border border-gray-300 text-gray-500 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
+                      className="bg-gray-50 border border-gray-300 placeholder-darkGalaxy text-darkGalaxy rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
                       placeholder="Institution Name"
                       required
                       value={institutionName} // Bind the input value to state
@@ -1444,7 +1444,7 @@ export const DelegationRegistration = () => {
                   <div className="col-span-2">
                     <label
                       htmlFor="item-weight"
-                      className="block mb-2 text-sm font-medium text-gray-500 dark:text-white"
+                      className="block mb-2 text-base font-medium text-whitepink dark:text-white"
                     >
                       TOTAL EVENTS
                     </label>
@@ -1452,9 +1452,9 @@ export const DelegationRegistration = () => {
                       type="number"
                       name="item-weight"
                       id="total_members"
-                      className="bg-gray-50 border border-gray-300 text-gray-500 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
+                      className="bg-gray-50 border border-gray-300 text-darkGalaxy placeholder-darkGalaxy  rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
                       placeholder="0"
-                      min="2"
+                      min="6"
                       required
                       onChange={(e) => {
                         setEventno(parseInt(e.target.value))
@@ -1468,14 +1468,14 @@ export const DelegationRegistration = () => {
                       <div className={``}>
                         <label
                           htmlFor="event"
-                          className="text-sm text-gray-400 "
+                          className="text-whitepink"
                         >
                           Event
                         </label>
                         <select
                           id="event"
                           name="event"
-                          className="mt-3 text-sm rounded-lg focus:ring-blue-500  block w-full p-2.5 bg-gray-700 border-gray-600 placeholder-gray-400 text-white "
+                          className="mt-3 text-sm rounded-lg focus:ring-blue-500  block w-full p-2.5 bg-gray-700 border-gray-600 placeholder-gray-400 text-whitepink "
                           onChange={(e) => handleEventChange(index, e.target.value)}
                         >
                           <option value="empty">---------</option>
@@ -1526,7 +1526,7 @@ export const DelegationRegistration = () => {
                       )}
                       {eventsWithCategories.includes(eventSelections[index]) && (
                         <div className={``}>
-                          <label htmlFor={`category_event${index}`} className="text-gray-400 text-sm">Category</label>
+                          <label htmlFor={`category_event${index}`} className="text-whitepink">Category</label>
                           <select
                             id={`category_event${index}`}
                             name={`category_event${index}`}
@@ -1572,10 +1572,10 @@ export const DelegationRegistration = () => {
           className="flex flex-col justify-center items-center mt-10 mb-52"
           onSubmit={handleSubmit}
         >
-          <h1 className="md:text-6xl text-4xl text-white text-center font-bold">
+          <h1 className="md:text-6xl text-4xl text-whitepink font-aquireBold text-center">
             INSTITUTIONAL REGISTRATION
           </h1>
-          <h1 className="text-red-500 font-semibold sm:text-md text-md text-center mt-5">
+          <h1 className="text-lightblue font-trench font-bold md:text-xl px-2 text-center mt-5">
             {`Only External Delegates are allowed to register through this, Internal won't be refunded`}
           </h1>
           {selectedEventData.map((event, idx) => (
@@ -1584,12 +1584,12 @@ export const DelegationRegistration = () => {
                 key={idx}
               >
                 {event.name ? (
-                  <span className="text-babyblue font-bold md:text-5xl text-4xl mt-10 text-center">
+                  <span className="text-babyblue font-aquireBold font-semibold md:text-5xl text-4xl mt-10 text-center">
                     {event.name.replace(/_/g, " ")} 
                     {event.category && event.category !== "None" ? ` (${event.category})` : ""}
                   </span>
                 ) : (
-                  <span className="text-babyblue font-semibold md:text-5xl text-4xl mt-10 text-center">
+                  <span className="text-babyblue font-aquireBold font-semibold md:text-5xl text-4xl mt-10 text-center">
                     Unknown Event
                   </span>
               )}
@@ -1618,24 +1618,24 @@ export const DelegationRegistration = () => {
                 >
                   
                     {Array.from({ length: event.members }, (_, i) => {
-  let delegateNumber = i + 1;
-  return (
-    <SwiperSlide className="!flex !max-w-lg justify-center" key={i}>
-      <Template
-        name={`PARTICIPANT ${delegateNumber}`}
-        member={`participant_${event.name.replace(/ /g, "_")}_${delegateNumber}`}
-        key={i}
-      />
-    </SwiperSlide>
-  );
-})}
+                      let delegateNumber = i + 1;
+                      return (
+                        <SwiperSlide className="!flex !max-w-lg justify-center" key={i}>
+                          <Template
+                            name={`Participant ${delegateNumber}`}
+                            member={`participant_${event.name.replace(/ /g, "_")}_${delegateNumber}`}
+                            key={i}
+                          />
+                        </SwiperSlide>
+                      );
+                    })}
 
                   
-                  <div className='text-galaxyBlue flex w-full justify-center mt-5'>
+                  <div className='text-galaxyBlue flex  justify-center mt-5'>
                     <div className='bg-lightGray !grid !justify-items-center pb-0.5  px-4 rounded-full bg-opacity-30'>
-                      <FaArrowLeft className='swiper-button-prev lg:!size-[50px] md:!size-[40px] !size-[30px] hover:cursor-pointer !text-babyblue hover:!text-neonPurple duration-500 !font-bold'/>
-                      <div className="pagination"></div>
-                      <FaArrowRight className='swiper-button-next lg:!size-[50px] md:!size-[40px] !size-[30px] hover:cursor-pointer !text-babyblue hover:!text-neonPurple duration-500 !font-bold'/>
+                      <FaArrowLeft className='swiper-button-prev lg:!size-[50px] md:!size-[40px] !size-[30px] hover:cursor-pointer !text-babyblue hover:!text-whitepink duration-500 !font-bold'/>
+                      <div className="pagination bg-whitepink px-3 pb-1 rounded-full bg-opacity-50 space-x-2"></div>
+                      <FaArrowRight className='swiper-button-next lg:!size-[50px] md:!size-[40px] !size-[30px] hover:cursor-pointer !text-babyblue hover:!text-whitepink duration-500 !font-bold'/>
                     </div>
                   </div>
                 </Swiper>
@@ -1644,7 +1644,7 @@ export const DelegationRegistration = () => {
           ))}
           <button
             type="submit"
-            className="px-4 py-3 bg-blue-600 hover:bg-blue-700 w-[50vw] sm:w-80 m-10 rounded-md text-white outline-none  shadow-lg transhtmlForm align-left active:scale-90 transition-transhtmlForm "
+            className="font-aquireBold px-4 py-3 bg-blue-600 hover:bg-blue-700 w-[50vw] sm:w-80 m-10 rounded-md text-white outline-none  shadow-lg transhtmlForm align-left active:scale-90 transition-transhtmlForm "
             disabled={currentStatus === "done" ? true : false}
           >
             
@@ -1662,14 +1662,13 @@ export const DelegationRegistration = () => {
       {currentStatus === "done" ? (
         <div
            
-          className="flex flex-col justify-center items-center p-10 h-full mx-24 rounded-lg shadow-emerald-500 shadow-sm bg-black"
+          className="flex flex-col justify-center items-center md:p-10 p-5 h-full md:mx-24 mx-5 bg-transparent rounded-2xl border border-lightblue font-trench mb-52 text-center"
         >
-          <p className="mb-3 text-4xl text-white">
-            Congrats you are officially part of PHENOMENON 2024 🎉
+          <p className="mb-3 md:text-4xl text-xl text-whitepink font-aquireBold">
+            Congrats! You are officially part of Phenomenon 2024 🎉
           </p>
-
-          <p className="mb-3 text-xl text-white">
-            {`Take a screenshot of your UID to present at registration`}
+          <p className="mb-3 md:text-2xl text-base font-bold text-white">
+            {`Take a screenshot of your Participant ID so you don't forget.`}
           </p>
           <ul className="list-none mt-14 text-lg">
             {ids.map((person) => (
