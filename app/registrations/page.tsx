@@ -9,7 +9,7 @@ import logo from '../../media/logo.png'
 export default function page() {
   const rules = [
     "All prices are inclusive of GST (if applicable).",  
-    "Institutional delegation: An institution does not need to send a team to every event. Participation in at least 10 events is required for institution registration.",  
+    "Institutional delegation: An institution does not need to send a team to every event. Participation in at least 6 events is required for institution registration.",  
     "A clear list of all members of an institutional delegation is required for registration (irrespective of the number of delegations).",  
     "‘Individual’ participants need not be from the same institution.",   
     "There will be no Best Institution Award.",  
