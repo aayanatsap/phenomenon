@@ -25,11 +25,14 @@ export default function page() {
       <section className="">
         <div className="py-8 px-4 mx-auto my-1 lg:py-16 lg:px-6">
           <div className="mx-auto lg:px-0 md:px-10 px-1 lg:max-w-screen-md text-center mb-8 lg:mb-12">
-            <h2 className="lg:mb-12 mb-7 md:text-4xl text-3xl font-aquireBold tracking-tight font-extrabold text-babyblue mun-gradient">
-              REGISTRATIONS ARE OPEN!
+            <h2 className="lg:mb-12 mb-7 md:text-4xl text-3xl font-aquireBold tracking-tight font-extrabold text-lightgray mun-gradient">
+              REGISTRATIONS ARE CLOSED
             </h2>
+            <p className="text-whitepink md:text-xl text-lg font-trench mb-8">
+              Thank you for your interest! Phenomenon 2024 was held on December 20-21, 2024. This event has concluded.
+            </p>
             <ul className='text-whitepink text-left px-3 md:px-5 lg:px-0 md:text-xl text-lg font-bold font-trench list-disc list-outside '>
-              <li>Registrations open on <span className='text-lightblue'>December 7</span>, 2024.</li>
+              <li>Event was held on <span className='text-lightblue'>December 20-21</span>, 2024.</li>
               {rules.map((rule, idx) => (
                 <li key={idx} className=''>{rule}</li>
               ))}
@@ -90,13 +93,11 @@ export default function page() {
                   />
                 </div>
                 <div  className="justify-center items-center mt-12 w-full inline-block">
-                <Link href={"/registrations/individual/"}>
                 <div
-                    className="px-4 py-2 rounded-xl font-aquireBold bg-black dark:bg-white dark:text-black text-white text-xs font-bold w-[80%] mx-auto"
+                    className="px-4 py-2 rounded-xl font-aquireBold bg-gray-500 text-gray-300 text-xs font-bold w-[80%] mx-auto cursor-not-allowed opacity-60"
                   >
-                    REGISTER NOW!
+                    REGISTRATIONS CLOSED
                   </div>
-                  </Link>
                 </div>
               </div>
             </div>
@@ -139,13 +140,11 @@ export default function page() {
                   />
                 </div>
                 <div className="justify-center items-center mt-12 w-full inline-block">
-                <Link href={"/registrations/delegation/"}>
                   <div
-                    className="px-4 py-2 rounded-xl font-aquireBold bg-black dark:bg-white dark:text-black text-white text-xs font-bold w-[80%] mx-auto"
+                    className="px-4 py-2 rounded-xl font-aquireBold bg-gray-500 text-gray-300 text-xs font-bold w-[80%] mx-auto cursor-not-allowed opacity-60"
                   >
-                    REGISTER NOW!
+                    REGISTRATIONS CLOSED
                   </div>
-                  </Link>
                 </div>
               </div>
             </div>

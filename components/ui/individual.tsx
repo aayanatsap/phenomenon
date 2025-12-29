@@ -48,14 +48,14 @@ export function Individual() {
           />
         </CardItem>
         <CardItem translateZ="60" className="justify-center items-center mt-12 w-full inline-block">
-        <Link href={"/registrations/individual/"}><CardItem
+          <CardItem
             translateZ={20}
             as="button"
-            className="font-aquireBold px-4 py-2 rounded-xl bg-black dark:bg-white dark:text-black text-white text-sm font-bold w-[80%] mx-auto"
+            className="font-aquireBold px-4 py-2 rounded-xl bg-gray-500 dark:bg-gray-600 text-gray-300 text-sm font-bold w-[80%] mx-auto cursor-not-allowed opacity-60"
+            disabled
           >
-            REGISTER NOW!
+            REGISTRATIONS CLOSED
           </CardItem>
-          </Link>
         </CardItem>
       </CardBody>
     </CardContainer>
